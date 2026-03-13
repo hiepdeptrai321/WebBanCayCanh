@@ -1,0 +1,33 @@
+[
+  {
+    "_id": {
+      "$oid": "65f700000000000000000001"
+    },
+    "name": "Cửa hàng cây cảnh Hiệp Garden",
+    "slug": "cua-hang-cay-canh-hiep-garden",
+    "description": "Chuyên cây cảnh nội thất, cây để bàn và phụ kiện trang trí không gian sống.",
+    "branches": [
+      {
+        "name": "Chi nhánh Gò Vấp",
+        "phone": "0909001122",
+        "province": "TP.HCM",
+        "district": "Gò Vấp",
+        "ward": "Phường 3",
+        "streetAddress": "120 Nguyễn Văn Bảo",
+        "openingHours": "08:00 - 21:00",
+        "mapUrl": "https://maps.google.com/?q=120+Nguyen+Van+Bao+Go+Vap+HCM"
+      },
+      {
+        "name": "Chi nhánh Thủ Đức",
+        "phone": "0909003344",
+        "province": "TP.HCM",
+        "district": "Thủ Đức",
+        "ward": "Linh Trung",
+        "streetAddress": "15 Võ Văn Ngân",
+        "openingHours": "08:00 - 21:30",
+        "mapUrl": "https://maps.google.com/?q=15+Vo+Van+Ngan+Thu+Duc+HCM"
+      }
+    ],
+    "isActive": true
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "_id": {
+      "$oid": "65f000000000000000000001"
+    },
+    "fullName": "Quản trị viên Hiệp Garden",
+    "email": "admin@hiepgarden.vn",
+    "passwordHash": "$2b$10$adminseedhashxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "phone": "0909000001",
+    "role": "admin",
+    "status": "active",
+    "addresses": [],
+    "createdAt": {
+      "$date": "2026-03-10T08:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T03:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000002"
+    },
+    "fullName": "Nguyễn Minh Anh",
+    "email": "minhanh@gmail.com",
+    "passwordHash": "$2b$10$customerseedhashxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "phone": "0909123456",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000001"
+        },
+        "recipientName": "Nguyễn Minh Anh",
+        "phone": "0909123456",
+        "province": "TP.HCM",
+        "district": "Gò Vấp",
+        "ward": "Phường 3",
+        "streetAddress": "120 Nguyễn Văn Bảo",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-03-10T09:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T04:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000003"
+    },
+    "fullName": "Trần Thu Hà",
+    "email": "thuha@gmail.com",
+    "passwordHash": "$2b$10$customerseedhashyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    "phone": "0911222333",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000002"
+        },
+        "recipientName": "Trần Thu Hà",
+        "phone": "0911222333",
+        "province": "TP.HCM",
+        "district": "Bình Thạnh",
+        "ward": "Phường 25",
+        "streetAddress": "45 D5",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-03-10T10:30:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T05:30:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000004"
+    },
+    "fullName": "Lê Hoàng Nam",
+    "email": "hoangnam@gmail.com",
+    "passwordHash": "$2b$10$customerseedhashzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+    "phone": "0933444555",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000003"
+        },
+        "recipientName": "Lê Hoàng Nam",
+        "phone": "0933444555",
+        "province": "TP.HCM",
+        "district": "Thủ Đức",
+        "ward": "Linh Trung",
+        "streetAddress": "15 Võ Văn Ngân",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-03-11T01:10:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T01:00:00Z"
+    }
+  }
+]

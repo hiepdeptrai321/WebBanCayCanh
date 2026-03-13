@@ -1,0 +1,70 @@
+[
+  {
+    "_id": {
+      "$oid": "65f400000000000000000001"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000002"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000001"
+        },
+        "productName": "Cây kim tiền",
+        "productImage": "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 285000,
+        "quantity": 1,
+        "subtotal": 285000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000005"
+        },
+        "productName": "Sen đá mix chậu sứ",
+        "productImage": "https://images.unsplash.com/photo-1498251095152-27c0ddd22aae?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 129000,
+        "quantity": 2,
+        "subtotal": 258000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-03-12T07:15:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f400000000000000000002"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000003"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000003"
+        },
+        "productName": "Trầu bà xanh",
+        "productImage": "https://images.unsplash.com/photo-1624798762133-9fbf8f209b7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 185000,
+        "quantity": 1,
+        "subtotal": 185000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000002"
+        },
+        "productName": "Cây lưỡi hổ mini",
+        "productImage": "https://images.unsplash.com/photo-1547306720-ad507f7d4d7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 165000,
+        "quantity": 1,
+        "subtotal": 165000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-03-12T08:05:00Z"
+    }
+  }
+]

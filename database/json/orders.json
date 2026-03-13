@@ -1,0 +1,198 @@
+[
+  {
+    "_id": {
+      "$oid": "65f500000000000000000001"
+    },
+    "orderCode": "ORD001",
+    "userId": {
+      "$oid": "65f000000000000000000002"
+    },
+    "customerInfo": {
+      "fullName": "Nguyễn Minh Anh",
+      "phone": "0909123456",
+      "email": "minhanh@gmail.com"
+    },
+    "shippingAddress": {
+      "recipientName": "Nguyễn Minh Anh",
+      "phone": "0909123456",
+      "province": "TP.HCM",
+      "district": "Gò Vấp",
+      "ward": "Phường 3",
+      "streetAddress": "120 Nguyễn Văn Bảo"
+    },
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000001"
+        },
+        "productName": "Cây kim tiền",
+        "productImage": "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 285000,
+        "quantity": 1,
+        "subtotal": 285000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000005"
+        },
+        "productName": "Sen đá mix chậu sứ",
+        "productImage": "https://images.unsplash.com/photo-1498251095152-27c0ddd22aae?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 129000,
+        "quantity": 2,
+        "subtotal": 258000
+      }
+    ],
+    "pricing": {
+      "subtotal": 543000,
+      "shippingFee": 30000,
+      "discountAmount": 0,
+      "totalAmount": 573000
+    },
+    "payment": {
+      "method": "COD",
+      "status": "pending",
+      "transactionCode": null,
+      "paidAt": null
+    },
+    "status": "pending_confirmation",
+    "note": "Giao giờ hành chính",
+    "orderedAt": {
+      "$date": "2026-03-12T02:30:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T09:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f500000000000000000002"
+    },
+    "orderCode": "ORD002",
+    "userId": {
+      "$oid": "65f000000000000000000003"
+    },
+    "customerInfo": {
+      "fullName": "Trần Thu Hà",
+      "phone": "0911222333",
+      "email": "thuha@gmail.com"
+    },
+    "shippingAddress": {
+      "recipientName": "Trần Thu Hà",
+      "phone": "0911222333",
+      "province": "TP.HCM",
+      "district": "Bình Thạnh",
+      "ward": "Phường 25",
+      "streetAddress": "45 D5"
+    },
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000003"
+        },
+        "productName": "Trầu bà xanh",
+        "productImage": "https://images.unsplash.com/photo-1624798762133-9fbf8f209b7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 185000,
+        "quantity": 1,
+        "subtotal": 185000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000002"
+        },
+        "productName": "Cây lưỡi hổ mini",
+        "productImage": "https://images.unsplash.com/photo-1547306720-ad507f7d4d7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 165000,
+        "quantity": 1,
+        "subtotal": 165000
+      }
+    ],
+    "pricing": {
+      "subtotal": 350000,
+      "shippingFee": 30000,
+      "discountAmount": 0,
+      "totalAmount": 380000
+    },
+    "payment": {
+      "method": "MOMO",
+      "status": "paid",
+      "transactionCode": "MOMO20260311001",
+      "paidAt": {
+        "$date": "2026-03-11T08:22:00Z"
+      }
+    },
+    "status": "confirmed",
+    "note": "Gọi trước khi giao",
+    "orderedAt": {
+      "$date": "2026-03-11T08:20:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T09:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f500000000000000000003"
+    },
+    "orderCode": "ORD003",
+    "userId": {
+      "$oid": "65f000000000000000000004"
+    },
+    "customerInfo": {
+      "fullName": "Lê Hoàng Nam",
+      "phone": "0933444555",
+      "email": "hoangnam@gmail.com"
+    },
+    "shippingAddress": {
+      "recipientName": "Lê Hoàng Nam",
+      "phone": "0933444555",
+      "province": "TP.HCM",
+      "district": "Thủ Đức",
+      "ward": "Linh Trung",
+      "streetAddress": "15 Võ Văn Ngân"
+    },
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000004"
+        },
+        "productName": "Monstera deliciosa",
+        "productImage": "https://images.unsplash.com/photo-1762755647813-017e128a4ba0?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 620000,
+        "quantity": 1,
+        "subtotal": 620000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000006"
+        },
+        "productName": "Nha đam mini",
+        "productImage": "https://images.unsplash.com/photo-1547516508-c0b73071d9de?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 110000,
+        "quantity": 1,
+        "subtotal": 110000
+      }
+    ],
+    "pricing": {
+      "subtotal": 730000,
+      "shippingFee": 30000,
+      "discountAmount": 0,
+      "totalAmount": 760000
+    },
+    "payment": {
+      "method": "bank_transfer",
+      "status": "paid",
+      "transactionCode": "BANK20260311003",
+      "paidAt": {
+        "$date": "2026-03-11T01:10:00Z"
+      }
+    },
+    "status": "shipping",
+    "note": "Giao buổi tối",
+    "orderedAt": {
+      "$date": "2026-03-11T01:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T09:00:00Z"
+    }
+  }
+]
