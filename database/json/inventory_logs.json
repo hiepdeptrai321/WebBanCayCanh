@@ -1,0 +1,97 @@
+[
+  {
+    "_id": {
+      "$oid": "65f900000000000000000001"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000001"
+    },
+    "adminId": {
+      "$oid": "65f000000000000000000001"
+    },
+    "actionType": "import",
+    "quantityChanged": 20,
+    "quantityBefore": 14,
+    "quantityAfter": 34,
+    "note": "Nhập thêm kim tiền đợt đầu tuần.",
+    "createdAt": {
+      "$date": "2026-03-11T01:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f900000000000000000002"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000002"
+    },
+    "adminId": {
+      "$oid": "65f000000000000000000001"
+    },
+    "actionType": "export",
+    "quantityChanged": 3,
+    "quantityBefore": 55,
+    "quantityAfter": 52,
+    "note": "Xuất hàng theo đơn đã xác nhận.",
+    "createdAt": {
+      "$date": "2026-03-11T08:30:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f900000000000000000003"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000004"
+    },
+    "adminId": {
+      "$oid": "65f000000000000000000001"
+    },
+    "actionType": "adjustment",
+    "quantityChanged": -2,
+    "quantityBefore": 20,
+    "quantityAfter": 18,
+    "note": "Điều chỉnh tồn do cây lỗi lá.",
+    "createdAt": {
+      "$date": "2026-03-11T09:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f900000000000000000004"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000005"
+    },
+    "adminId": {
+      "$oid": "65f000000000000000000001"
+    },
+    "actionType": "import",
+    "quantityChanged": 30,
+    "quantityBefore": 37,
+    "quantityAfter": 67,
+    "note": "Nhập thêm lô sen đá mini.",
+    "createdAt": {
+      "$date": "2026-03-12T02:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f900000000000000000005"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000008"
+    },
+    "adminId": {
+      "$oid": "65f000000000000000000001"
+    },
+    "actionType": "import",
+    "quantityChanged": 12,
+    "quantityBefore": 15,
+    "quantityAfter": 27,
+    "note": "Bổ sung lan ý để bàn cuối tuần.",
+    "createdAt": {
+      "$date": "2026-03-12T03:40:00Z"
+    }
+  }
+]

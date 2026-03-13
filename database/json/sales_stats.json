@@ -1,0 +1,47 @@
+[
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000001"
+    },
+    "statDate": "2026-03-08",
+    "totalOrders": 6,
+    "totalProductsSold": 11,
+    "revenue": 3140000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000002"
+    },
+    "statDate": "2026-03-09",
+    "totalOrders": 8,
+    "totalProductsSold": 14,
+    "revenue": 4280000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000003"
+    },
+    "statDate": "2026-03-10",
+    "totalOrders": 9,
+    "totalProductsSold": 16,
+    "revenue": 5120000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000004"
+    },
+    "statDate": "2026-03-11",
+    "totalOrders": 11,
+    "totalProductsSold": 19,
+    "revenue": 6430000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000005"
+    },
+    "statDate": "2026-03-12",
+    "totalOrders": 7,
+    "totalProductsSold": 12,
+    "revenue": 3860000
+  }
+]

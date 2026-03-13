@@ -1,0 +1,52 @@
+[
+  {
+    "_id": {
+      "$oid": "65f200000000000000000001"
+    },
+    "name": "Cây để bàn",
+    "slug": "cay-de-ban",
+    "description": "Nhóm cây nhỏ gọn phù hợp bàn làm việc và kệ trang trí.",
+    "parentId": null,
+    "isActive": true
+  },
+  {
+    "_id": {
+      "$oid": "65f200000000000000000002"
+    },
+    "name": "Cây nội thất",
+    "slug": "cay-noi-that",
+    "description": "Các loại cây xanh phù hợp trang trí không gian trong nhà.",
+    "parentId": null,
+    "isActive": true
+  },
+  {
+    "_id": {
+      "$oid": "65f200000000000000000003"
+    },
+    "name": "Sen đá & xương rồng",
+    "slug": "sen-da-xuong-rong",
+    "description": "Nhóm cây chịu hạn, dễ chăm sóc, kích thước nhỏ.",
+    "parentId": null,
+    "isActive": true
+  },
+  {
+    "_id": {
+      "$oid": "65f200000000000000000004"
+    },
+    "name": "Cây cỡ lớn",
+    "slug": "cay-co-lon",
+    "description": "Cây nổi bật cho phòng khách, sảnh, văn phòng.",
+    "parentId": null,
+    "isActive": true
+  },
+  {
+    "_id": {
+      "$oid": "65f200000000000000000005"
+    },
+    "name": "Cây dây leo",
+    "slug": "cay-day-leo",
+    "description": "Các loại cây rủ, dây leo, phù hợp kệ cao và ban công.",
+    "parentId": null,
+    "isActive": true
+  }
+]

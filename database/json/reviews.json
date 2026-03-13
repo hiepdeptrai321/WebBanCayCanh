@@ -1,0 +1,102 @@
+[
+  {
+    "_id": {
+      "$oid": "65f800000000000000000001"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000001"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000002"
+      },
+      "fullName": "Nguyễn Minh Anh"
+    },
+    "rating": 5,
+    "comment": "Cây đẹp, lá bóng và đóng gói rất kỹ.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-12T04:20:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000002"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000002"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000003"
+      },
+      "fullName": "Trần Thu Hà"
+    },
+    "rating": 4,
+    "comment": "Form cây gọn, hợp bàn làm việc, giao nhanh.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-11T10:20:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000003"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000004"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000004"
+      },
+      "fullName": "Lê Hoàng Nam"
+    },
+    "rating": 5,
+    "comment": "Cây to, lên ảnh rất đẹp, đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-11T12:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000004"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000005"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000002"
+      },
+      "fullName": "Nguyễn Minh Anh"
+    },
+    "rating": 4,
+    "comment": "Chậu xinh, phù hợp làm quà tặng.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-10T11:30:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000005"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000008"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000003"
+      },
+      "fullName": "Trần Thu Hà"
+    },
+    "rating": 5,
+    "comment": "Lá xanh đẹp, nhìn rất dịu mắt.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-12T01:15:00Z"
+    }
+  }
+]
