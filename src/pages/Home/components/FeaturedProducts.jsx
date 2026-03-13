@@ -1,35 +1,39 @@
-import ProductCard from './ProductCard'
+import ProductCard from "./ProductCard";
+import TrauBa from "../../../assets/images/home/featured/trauba.jpg";
+import LuoiHo from "../../../assets/images/home/featured/luoiho.jpg";
+import BachMa from "../../../assets/images/home/featured/bachmahoanghau.jpg";
+import SenDa from "../../../assets/images/home/featured/senda.jpg";
 
 const products = [
   {
     id: 1,
-    image: 'https://placehold.co/400x400/d1fae5/16a34a?text=Trầu+Bà',
-    name: 'Trầu Bà Xanh',
-    price: '85.000đ',
-    originalPrice: '120.000đ',
+    image: TrauBa,
+    name: "Trầu Bà Xanh",
+    price: "85.000đ",
+    originalPrice: "120.000đ",
   },
   {
     id: 2,
-    image: 'https://placehold.co/400x400/bbf7d0/15803d?text=Lưỡi+Hổ',
-    name: 'Lưỡi Hổ',
-    price: '95.000đ',
-    originalPrice: '140.000đ',
+    image: LuoiHo,
+    name: "Lưỡi Hổ",
+    price: "95.000đ",
+    originalPrice: "140.000đ",
   },
   {
     id: 3,
-    image: 'https://placehold.co/400x400/a7f3d0/065f46?text=Bạch+Mã',
-    name: 'Bạch Mã Hoàng Hậu',
-    price: '120.000đ',
+    image: BachMa,
+    name: "Bạch Mã Hoàng Hậu",
+    price: "120.000đ",
     originalPrice: null,
   },
   {
     id: 4,
-    image: 'https://placehold.co/400x400/6ee7b7/047857?text=Sen+Đá',
-    name: 'Sen Đá Mini',
-    price: '45.000đ',
-    originalPrice: '65.000đ',
+    image: SenDa,
+    name: "Sen Đá Mini",
+    price: "45.000đ",
+    originalPrice: "65.000đ",
   },
-]
+];
 
 function FeaturedProducts() {
   return (
@@ -59,7 +63,7 @@ function FeaturedProducts() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default FeaturedProducts
+export default FeaturedProducts;
