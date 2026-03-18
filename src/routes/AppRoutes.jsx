@@ -24,11 +24,12 @@ function AppRoutes() {
       </Route>
 
       {/* Trang sản phẩm & giỏ hàng */}
-      <Route element={<ShopLayout />}>
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
-      </Route>
+        <Route element={<ShopLayout />}>
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products/:id" element={<ProductsPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+        </Route>
 
       {/* Trang thông tin */}
       <Route element={<InfoLayout />}>
