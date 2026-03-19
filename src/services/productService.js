@@ -27,3 +27,13 @@ export async function getProductById(id) {
 
   return response.json()
 }
+
+export async function getReviewsByProduct(productId) {
+  const response = await fetch(`${API_BASE_URL}/reviews/product/${productId}`)
+
+  if (!response.ok) {
+    throw new Error('Khong the tai danh gia san pham')
+  }
+
+  return response.json()
+}

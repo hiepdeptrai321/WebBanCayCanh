@@ -4,6 +4,8 @@ import ProductSort from "../../components/products/ProductSort";
 import ProductGrid from "../../components/products/ProductGrid";
 import { getAllProducts } from "../../services/productService";
 
+import TopPage from "../../components/products/TopPage.jsx";
+
 const API_BASE_URL =
     import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
 
@@ -12,6 +14,7 @@ function ProductsPage() {
     const [categories, setCategories] = useState([]);
     const [sortValue, setSortValue] = useState("newest");
     const [selectedCategory, setSelectedCategory] = useState("all");
+    const [selectedPrice, setSelectedPrice] = useState("all");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
@@ -55,12 +58,35 @@ function ProductsPage() {
     const filteredAndSortedProducts = useMemo(() => {
         let result = [...products];
 
+        // Lọc theo phân loại
         if (selectedCategory !== "all") {
             result = result.filter(
                 (product) => String(product.categoryId) === String(selectedCategory)
             );
         }
 
+        // Lọc theo giá
+        if (selectedPrice !== "all") {
+            result = result.filter((product) => {
+                const finalPrice =
+                    product.discountPrice > 0 ? product.discountPrice : product.price;
+
+                switch (selectedPrice) {
+                    case "under-100k":
+                        return finalPrice < 100000;
+                    case "100k-500k":
+                        return finalPrice >= 100000 && finalPrice <= 500000;
+                    case "500k-2m":
+                        return finalPrice > 500000 && finalPrice <= 2000000;
+                    case "over-2m":
+                        return finalPrice > 2000000;
+                    default:
+                        return true;
+                }
+            });
+        }
+
+        // Sắp xếp
         switch (sortValue) {
             case "oldest":
                 result.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
@@ -89,7 +115,7 @@ function ProductsPage() {
         }
 
         return result;
-    }, [products, selectedCategory, sortValue]);
+    }, [products, selectedCategory, selectedPrice, sortValue]);
 
     if (loading) {
         return <p className="py-20 text-center">Đang tải sản phẩm...</p>;
@@ -101,27 +127,7 @@ function ProductsPage() {
 
     return (
         <div className="bg-white">
-            <section className="relative h-[220px] overflow-hidden bg-[#f4f7f1]">
-                <img
-                    src="https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&w=1600&q=80"
-                    alt="Banner sản phẩm"
-                    className="h-full w-full object-cover opacity-80"
-                />
-
-                <div className="absolute inset-0 bg-black/20" />
-
-                <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-4">
-                    <div className="mb-3 flex items-center gap-2 text-sm text-white/90">
-                        <span>Trang chủ</span>
-                        <span>›</span>
-                        <span>Tất cả sản phẩm</span>
-                    </div>
-
-                    <h1 className="text-4xl font-bold text-white md:text-5xl">
-                        Tất cả sản phẩm
-                    </h1>
-                </div>
-            </section>
+        <TopPage/>
 
             <section className="mx-auto max-w-7xl px-4 py-10">
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-[260px_1fr]">
@@ -130,6 +136,8 @@ function ProductsPage() {
                             categories={categories}
                             selectedCategory={selectedCategory}
                             onCategoryChange={setSelectedCategory}
+                            selectedPrice={selectedPrice}
+                            onPriceChange={setSelectedPrice}
                         />
                     </aside>
 

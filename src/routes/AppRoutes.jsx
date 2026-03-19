@@ -10,6 +10,10 @@ import AdminDashboard from "../pages/Admin/AdminDashboard";
 import PlaceholderPage from "../pages/PlaceholderPage";
 import StoresPage from "../pages/Stores/StoresPage";
 import AboutPage from "../pages/About/AboutUsPage";
+import ProductDetailPage from '../pages/Products/ProductDetailPage';
+
+
+
 function AppRoutes() {
   return (
     <Routes>
@@ -26,9 +30,10 @@ function AppRoutes() {
       {/* Trang sản phẩm & giỏ hàng */}
         <Route element={<ShopLayout />}>
             <Route path="/products" element={<ProductsPage />} />
-            <Route path="/products/:id" element={<ProductsPage />} />
+            <Route path = "/products/:id" element = { <ProductDetailPage /> } />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
+
         </Route>
 
       {/* Trang thông tin */}
