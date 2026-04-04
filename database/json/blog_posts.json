@@ -1,0 +1,98 @@
+[
+  {
+    "_id": {
+      "$oid": "65f600000000000000000001"
+    },
+    "title": "Cách chăm sóc cây kim tiền trong môi trường văn phòng",
+    "slug": "cach-cham-soc-cay-kim-tien-van-phong",
+    "category": {
+      "id": {
+        "$oid": "65f200000000000000000002"
+      },
+      "name": "Cây nội thất"
+    },
+    "author": {
+      "id": {
+        "$oid": "65f000000000000000000001"
+      },
+      "name": "Quản trị viên Hiệp Garden"
+    },
+    "summary": "Một số lưu ý về ánh sáng, nước và vị trí đặt cây kim tiền để cây luôn khỏe đẹp.",
+    "content": "Cây kim tiền phù hợp môi trường trong nhà, nên đặt ở nơi có ánh sáng gián tiếp và tránh tưới quá nhiều. Khi mặt đất khô mới tưới lại để hạn chế úng rễ.",
+    "thumbnail": "https://images.unsplash.com/photo-1570641798336-7696b1de5827?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "tags": [
+      "chăm sóc cây",
+      "kim tiền",
+      "cây nội thất"
+    ],
+    "viewCount": 220,
+    "isPublished": true,
+    "publishedAt": {
+      "$date": "2026-03-10T02:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f600000000000000000002"
+    },
+    "title": "5 vị trí đẹp để đặt monstera trong phòng khách",
+    "slug": "5-vi-tri-dep-dat-monstera-trong-phong-khach",
+    "category": {
+      "id": {
+        "$oid": "65f200000000000000000004"
+      },
+      "name": "Cây cỡ lớn"
+    },
+    "author": {
+      "id": {
+        "$oid": "65f000000000000000000001"
+      },
+      "name": "Quản trị viên Hiệp Garden"
+    },
+    "summary": "Gợi ý bố trí monstera giúp không gian hiện đại hơn mà vẫn đảm bảo cây phát triển tốt.",
+    "content": "Monstera hợp với góc có ánh sáng tán xạ, cạnh sofa, gần cửa kính hoặc các vị trí tạo điểm nhấn trong không gian mở. Tránh nắng gắt trực tiếp giữa trưa.",
+    "thumbnail": "https://images.unsplash.com/photo-1762755647813-017e128a4ba0?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "tags": [
+      "monstera",
+      "decor",
+      "phòng khách"
+    ],
+    "viewCount": 176,
+    "isPublished": true,
+    "publishedAt": {
+      "$date": "2026-03-11T01:30:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f600000000000000000003"
+    },
+    "title": "Tưới nước cho sen đá và nha đam như thế nào cho đúng?",
+    "slug": "tuoi-nuoc-cho-sen-da-va-nha-dam-dung-cach",
+    "category": {
+      "id": {
+        "$oid": "65f200000000000000000003"
+      },
+      "name": "Sen đá & xương rồng"
+    },
+    "author": {
+      "id": {
+        "$oid": "65f000000000000000000001"
+      },
+      "name": "Quản trị viên Hiệp Garden"
+    },
+    "summary": "Phân biệt tần suất tưới của các dòng cây mọng nước để tránh thối rễ.",
+    "content": "Sen đá và nha đam đều chịu hạn tốt nên không cần tưới thường xuyên. Chỉ nên tưới khi giá thể khô, ưu tiên chậu thoát nước tốt và nơi có ánh sáng ổn định.",
+    "thumbnail": "https://images.unsplash.com/photo-1498251095152-27c0ddd22aae?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+    "tags": [
+      "sen đá",
+      "nha đam",
+      "tưới nước"
+    ],
+    "viewCount": 143,
+    "isPublished": true,
+    "publishedAt": {
+      "$date": "2026-03-11T09:15:00Z"
+    }
+  }
+]

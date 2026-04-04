@@ -1,0 +1,450 @@
+[
+  {
+    "_id": {
+      "$oid": "65f300000000000000000001"
+    },
+    "categoryId": {
+      "$oid": "65f200000000000000000002"
+    },
+    "name": "Cây kim tiền",
+    "slug": "cay-kim-tien",
+    "sku": "SP001",
+    "shortDescription": "Cây phong thủy dễ chăm, phù hợp văn phòng.",
+    "description": "Kim tiền có tán lá dày, xanh bóng, tượng trưng cho tài lộc và rất phù hợp để đặt ở phòng khách hoặc bàn làm việc.",
+    "price": 320000,
+    "discountPrice": 285000,
+    "stockQuantity": 34,
+    "careInfo": {
+      "lightRequirement": "Ánh sáng gián tiếp",
+      "waterRequirement": "1-2 lần/tuần",
+      "humidityRequirement": "Trung bình",
+      "difficultyLevel": "Dễ"
+    },
+    "dimensions": {
+      "heightCm": 45,
+      "potSizeCm": 18
+    },
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Cây kim tiền",
+        "isPrimary": true
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1570641798336-7696b1de5827?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Cây kim tiền - góc chụp khác",
+        "isPrimary": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Màu lá",
+        "value": "Xanh đậm"
+      },
+      {
+        "name": "Vị trí",
+        "value": "Trong nhà"
+      }
+    ],
+    "isFeatured": true,
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-03-10T00:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T00:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f300000000000000000002"
+    },
+    "categoryId": {
+      "$oid": "65f200000000000000000001"
+    },
+    "name": "Cây lưỡi hổ mini",
+    "slug": "cay-luoi-ho-mini",
+    "sku": "SP002",
+    "shortDescription": "Cây thanh lọc không khí, hợp góc học tập.",
+    "description": "Lưỡi hổ mini có dáng đứng khỏe, dễ sống, chịu hạn tốt và phù hợp với người bận rộn.",
+    "price": 190000,
+    "discountPrice": 165000,
+    "stockQuantity": 52,
+    "careInfo": {
+      "lightRequirement": "Ánh sáng nhẹ hoặc gián tiếp",
+      "waterRequirement": "5-7 ngày/lần",
+      "humidityRequirement": "Thấp",
+      "difficultyLevel": "Dễ"
+    },
+    "dimensions": {
+      "heightCm": 30,
+      "potSizeCm": 14
+    },
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1547306720-ad507f7d4d7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Cây lưỡi hổ mini",
+        "isPrimary": true
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Cây lưỡi hổ mini - góc chụp khác",
+        "isPrimary": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Màu lá",
+        "value": "Xanh viền vàng"
+      },
+      {
+        "name": "Vị trí",
+        "value": "Trong nhà"
+      }
+    ],
+    "isFeatured": true,
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-03-10T00:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T00:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f300000000000000000003"
+    },
+    "categoryId": {
+      "$oid": "65f200000000000000000005"
+    },
+    "name": "Trầu bà xanh",
+    "slug": "trau-ba-xanh",
+    "sku": "SP003",
+    "shortDescription": "Cây dây leo mềm mại, phù hợp kệ cao và ban công.",
+    "description": "Trầu bà xanh sinh trưởng nhanh, lá bóng đẹp, dễ chăm và tạo cảm giác tươi mát cho không gian sống.",
+    "price": 210000,
+    "discountPrice": 185000,
+    "stockQuantity": 41,
+    "careInfo": {
+      "lightRequirement": "Ánh sáng gián tiếp",
+      "waterRequirement": "2-3 lần/tuần",
+      "humidityRequirement": "Trung bình",
+      "difficultyLevel": "Dễ"
+    },
+    "dimensions": {
+      "heightCm": 35,
+      "potSizeCm": 16
+    },
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1624798762133-9fbf8f209b7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Trầu bà xanh",
+        "isPrimary": true
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1747156198758-e12dfd4fe7ee?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Trầu bà xanh - góc chụp khác",
+        "isPrimary": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Dáng cây",
+        "value": "Dây leo"
+      },
+      {
+        "name": "Vị trí",
+        "value": "Trong nhà/Ban công"
+      }
+    ],
+    "isFeatured": false,
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-03-10T00:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T00:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f300000000000000000004"
+    },
+    "categoryId": {
+      "$oid": "65f200000000000000000004"
+    },
+    "name": "Monstera deliciosa",
+    "slug": "monstera-deliciosa",
+    "sku": "SP004",
+    "shortDescription": "Cây lá xẻ nổi bật, hợp không gian hiện đại.",
+    "description": "Monstera là dòng cây nội thất được ưa chuộng nhờ bộ lá xẻ lớn, tạo điểm nhấn mạnh cho phòng khách hoặc studio.",
+    "price": 690000,
+    "discountPrice": 620000,
+    "stockQuantity": 18,
+    "careInfo": {
+      "lightRequirement": "Ánh sáng tán xạ mạnh",
+      "waterRequirement": "2 lần/tuần",
+      "humidityRequirement": "Trung bình",
+      "difficultyLevel": "Trung bình"
+    },
+    "dimensions": {
+      "heightCm": 75,
+      "potSizeCm": 24
+    },
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1762755647813-017e128a4ba0?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Monstera deliciosa",
+        "isPrimary": true
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1623325943583-d658515e0889?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Monstera deliciosa - góc chụp khác",
+        "isPrimary": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Kiểu lá",
+        "value": "Lá xẻ"
+      },
+      {
+        "name": "Vị trí",
+        "value": "Phòng khách"
+      }
+    ],
+    "isFeatured": true,
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-03-10T00:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T00:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f300000000000000000005"
+    },
+    "categoryId": {
+      "$oid": "65f200000000000000000003"
+    },
+    "name": "Sen đá mix chậu sứ",
+    "slug": "sen-da-mix-chau-su",
+    "sku": "SP005",
+    "shortDescription": "Bộ sen đá nhỏ gọn, tối giản, hợp bàn làm việc.",
+    "description": "Sen đá mix chậu sứ có vẻ ngoài thanh lịch, chịu hạn tốt, ít phải chăm và là lựa chọn quà tặng phổ biến.",
+    "price": 145000,
+    "discountPrice": 129000,
+    "stockQuantity": 67,
+    "careInfo": {
+      "lightRequirement": "Nơi sáng, có nắng nhẹ",
+      "waterRequirement": "5-7 ngày/lần",
+      "humidityRequirement": "Thấp",
+      "difficultyLevel": "Dễ"
+    },
+    "dimensions": {
+      "heightCm": 16,
+      "potSizeCm": 10
+    },
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1498251095152-27c0ddd22aae?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Sen đá mix chậu sứ",
+        "isPrimary": true
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1669144457395-0ea4b03edaac?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Sen đá mix chậu sứ - góc chụp khác",
+        "isPrimary": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Nhóm cây",
+        "value": "Sen đá"
+      },
+      {
+        "name": "Vị trí",
+        "value": "Bàn làm việc"
+      }
+    ],
+    "isFeatured": false,
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-03-10T00:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T00:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f300000000000000000006"
+    },
+    "categoryId": {
+      "$oid": "65f200000000000000000003"
+    },
+    "name": "Nha đam mini",
+    "slug": "nha-dam-mini",
+    "sku": "SP006",
+    "shortDescription": "Cây nhỏ xinh, dễ sống, hợp cửa sổ và bếp.",
+    "description": "Nha đam mini có phần lá mọng nước, dễ chăm, chịu nắng tốt và thích hợp đặt gần cửa sổ hoặc ban công nhỏ.",
+    "price": 125000,
+    "discountPrice": 110000,
+    "stockQuantity": 39,
+    "careInfo": {
+      "lightRequirement": "Có nắng nhẹ buổi sáng",
+      "waterRequirement": "4-6 ngày/lần",
+      "humidityRequirement": "Thấp",
+      "difficultyLevel": "Dễ"
+    },
+    "dimensions": {
+      "heightCm": 22,
+      "potSizeCm": 11
+    },
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1547516508-c0b73071d9de?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Nha đam mini",
+        "isPrimary": true
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1501297948169-8123996e0b80?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Nha đam mini - góc chụp khác",
+        "isPrimary": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Nhóm cây",
+        "value": "Mọng nước"
+      },
+      {
+        "name": "Vị trí",
+        "value": "Cửa sổ/Ban công"
+      }
+    ],
+    "isFeatured": false,
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-03-10T00:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T00:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f300000000000000000007"
+    },
+    "categoryId": {
+      "$oid": "65f200000000000000000005"
+    },
+    "name": "Trầu bà cẩm thạch",
+    "slug": "trau-ba-cam-thach",
+    "sku": "SP007",
+    "shortDescription": "Phiên bản trầu bà lá variegated nổi bật.",
+    "description": "Trầu bà cẩm thạch có màu lá loang sáng đẹp mắt, phù hợp decor phong cách hiện đại và tối giản.",
+    "price": 260000,
+    "discountPrice": 235000,
+    "stockQuantity": 22,
+    "careInfo": {
+      "lightRequirement": "Ánh sáng gián tiếp sáng",
+      "waterRequirement": "2-3 lần/tuần",
+      "humidityRequirement": "Trung bình",
+      "difficultyLevel": "Trung bình"
+    },
+    "dimensions": {
+      "heightCm": 30,
+      "potSizeCm": 15
+    },
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1623325943583-d658515e0889?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Trầu bà cẩm thạch",
+        "isPrimary": true
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1624798762133-9fbf8f209b7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Trầu bà cẩm thạch - góc chụp khác",
+        "isPrimary": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Màu lá",
+        "value": "Xanh trắng"
+      },
+      {
+        "name": "Vị trí",
+        "value": "Trong nhà"
+      }
+    ],
+    "isFeatured": true,
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-03-10T00:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T00:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f300000000000000000008"
+    },
+    "categoryId": {
+      "$oid": "65f200000000000000000001"
+    },
+    "name": "Lan ý để bàn",
+    "slug": "lan-y-de-ban",
+    "sku": "SP008",
+    "shortDescription": "Cây lá xanh bóng, mang vẻ dịu mắt và thanh lịch.",
+    "description": "Lan ý phù hợp đặt ở bàn làm việc hoặc kệ sách, tạo cảm giác nhẹ nhàng và giúp không gian thêm mát mắt.",
+    "price": 280000,
+    "discountPrice": 249000,
+    "stockQuantity": 27,
+    "careInfo": {
+      "lightRequirement": "Ánh sáng gián tiếp",
+      "waterRequirement": "2 lần/tuần",
+      "humidityRequirement": "Cao",
+      "difficultyLevel": "Trung bình"
+    },
+    "dimensions": {
+      "heightCm": 38,
+      "potSizeCm": 16
+    },
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1620310252507-c65943dbd411?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Lan ý để bàn",
+        "isPrimary": true
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1744744041806-e70b5fe91a56?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "alt": "Lan ý để bàn - góc chụp khác",
+        "isPrimary": false
+      }
+    ],
+    "attributes": [
+      {
+        "name": "Đặc điểm",
+        "value": "Lá bóng xanh"
+      },
+      {
+        "name": "Vị trí",
+        "value": "Trong nhà"
+      }
+    ],
+    "isFeatured": false,
+    "isActive": true,
+    "createdAt": {
+      "$date": "2026-03-10T00:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-12T00:00:00Z"
+    }
+  }
+]
