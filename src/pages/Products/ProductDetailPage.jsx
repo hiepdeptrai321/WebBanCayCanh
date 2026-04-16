@@ -4,12 +4,9 @@ import ProductGallery from "../../components/products/ProductGallery";
 import ProductInfo from "../../components/products/ProductInfo";
 import ProductDescription from "../../components/products/ProductDescription";
 import ReviewList from "../../components/products/ReviewList";
-import { getProductById } from "../../services/productService";
+import { API_BASE_URL, getProductById } from "../../services/productService";
 import TopPage from "../../components/products/TopPage.jsx";
 import TopDetailPage from "../../components/products/TopDetailPage.jsx";
-
-const API_BASE_URL =
-    import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
 
 function ProductDetailPage() {
     const { id } = useParams();

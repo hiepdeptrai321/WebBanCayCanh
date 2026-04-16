@@ -1,4 +1,18 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api'
+const rawApiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api'
+
+export const API_BASE_URL = rawApiBaseUrl.endsWith('/api')
+  ? rawApiBaseUrl
+  : `${rawApiBaseUrl.replace(/\/+$/, '')}/api`
+
+async function fetchJson(path) {
+  const response = await fetch(`${API_BASE_URL}${path}`)
+
+  if (!response.ok) {
+    throw new Error(`Request failed (${response.status}) for ${path}`)
+  }
+
+  return response.json()
+}
 
 export async function getAllProducts(options = {}) {
   const { featured = true, limit = 10 } = options
@@ -9,31 +23,13 @@ export async function getAllProducts(options = {}) {
     params.set('featured', 'true')
   }
 
-  const response = await fetch(`${API_BASE_URL}/products?${params.toString()}`)
-
-  if (!response.ok) {
-    throw new Error('Khong the tai danh sach san pham')
-  }
-
-  return response.json()
+  return fetchJson(`/products?${params.toString()}`)
 }
 
 export async function getProductById(id) {
-  const response = await fetch(`${API_BASE_URL}/products/${id}`)
-
-  if (!response.ok) {
-    throw new Error('Khong the tai chi tiet san pham')
-  }
-
-  return response.json()
+  return fetchJson(`/products/${id}`)
 }
 
 export async function getReviewsByProduct(productId) {
-  const response = await fetch(`${API_BASE_URL}/reviews/product/${productId}`)
-
-  if (!response.ok) {
-    throw new Error('Khong the tai danh gia san pham')
-  }
-
-  return response.json()
+  return fetchJson(`/reviews/product/${productId}`)
 }

@@ -2,12 +2,9 @@ import { useEffect, useMemo, useState } from "react";
 import SidebarFilter from "../../components/products/SidebarFilter";
 import ProductSort from "../../components/products/ProductSort";
 import ProductGrid from "../../components/products/ProductGrid";
-import { getAllProducts } from "../../services/productService";
+import { API_BASE_URL, getAllProducts } from "../../services/productService";
 
 import TopPage from "../../components/products/TopPage.jsx";
-
-const API_BASE_URL =
-    import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
 
 function ProductsPage() {
     const [products, setProducts] = useState([]);
@@ -30,23 +27,28 @@ function ProductsPage() {
         async function loadData() {
             try {
                 setLoading(true);
+                setError("");
 
-                const [productData, categoryResponse] = await Promise.all([
+                const [productResult, categoryResult] = await Promise.allSettled([
                     getAllProducts({ featured: false, limit: 100 }),
                     fetch(`${API_BASE_URL}/categories`),
                 ]);
 
-                if (!categoryResponse.ok) {
-                    throw new Error("Khong the tai danh muc");
+                if (productResult.status !== "fulfilled") {
+                    throw productResult.reason;
                 }
 
-                const categoryData = await categoryResponse.json();
+                setProducts(productResult.value);
 
-                setProducts(productData);
-                setCategories(categoryData);
+                if (categoryResult.status === "fulfilled" && categoryResult.value.ok) {
+                    const categoryData = await categoryResult.value.json();
+                    setCategories(categoryData);
+                } else {
+                    setCategories([]);
+                }
             } catch (err) {
                 console.error(err);
-                setError("Không thể tải dữ liệu sản phẩm");
+                setError("Không thể tải dữ liệu sản phẩm. Hãy kiểm tra backend API ở cổng 5000.");
             } finally {
                 setLoading(false);
             }
