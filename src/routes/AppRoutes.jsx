@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import ShopLayout from "../layouts/ShopLayout";
 import InfoLayout from "../layouts/InfoLayout";
+import BlogDetailLayout from "../layouts/BlogDetailLayout";
+import BlogKnowledgeLayout from "../layouts/BlogKnowledgeLayout";
 import HomePage from "../pages/Home/HomePage";
 import ProductsPage from "../pages/Products/ProductsPage";
 import CartPage from "../pages/Cart/CartPage";
@@ -10,6 +12,12 @@ import AdminDashboard from "../pages/Admin/AdminDashboard";
 import PlaceholderPage from "../pages/PlaceholderPage";
 import StoresPage from "../pages/Stores/StoresPage";
 import AboutPage from "../pages/About/AboutUsPage";
+import ProductDetailPage from '../pages/Products/ProductDetailPage';
+import BlogKnowledgePage from "../pages/Blog/BlogKnowledgePage";
+import BlogDetailPage from "../pages/Blog/BlogDetailPage";
+
+
+
 function AppRoutes() {
   return (
     <Routes>
@@ -24,22 +32,27 @@ function AppRoutes() {
       </Route>
 
       {/* Trang sản phẩm & giỏ hàng */}
-      <Route element={<ShopLayout />}>
-        <Route path="/products" element={<ProductsPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
-      </Route>
+        <Route element={<ShopLayout />}>
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path = "/products/:id" element = { <ProductDetailPage /> } />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+
+        </Route>
 
       {/* Trang thông tin */}
       <Route element={<InfoLayout />}>
         <Route path="/stores" element={<StoresPage title="Các cửa hàng" />} />
-
-        <Route
-          path="/blog"
-          element={<PlaceholderPage title="Kiến thức cây cảnh" />}
-        />
         <Route path="/support" element={<PlaceholderPage title="Hỗ trợ" />} />
         <Route path="/about" element={<AboutPage />} />
+      </Route>
+
+      <Route element={<BlogKnowledgeLayout />}>
+        <Route path="/blog" element={<BlogKnowledgePage />} />
+      </Route>
+
+      <Route element={<BlogDetailLayout />}>
+        <Route path="/blog/:slug" element={<BlogDetailPage />} />
       </Route>
     </Routes>
   );
