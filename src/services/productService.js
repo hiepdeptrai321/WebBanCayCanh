@@ -15,12 +15,12 @@ async function fetchJson(path) {
 }
 
 export async function getAllProducts(options = {}) {
-  const { featured = true, limit = 10 } = options
-  const params = new URLSearchParams()
+  const { featured = true, limit = 10 } = options;
+  const params = new URLSearchParams();
 
-  params.set('limit', String(limit))
+  params.set("limit", String(limit));
   if (featured) {
-    params.set('featured', 'true')
+    params.set("featured", "true");
   }
 
   return fetchJson(`/products?${params.toString()}`)
