@@ -1,189 +1,128 @@
 # Cấu Trúc Thư Mục Dự Án – Web Bán Cây Cảnh
 
-Tài liệu này giải thích cấu trúc thư mục của dự án để các thành viên trong nhóm nắm rõ trước khi bắt đầu phát triển.
+Tài liệu này mô tả cấu trúc hiện tại của dự án.
+Nguồn chuẩn chính thức: `docs/PROJECT_STRUCTURE.md`.
 
 ---
 
 ## Tổng Quan
 
-Dự án được chia làm hai phần chính:
+Dự án được chia thành 2 phần chính:
 
-- **Frontend** – nằm trong thư mục gốc (`src/`), dùng React + Vite + TailwindCSS
-- **Backend** – nằm trong thư mục `server/`, dùng Node.js + Express + MongoDB
+- Frontend ở thư mục gốc, mã nguồn trong `src/` (React + Vite).
+- Backend trong `server/` (Node.js + Express + MongoDB Atlas).
 
 ---
 
 ## Cấu Trúc Thư Mục Gốc
 
-```
+```txt
 WebBanCayCanh/
-├── src/              # Mã nguồn frontend (React)
-├── server/           # Mã nguồn backend (Node.js + Express)
-├── public/           # Tài nguyên tĩnh (favicon, ảnh công khai)
-├── docs/             # Tài liệu dự án
-├── markdown/         # Hướng dẫn nội bộ cho nhóm
-├── index.html        # HTML gốc của Vite
-├── vite.config.js    # Cấu hình Vite
-├── package.json      # Dependencies frontend
-├── .gitignore        # Các file/thư mục không đưa lên Git
-└── eslint.config.js  # Cấu hình ESLint
+├── src/                  # Mã nguồn frontend
+├── server/               # Mã nguồn backend
+├── database/             # Script seed + dữ liệu JSON
+├── public/               # Static files cho frontend
+├── docs/                 # Tài liệu chính thức
+├── markdown/             # Ghi chú/hướng dẫn nội bộ
+├── index.html
+├── package.json
+├── vite.config.js
+├── eslint.config.js
+└── README.md
 ```
 
 ---
 
 ## Frontend – Thư Mục `src/`
 
-```
+```txt
 src/
-├── assets/               # Tài nguyên tĩnh của ứng dụng
-│   ├── images/           # Hình ảnh (ảnh sản phẩm, banner, ...)
-│   └── icons/            # Icon SVG hoặc PNG
-│
-├── components/           # Các component tái sử dụng
-│   ├── common/           # Component dùng chung (Button, Input, Modal, ...)
-│   ├── layout/           # Component bố cục trang
-│   │   ├── Header.jsx    # Phần đầu trang (logo, thanh tìm kiếm, giỏ hàng)
-│   │   ├── Footer.jsx    # Phần chân trang
-│   │   └── Navbar.jsx    # Thanh điều hướng
-│   └── product/          # Component liên quan đến sản phẩm (ProductCard, ...)
-│
-├── pages/                # Các trang chính của ứng dụng
-│   ├── Home/
-│   │   └── HomePage.jsx        # Trang chủ
-│   ├── Products/
-│   │   └── ProductsPage.jsx    # Trang danh sách sản phẩm
-│   ├── Cart/
-│   │   └── CartPage.jsx        # Trang giỏ hàng
-│   ├── Checkout/
-│   │   └── CheckoutPage.jsx    # Trang thanh toán
-│   └── Admin/
-│       └── AdminDashboard.jsx  # Trang quản trị
-│
-├── layouts/
-│   └── MainLayout.jsx    # Layout chung (bọc Header + Outlet + Footer)
-│
-├── routes/
-│   └── AppRoutes.jsx     # Khai báo tất cả các route của ứng dụng
-│
+├── assets/
+│   ├── icons/
+│   └── images/
+├── components/
+│   ├── common/
+│   ├── layout/
+│   ├── product/          # Placeholder/legacy
+│   └── products/         # Components sản phẩm đang dùng
 ├── context/
-│   └── CartContext.jsx   # Quản lý state giỏ hàng toàn cục (React Context)
-│
-├── services/             # Giao tiếp với API backend
-│   ├── productService.js # Hàm gọi API sản phẩm
-│   └── orderService.js   # Hàm gọi API đơn hàng
-│
-├── utils/                # Hàm tiện ích dùng chung
-│   └── formatCurrency.js # Định dạng tiền tệ sang VNĐ
-│
-├── App.jsx               # Component gốc, khởi tạo Router và Context
-├── App.css               # CSS riêng của App
-├── index.css             # CSS toàn cục (import TailwindCSS ở đây)
-└── main.jsx              # Điểm vào của ứng dụng React
+├── layouts/
+├── pages/
+│   ├── About/
+│   ├── Admin/
+│   ├── Blog/
+│   ├── Cart/
+│   ├── Checkout/
+│   ├── Home/
+│   ├── Products/
+│   └── Stores/
+├── routes/
+├── services/
+├── utils/
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
 ```
 
-### Quy tắc khi làm việc với `src/`
+### Ghi chú frontend
 
-- Mỗi trang nằm trong một thư mục riêng bên trong `pages/`
-- Component dùng lại nhiều nơi thì đặt vào `components/common/`
-- Logic gọi API chỉ được viết trong `services/`, không gọi API trực tiếp trong component
-- State dùng chung nhiều component thì đặt vào `context/`
-- CSS được viết bằng TailwindCSS trực tiếp trong JSX, hạn chế dùng CSS riêng
+- Header đã tách thành nhiều component trong `src/components/layout/`:
+  - `HeaderInfo.jsx`
+  - `HeaderMain.jsx`
+  - `HeaderShop.jsx`
+  - `FullscreenMenu.jsx`
+  - `LogoBlock.jsx`
+- API call viết trong `src/services/`.
+- Shared state viết trong `src/context/`.
 
 ---
 
 ## Backend – Thư Mục `server/`
 
-```
+```txt
 server/
 ├── config/
-│   └── db.js                   # Kết nối MongoDB bằng Mongoose
-│
-├── models/                     # Định nghĩa cấu trúc dữ liệu (Schema)
-│   ├── Product.js              # Schema sản phẩm
-│   └── Order.js                # Schema đơn hàng
-│
-├── controllers/                # Xử lý logic nghiệp vụ
-│   ├── productController.js    # Logic CRUD sản phẩm
-│   └── orderController.js      # Logic xử lý đơn hàng
-│
-├── routes/                     # Định nghĩa các endpoint API
-│   ├── productRoutes.js        # Route /api/products
-│   └── orderRoutes.js          # Route /api/orders
-│
-├── middleware/                 # Middleware (xác thực, xử lý lỗi, ...)
-│
-├── .env                        # Biến môi trường (MONGO_URI, PORT) – không đưa lên Git
-├── package.json                # Dependencies backend
-└── server.js                   # File khởi động server Express
+│   └── db.js
+├── controllers/
+│   ├── blogController.js
+│   ├── categoryController.js
+│   ├── orderController.js
+│   └── productController.js
+├── middleware/
+├── models/
+│   ├── BlogPost.js
+│   ├── Category.js
+│   ├── Order.js
+│   └── Product.js
+├── routes/
+│   ├── blogRoutes.js
+│   ├── categoryRoutes.js
+│   ├── orderRoutes.js
+│   └── productRoutes.js
+├── .env                 # Local only, không commit
+├── package.json
+└── server.js
 ```
 
-### Quy tắc khi làm việc với `server/`
+### Ghi chú backend
 
-- **Không** hardcode thông tin nhạy cảm (mật khẩu, URI) trong code, phải dùng `process.env`
-- Mỗi loại dữ liệu có một file `model`, `controller`, và `routes` riêng
-- Logic xử lý dữ liệu viết trong `controllers/`, không viết trực tiếp trong `routes/`
-- Middleware dùng chung (ví dụ: xác thực token) đặt vào thư mục `middleware/`
-- Chạy server bằng lệnh `npm run dev` (dùng nodemon để tự reload)
+- Không hardcode thông tin nhạy cảm, dùng biến môi trường.
+- Tách rõ model/controller/route theo từng domain.
+- Luôn thêm route mới qua `server/server.js` theo prefix `/api/...`.
 
 ---
 
-## Thư Mục `docs/`
+## Tài Liệu Liên Quan
 
-Chứa tài liệu kỹ thuật cho toàn dự án:
-
-| File                    | Nội dung                              |
-|-------------------------|---------------------------------------|
-| `PROJECT_STRUCTURE.md`  | Tóm tắt cấu trúc thư mục             |
-| `TASK_ASSIGNMENT.md`    | Phân công công việc cho từng thành viên |
-| `API_DOCUMENTATION.md`  | Danh sách các endpoint API            |
-
----
-
-## Luồng Dữ Liệu
-
-```
-Người dùng
-    │
-    ▼
-React (Frontend - src/)
-    │  gọi API qua services/
-    ▼
-Express Server (Backend - server/)
-    │  truy vấn qua models/
-    ▼
-MongoDB Atlas
-```
-
----
-
-## Cách Chạy Dự Án
-
-### Chạy Frontend
-
-```bash
-# Tại thư mục gốc WebBanCayCanh/
-npm install
-npm run dev
-```
-
-Truy cập tại: `http://localhost:5173`
-
-### Chạy Backend
-
-```bash
-# Tại thư mục server/
-npm install
-# Điền thông tin vào file .env trước
-npm run dev
-```
-
-Server chạy tại: `http://localhost:5000`
+- `docs/PROJECT_STRUCTURE.md`: tài liệu cấu trúc chuẩn, cập nhật theo code hiện tại.
+- `docs/API_DOCUMENTATION.md`: mô tả endpoint API.
+- `docs/TASK_ASSIGNMENT.md`: phân công công việc.
 
 ---
 
 ## Lưu Ý Quan Trọng
 
-- **Không được commit file `.env`** lên Git
-- **Không được commit thư mục `node_modules`** lên Git
-- Trước khi push code, kiểm tra lại bằng `npm run lint`
-- Đặt tên file và component theo chuẩn **PascalCase** cho JSX, **camelCase** cho file JS thường
+- Không commit file `.env`.
+- Không commit thư mục `node_modules` và `dist`.
+- Trước khi push, kiểm tra `npm run lint` ở frontend và backend.
