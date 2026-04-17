@@ -1,17 +1,25 @@
 import { useState } from "react";
+function QuantitySelector({ value, onChange, max = 99 }) {
+    const [localQuantity, setLocalQuantity] = useState(1);
 
-function QuantitySelector({ max = 99 }) {
-    const [quantity, setQuantity] = useState(1);
+    const quantity = value !== undefined ? value : localQuantity;
+
+    const updateQuantity = (newVal) => {
+        setLocalQuantity(newVal);
+        if (onChange) {
+            onChange(newVal); // Báo cho ProductInfo biết con số vừa đổi
+        }
+    };
 
     const decrease = () => {
         if (quantity > 1) {
-            setQuantity(quantity - 1);
+            updateQuantity(quantity - 1);
         }
     };
 
     const increase = () => {
         if (quantity < max) {
-            setQuantity(quantity + 1);
+            updateQuantity(quantity + 1);
         }
     };
 

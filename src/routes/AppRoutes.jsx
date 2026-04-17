@@ -16,45 +16,47 @@ import ProductDetailPage from '../pages/Products/ProductDetailPage';
 import BlogKnowledgePage from "../pages/Blog/BlogKnowledgePage";
 import BlogDetailPage from "../pages/Blog/BlogDetailPage";
 
-
+// 1. IMPORT KHO CHỨA GIỎ HÀNG
+import { CartProvider } from "../context/CartContext";
 
 function AppRoutes() {
   return (
-    <Routes>
-      {/* Trang chủ, Admin & fallback */}
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route
-          path="*"
-          element={<PlaceholderPage title="Trang không tồn tại" />}
-        />
-      </Route>
-
-      {/* Trang sản phẩm & giỏ hàng */}
-        <Route element={<ShopLayout />}>
-            <Route path="/products" element={<ProductsPage />} />
-            <Route path = "/products/:id" element = { <ProductDetailPage /> } />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-
+    <CartProvider>
+      <Routes>
+        {/* Trang chủ, Admin & fallback */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route
+            path="*"
+            element={<PlaceholderPage title="Trang không tồn tại" />}
+          />
         </Route>
 
-      {/* Trang thông tin */}
-      <Route element={<InfoLayout />}>
-        <Route path="/stores" element={<StoresPage title="Các cửa hàng" />} />
-        <Route path="/support" element={<PlaceholderPage title="Hỗ trợ" />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Route>
+        {/* Trang sản phẩm & giỏ hàng */}
+        <Route element={<ShopLayout />}>
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:id" element={<ProductDetailPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+        </Route>
 
-      <Route element={<BlogKnowledgeLayout />}>
-        <Route path="/blog" element={<BlogKnowledgePage />} />
-      </Route>
+        {/* Trang thông tin */}
+        <Route element={<InfoLayout />}>
+          <Route path="/stores" element={<StoresPage title="Các cửa hàng" />} />
+          <Route path="/support" element={<PlaceholderPage title="Hỗ trợ" />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Route>
 
-      <Route element={<BlogDetailLayout />}>
-        <Route path="/blog/:slug" element={<BlogDetailPage />} />
-      </Route>
-    </Routes>
+        <Route element={<BlogKnowledgeLayout />}>
+          <Route path="/blog" element={<BlogKnowledgePage />} />
+        </Route>
+
+        <Route element={<BlogDetailLayout />}>
+          <Route path="/blog/:slug" element={<BlogDetailPage />} />
+        </Route>
+      </Routes>
+    </CartProvider>
   );
 }
 
