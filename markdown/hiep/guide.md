@@ -1,4 +1,9 @@
-# Plant Shop Project – Basic Setup Guide for AI Agent
+# Plant Shop Project - Basic Setup Guide for AI Agent
+
+> Status: Historical document for initial bootstrapping only.
+>
+> Current authoritative structure document: `docs/PROJECT_STRUCTURE.md`.
+> If there is any conflict, follow `docs/PROJECT_STRUCTURE.md`.
 
 This document instructs an AI agent to create only the **basic project skeleton** for the Plant Shop application.
 
