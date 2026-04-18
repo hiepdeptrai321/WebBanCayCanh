@@ -1,10 +1,16 @@
 function StatusBadge({ status }) {
   const className =
-    status === 'Đang hiển thị'
-      ? 'bg-emerald-100 text-emerald-700'
-      : 'bg-slate-200 text-slate-700'
+    status === "Đang hiển thị"
+      ? "bg-emerald-100 text-emerald-700"
+      : "bg-slate-200 text-slate-700";
 
-  return <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${className}`}>{status}</span>
+  return (
+    <span
+      className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${className}`}
+    >
+      {status}
+    </span>
+  );
 }
 
 function CategoriesTable({ categories, onEdit, onDelete }) {
@@ -13,7 +19,7 @@ function CategoriesTable({ categories, onEdit, onDelete }) {
       <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">
         Không tìm thấy danh mục phù hợp.
       </div>
-    )
+    );
   }
 
   return (
@@ -33,10 +39,16 @@ function CategoriesTable({ categories, onEdit, onDelete }) {
           <tbody className="divide-y divide-slate-100 bg-white text-sm text-slate-700">
             {categories.map((category) => (
               <tr key={category.id} className="align-top">
-                <td className="px-4 py-3 font-semibold text-slate-900">{category.name}</td>
-                <td className="px-4 py-3 font-mono text-xs text-slate-600">{category.slug}</td>
+                <td className="px-4 py-3 font-semibold text-slate-900">
+                  {category.name}
+                </td>
+                <td className="px-4 py-3 font-mono text-xs text-slate-600">
+                  {category.slug}
+                </td>
                 <td className="px-4 py-3">
-                  <p className="max-w-lg text-slate-600">{category.description}</p>
+                  <p className="max-w-lg text-slate-600">
+                    {category.description}
+                  </p>
                 </td>
                 <td className="px-4 py-3">{category.productCount}</td>
                 <td className="px-4 py-3">
@@ -66,7 +78,7 @@ function CategoriesTable({ categories, onEdit, onDelete }) {
         </table>
       </div>
     </div>
-  )
+  );
 }
 
-export default CategoriesTable
+export default CategoriesTable;
