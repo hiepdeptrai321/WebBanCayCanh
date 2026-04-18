@@ -1,17 +1,18 @@
-const rawApiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api'
+const rawApiBaseUrl =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:5001/api";
 
-export const API_BASE_URL = rawApiBaseUrl.endsWith('/api')
+export const API_BASE_URL = rawApiBaseUrl.endsWith("/api")
   ? rawApiBaseUrl
-  : `${rawApiBaseUrl.replace(/\/+$/, '')}/api`
+  : `${rawApiBaseUrl.replace(/\/+$/, "")}/api`;
 
 async function fetchJson(path) {
-  const response = await fetch(`${API_BASE_URL}${path}`)
+  const response = await fetch(`${API_BASE_URL}${path}`);
 
   if (!response.ok) {
-    throw new Error(`Request failed (${response.status}) for ${path}`)
+    throw new Error(`Request failed (${response.status}) for ${path}`);
   }
 
-  return response.json()
+  return response.json();
 }
 
 export async function getAllProducts(options = {}) {
@@ -23,13 +24,13 @@ export async function getAllProducts(options = {}) {
     params.set("featured", "true");
   }
 
-  return fetchJson(`/products?${params.toString()}`)
+  return fetchJson(`/products?${params.toString()}`);
 }
 
 export async function getProductById(id) {
-  return fetchJson(`/products/${id}`)
+  return fetchJson(`/products/${id}`);
 }
 
 export async function getReviewsByProduct(productId) {
-  return fetchJson(`/reviews/product/${productId}`)
+  return fetchJson(`/reviews/product/${productId}`);
 }
