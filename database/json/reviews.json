@@ -98,5 +98,2805 @@
     "createdAt": {
       "$date": "2026-03-12T01:15:00Z"
     }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000015"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001f"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000b"
+      },
+      "fullName": "Đỗ Mỹ Tiên"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2025-06-15T11:05:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000056"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000018"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000005"
+      },
+      "fullName": "Phạm Gia Hân"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-06-17T00:20:16Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000025"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000b"
+      },
+      "fullName": "Đỗ Mỹ Tiên"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-06-17T09:05:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000006c"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000013"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000005"
+      },
+      "fullName": "Phạm Gia Hân"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-07-01T12:20:16Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000090"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000020"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000015"
+      },
+      "fullName": "Tôn Gia Bảo"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-07-04T15:36:16Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000007e"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000f"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000006"
+      },
+      "fullName": "Võ Nhật Quang"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-07-10T02:38:22Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000035"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000025"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000c"
+      },
+      "fullName": "Hồ Bảo Trâm"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-07-11T01:16:45Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000004f"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000015"
+      },
+      "fullName": "Tôn Gia Bảo"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-07-15T10:36:16Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000009"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000012"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000c"
+      },
+      "fullName": "Hồ Bảo Trâm"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-07-29T12:57:35Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000089"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000006"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000b"
+      },
+      "fullName": "Đỗ Mỹ Tiên"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2025-08-02T18:41:44Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000055"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000006"
+      },
+      "fullName": "Võ Nhật Quang"
+    },
+    "rating": 3,
+    "comment": "Cây ổn, cần thêm vài ngày để quen môi trường mới.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-08-21T00:48:05Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000013"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000016"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000006"
+      },
+      "fullName": "Võ Nhật Quang"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-08-25T13:48:05Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000084"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000006"
+      },
+      "fullName": "Võ Nhật Quang"
+    },
+    "rating": 3,
+    "comment": "Chậu đẹp nhưng mình mong cây dày lá hơn chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-08-29T18:48:05Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000007c"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000022"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000016"
+      },
+      "fullName": "Vũ Thu Trang"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-08-30T03:31:36Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000007b"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000022"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000013"
+      },
+      "fullName": "Nguyễn Hải Đăng"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-09-07T03:00:16Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000027"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000027"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000016"
+      },
+      "fullName": "Vũ Thu Trang"
+    },
+    "rating": 4,
+    "comment": "Sản phẩm tốt, chậu xinh, phù hợp bàn làm việc.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-09-09T18:31:36Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000058"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-09-21T10:30:57Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000059"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001f"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000007"
+      },
+      "fullName": "Đặng Khánh Linh"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-09-29T07:20:26Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000086"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000006"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000004"
+      },
+      "fullName": "Lê Hoàng Nam"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-10-07T22:43:44Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000007a"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000019"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000007"
+      },
+      "fullName": "Đặng Khánh Linh"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2025-10-10T01:20:26Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000074"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000015"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000f"
+      },
+      "fullName": "Mai Anh Khoa"
+    },
+    "rating": 3,
+    "comment": "Cây ổn, cần thêm vài ngày để quen môi trường mới.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-10-12T05:03:38Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000068"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000007"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000009"
+      },
+      "fullName": "Ngô Yến Nhi"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-10-15T07:40:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000006d"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000014"
+      },
+      "fullName": "Lê Quỳnh Chi"
+    },
+    "rating": 4,
+    "comment": "Nhìn chung rất ổn, đóng gói kỹ và giao đúng hẹn.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-10-16T16:08:20Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000001b"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000022"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000009"
+      },
+      "fullName": "Ngô Yến Nhi"
+    },
+    "rating": 4,
+    "comment": "Sản phẩm tốt, chậu xinh, phù hợp bàn làm việc.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-10-17T08:40:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000087"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000010"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000f"
+      },
+      "fullName": "Mai Anh Khoa"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-10-19T23:59:01Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000044"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000f"
+      },
+      "fullName": "Mai Anh Khoa"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-10-30T22:59:01Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000072"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000002"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000009"
+      },
+      "fullName": "Ngô Yến Nhi"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-11-01T06:20:12Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000081"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000008"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000016"
+      },
+      "fullName": "Vũ Thu Trang"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-11-05T01:03:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000063"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000011"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000012"
+      },
+      "fullName": "Tạ Diệu Linh"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-11-08T16:41:12Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000003b"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000024"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000017"
+      },
+      "fullName": "Đinh Hoài Nam"
+    },
+    "rating": 3,
+    "comment": "Chậu đẹp nhưng mình mong cây dày lá hơn chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-11-09T23:02:15Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000042"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000021"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000017"
+      },
+      "fullName": "Đinh Hoài Nam"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-11-10T20:45:10Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000046"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000f"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000b"
+      },
+      "fullName": "Đỗ Mỹ Tiên"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-11-22T20:58:04Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000005f"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000020"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000b"
+      },
+      "fullName": "Đỗ Mỹ Tiên"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-11-23T09:58:04Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000075"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000015"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000016"
+      },
+      "fullName": "Vũ Thu Trang"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-11-25T14:20:31Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000080"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001b"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000b"
+      },
+      "fullName": "Đỗ Mỹ Tiên"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-12-01T07:58:04Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000004b"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000019"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000014"
+      },
+      "fullName": "Lê Quỳnh Chi"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-12-02T12:57:56Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000002e"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000027"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000006"
+      },
+      "fullName": "Võ Nhật Quang"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-12-03T00:17:24Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000008f"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000f"
+      },
+      "fullName": "Mai Anh Khoa"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-12-06T01:08:29Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000018"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001a"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000012"
+      },
+      "fullName": "Tạ Diệu Linh"
+    },
+    "rating": 3,
+    "comment": "Nhìn chung được, phần đất hơi khô khi nhận hàng.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-12-06T22:44:22Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000069"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000024"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000006"
+      },
+      "fullName": "Võ Nhật Quang"
+    },
+    "rating": 4,
+    "comment": "Sản phẩm tốt, chậu xinh, phù hợp bàn làm việc.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-12-08T20:17:24Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000071"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000024"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000f"
+      },
+      "fullName": "Mai Anh Khoa"
+    },
+    "rating": 3,
+    "comment": "Cây ổn, cần thêm vài ngày để quen môi trường mới.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-12-20T11:21:54Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000008"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000011"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000017"
+      },
+      "fullName": "Đinh Hoài Nam"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-12-22T09:09:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000034"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000029"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000f"
+      },
+      "fullName": "Mai Anh Khoa"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2025-12-23T21:21:54Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000043"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000022"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000012"
+      },
+      "fullName": "Tạ Diệu Linh"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-02T11:56:20Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000004d"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000008"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000016"
+      },
+      "fullName": "Vũ Thu Trang"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-05T01:24:38Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000006b"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001f"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000012"
+      },
+      "fullName": "Tạ Diệu Linh"
+    },
+    "rating": 4,
+    "comment": "Sản phẩm tốt, chậu xinh, phù hợp bàn làm việc.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-06T10:56:20Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000061"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000016"
+      },
+      "fullName": "Vũ Thu Trang"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-11T18:24:38Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000023"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000023"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000014"
+      },
+      "fullName": "Lê Quỳnh Chi"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-01-13T04:17:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000040"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000b"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000012"
+      },
+      "fullName": "Tạ Diệu Linh"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-14T07:56:20Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000008a"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000022"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000014"
+      },
+      "fullName": "Lê Quỳnh Chi"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-14T16:26:08Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000079"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000014"
+      },
+      "fullName": "Lê Quỳnh Chi"
+    },
+    "rating": 4,
+    "comment": "Sản phẩm tốt, chậu xinh, phù hợp bàn làm việc.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-01-18T21:05:26Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000032"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000026"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000d"
+      },
+      "fullName": "Trịnh Đức Minh"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-21T22:17:28Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000002b"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000018"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000011"
+      },
+      "fullName": "Chu Minh Khang"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-24T00:58:26Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000049"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000005"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000d"
+      },
+      "fullName": "Trịnh Đức Minh"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-25T06:17:28Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000003c"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000002"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-01-25T08:37:42Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000039"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000028"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000d"
+      },
+      "fullName": "Trịnh Đức Minh"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-26T01:37:50Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000005b"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000d"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000003"
+      },
+      "fullName": "Trần Thu Hà"
+    },
+    "rating": 4,
+    "comment": "Nhìn chung rất ổn, đóng gói kỹ và giao đúng hẹn.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-26T06:33:36Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000085"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000006"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000014"
+      },
+      "fullName": "Lê Quỳnh Chi"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-26T12:17:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000008e"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-27T21:37:42Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000004a"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000012"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000002"
+      },
+      "fullName": "Nguyễn Minh Anh"
+    },
+    "rating": 3,
+    "comment": "Cây ổn, cần thêm vài ngày để quen môi trường mới.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-28T01:57:26Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000000d"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000020"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000016"
+      },
+      "fullName": "Vũ Thu Trang"
+    },
+    "rating": 3,
+    "comment": "Chậu đẹp nhưng mình mong cây dày lá hơn chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-28T21:35:21Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000005c"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000026"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000004"
+      },
+      "fullName": "Lê Hoàng Nam"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-29T01:53:32Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000073"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001a"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000002"
+      },
+      "fullName": "Nguyễn Minh Anh"
+    },
+    "rating": 4,
+    "comment": "Sản phẩm tốt, chậu xinh, phù hợp bàn làm việc.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-29T20:30:29Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000011"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000011"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000011"
+      },
+      "fullName": "Chu Minh Khang"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-30T11:48:29Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000005a"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000020"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000004"
+      },
+      "fullName": "Lê Hoàng Nam"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-30T15:53:32Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000010"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000013"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000004"
+      },
+      "fullName": "Lê Hoàng Nam"
+    },
+    "rating": 4,
+    "comment": "Nhìn chung rất ổn, đóng gói kỹ và giao đúng hẹn.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-01-31T01:53:32Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000001f"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000024"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000007"
+      },
+      "fullName": "Đặng Khánh Linh"
+    },
+    "rating": 4,
+    "comment": "Nhìn chung rất ổn, đóng gói kỹ và giao đúng hẹn.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-03T07:13:38Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000006"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000f"
+      },
+      "fullName": "Mai Anh Khoa"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-02-04T09:12:22Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000026"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000016"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000f"
+      },
+      "fullName": "Mai Anh Khoa"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-04T20:02:41Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000078"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001b"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000007"
+      },
+      "fullName": "Đặng Khánh Linh"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-06T02:44:24Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000002c"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000011"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000007"
+      },
+      "fullName": "Đặng Khánh Linh"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-06T09:13:38Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000038"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000024"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000014"
+      },
+      "fullName": "Lê Quỳnh Chi"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-08T09:58:59Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000037"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000d"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000e"
+      },
+      "fullName": "Phan Hải Yến"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-09T08:44:38Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000028"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001f"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000006"
+      },
+      "fullName": "Võ Nhật Quang"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-09T20:21:29Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000053"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001d"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-10T06:37:42Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000003e"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000013"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 4,
+    "comment": "Sản phẩm tốt, chậu xinh, phù hợp bàn làm việc.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-10T17:37:42Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000031"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000025"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000015"
+      },
+      "fullName": "Tôn Gia Bảo"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-11T01:40:51Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000007d"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000021"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000e"
+      },
+      "fullName": "Phan Hải Yến"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-11T08:19:12Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000024"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000012"
+      },
+      "fullName": "Tạ Diệu Linh"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-11T16:13:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000002f"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000023"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000004"
+      },
+      "fullName": "Lê Hoàng Nam"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-12T11:34:49Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000001e"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000012"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000c"
+      },
+      "fullName": "Hồ Bảo Trâm"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-14T13:23:26Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000030"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000022"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000007"
+      },
+      "fullName": "Đặng Khánh Linh"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-02-15T08:44:24Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000050"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000010"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000015"
+      },
+      "fullName": "Tôn Gia Bảo"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-19T00:40:51Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000001c"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002a"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000012"
+      },
+      "fullName": "Tạ Diệu Linh"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-19T08:13:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000057"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000008"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000e"
+      },
+      "fullName": "Phan Hải Yến"
+    },
+    "rating": 4,
+    "comment": "Nhìn chung rất ổn, đóng gói kỹ và giao đúng hẹn.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-20T08:13:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000051"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000005"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000014"
+      },
+      "fullName": "Lê Quỳnh Chi"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-02-24T02:59:33Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000064"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000025"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000008"
+      },
+      "fullName": "Bùi Quốc Bảo"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-26T18:33:33Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000077"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000b"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000012"
+      },
+      "fullName": "Tạ Diệu Linh"
+    },
+    "rating": 4,
+    "comment": "Nhìn chung rất ổn, đóng gói kỹ và giao đúng hẹn.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-27T10:13:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000067"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000005"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000007"
+      },
+      "fullName": "Đặng Khánh Linh"
+    },
+    "rating": 4,
+    "comment": "Sản phẩm tốt, chậu xinh, phù hợp bàn làm việc.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-02-27T11:28:37Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000002d"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000025"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000016"
+      },
+      "fullName": "Vũ Thu Trang"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-02-28T21:25:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000006f"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001a"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000e"
+      },
+      "fullName": "Phan Hải Yến"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-01T01:13:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000008c"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002f"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-02T20:18:32Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000014"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002f"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000012"
+      },
+      "fullName": "Tạ Diệu Linh"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-02T23:49:17Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000047"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000013"
+      },
+      "fullName": "Nguyễn Hải Đăng"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-03T13:45:30Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000003a"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000008"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-03T22:38:32Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000054"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000a"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000002"
+      },
+      "fullName": "Nguyễn Minh Anh"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-04T21:05:53Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000036"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001b"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000014"
+      },
+      "fullName": "Lê Quỳnh Chi"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-05T23:23:56Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000000f"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000011"
+      },
+      "fullName": "Chu Minh Khang"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-03-06T02:18:07Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000082"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002d"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-03-06T22:02:50Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000076"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000021"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-03-06T23:18:32Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000003d"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000020"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000011"
+      },
+      "fullName": "Chu Minh Khang"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-08T09:18:07Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000091"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000013"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000d"
+      },
+      "fullName": "Trịnh Đức Minh"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-08T14:24:06Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000020"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001b"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000005"
+      },
+      "fullName": "Phạm Gia Hân"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-08T18:07:12Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000048"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000006"
+      },
+      "fullName": "Võ Nhật Quang"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-09T00:43:02Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000041"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000a"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000016"
+      },
+      "fullName": "Vũ Thu Trang"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-03-09T11:25:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000003f"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001a"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000d"
+      },
+      "fullName": "Trịnh Đức Minh"
+    },
+    "rating": 3,
+    "comment": "Nhìn chung được, phần đất hơi khô khi nhận hàng.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-09T12:30:45Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000000a"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000025"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-09T22:02:50Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000052"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002a"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000017"
+      },
+      "fullName": "Đinh Hoài Nam"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-10T13:53:26Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000000b"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000025"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000011"
+      },
+      "fullName": "Chu Minh Khang"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-12T20:46:46Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000008d"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000006"
+      },
+      "fullName": "Võ Nhật Quang"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-13T01:12:41Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000006a"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000025"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000d"
+      },
+      "fullName": "Trịnh Đức Minh"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-13T22:24:06Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000006e"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000008"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000d"
+      },
+      "fullName": "Trịnh Đức Minh"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-15T02:30:45Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000065"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000f"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000017"
+      },
+      "fullName": "Đinh Hoài Nam"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-18T10:15:03Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000001a"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000a"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000013"
+      },
+      "fullName": "Nguyễn Hải Đăng"
+    },
+    "rating": 3,
+    "comment": "Nhìn chung được, phần đất hơi khô khi nhận hàng.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-19T00:45:30Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000022"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000004"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000005"
+      },
+      "fullName": "Phạm Gia Hân"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-21T03:52:54Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000083"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000014"
+      },
+      "fullName": "Lê Quỳnh Chi"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-21T12:23:56Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000001d"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000028"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000003"
+      },
+      "fullName": "Trần Thu Hà"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-24T08:34:19Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000012"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000012"
+      },
+      "fullName": "Tạ Diệu Linh"
+    },
+    "rating": 4,
+    "comment": "Nhìn chung rất ổn, đóng gói kỹ và giao đúng hẹn.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-27T02:05:04Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000004c"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-27T22:07:27Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000007"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000f"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000010"
+      },
+      "fullName": "Lâm Tú Quyên"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-28T14:52:58Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000005e"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000012"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000004"
+      },
+      "fullName": "Lê Hoàng Nam"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-03-29T00:13:33Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000000c"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000010"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000015"
+      },
+      "fullName": "Tôn Gia Bảo"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": false,
+    "createdAt": {
+      "$date": "2026-03-30T16:20:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000019"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001a"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000e"
+      },
+      "fullName": "Phan Hải Yến"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-02T08:42:14Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000005d"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000024"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000d"
+      },
+      "fullName": "Trịnh Đức Minh"
+    },
+    "rating": 4,
+    "comment": "Nhìn chung rất ổn, đóng gói kỹ và giao đúng hẹn.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-03T01:54:01Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000045"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000010"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000007"
+      },
+      "fullName": "Đặng Khánh Linh"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-04T01:04:37Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000007f"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000017"
+      },
+      "fullName": "Đinh Hoài Nam"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-04T22:15:03Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000017"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000000c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000003"
+      },
+      "fullName": "Trần Thu Hà"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-06T00:18:13Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000062"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000007"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000018"
+      },
+      "fullName": "Cao Ngọc Mai"
+    },
+    "rating": 4,
+    "comment": "Sản phẩm tốt, chậu xinh, phù hợp bàn làm việc.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-08T22:51:09Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000033"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000019"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000012"
+      },
+      "fullName": "Tạ Diệu Linh"
+    },
+    "rating": 4,
+    "comment": "Cây khỏe, hình thức đẹp, sẽ quay lại mua thêm.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-10T05:20:46Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000000e"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001b"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000d"
+      },
+      "fullName": "Trịnh Đức Minh"
+    },
+    "rating": 4,
+    "comment": "Nhìn chung rất ổn, đóng gói kỹ và giao đúng hẹn.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-10T13:54:01Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000070"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000001c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000002"
+      },
+      "fullName": "Nguyễn Minh Anh"
+    },
+    "rating": 5,
+    "comment": "Cây tươi, dễ decor, shop tư vấn nhiệt tình.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-11T14:54:37Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000060"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000021"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000014"
+      },
+      "fullName": "Lê Quỳnh Chi"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-12T05:17:51Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000066"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000022"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-12T16:07:27Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000004e"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002f"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000005"
+      },
+      "fullName": "Phạm Gia Hân"
+    },
+    "rating": 4,
+    "comment": "Cây đẹp và dễ chăm, chỉ hơi nhỏ hơn tưởng tượng một chút.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-12T17:54:26Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000029"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000006"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000b"
+      },
+      "fullName": "Đỗ Mỹ Tiên"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-13T04:14:25Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000002a"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000028"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000002"
+      },
+      "fullName": "Nguyễn Minh Anh"
+    },
+    "rating": 5,
+    "comment": "Giao nhanh, cây xanh mướt và đúng mô tả.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-17T05:54:37Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000021"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002e"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000b"
+      },
+      "fullName": "Đỗ Mỹ Tiên"
+    },
+    "rating": 5,
+    "comment": "Cây rất đẹp, lá khỏe và đóng gói cực kỳ cẩn thận.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-17T08:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f80000000000000000008b"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000010"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000017"
+      },
+      "fullName": "Đinh Hoài Nam"
+    },
+    "rating": 5,
+    "comment": "Nhận hàng đúng như hình, chậu sạch và cây đứng form rất đẹp.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-17T14:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000016"
+    },
+    "productId": {
+      "$oid": "65f30000000000000000002c"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f00000000000000000000a"
+      },
+      "fullName": "Lý Thành Đạt"
+    },
+    "rating": 5,
+    "comment": "Đóng gói kỹ, mở ra không bị gãy lá, rất ưng ý.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-17T18:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f800000000000000000088"
+    },
+    "productId": {
+      "$oid": "65f300000000000000000003"
+    },
+    "user": {
+      "id": {
+        "$oid": "65f000000000000000000017"
+      },
+      "fullName": "Đinh Hoài Nam"
+    },
+    "rating": 3,
+    "comment": "Nhìn chung được, phần đất hơi khô khi nhận hàng.",
+    "isApproved": true,
+    "createdAt": {
+      "$date": "2026-04-17T18:00:00Z"
+    }
   }
 ]

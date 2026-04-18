@@ -66,5 +66,609 @@
     "updatedAt": {
       "$date": "2026-03-12T08:05:00Z"
     }
+  },
+  {
+    "_id": {
+      "$oid": "65f40000000000000000000c"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000009"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f30000000000000000001d"
+        },
+        "productName": "Monstera deliciosa lá xẻ bản to",
+        "productImage": "https://images.unsplash.com/photo-1762755647813-017e128a4ba0?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 715000,
+        "quantity": 1,
+        "subtotal": 715000
+      },
+      {
+        "productId": {
+          "$oid": "65f30000000000000000000d"
+        },
+        "productName": "Cây kim tiền quà tặng khai trương mini",
+        "productImage": "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 239000,
+        "quantity": 3,
+        "subtotal": 717000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-12T03:27:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f40000000000000000000f"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000006"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000019"
+        },
+        "productName": "Monstera deliciosa size M",
+        "productImage": "https://images.unsplash.com/photo-1762755647813-017e128a4ba0?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 575000,
+        "quantity": 1,
+        "subtotal": 575000
+      },
+      {
+        "productId": {
+          "$oid": "65f30000000000000000002a"
+        },
+        "productName": "Trầu bà cẩm thạch leo cột mini",
+        "productImage": "https://images.unsplash.com/photo-1623325943583-d658515e0889?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 269000,
+        "quantity": 1,
+        "subtotal": 269000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000012"
+        },
+        "productName": "Cây lưỡi hổ góc học tập",
+        "productImage": "https://images.unsplash.com/photo-1547306720-ad507f7d4d7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 149000,
+        "quantity": 1,
+        "subtotal": 149000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-12T07:04:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f400000000000000000010"
+    },
+    "userId": {
+      "$oid": "65f00000000000000000000d"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000015"
+        },
+        "productName": "Trầu bà xanh leo cột mini",
+        "productImage": "https://images.unsplash.com/photo-1624798762133-9fbf8f209b7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 229000,
+        "quantity": 1,
+        "subtotal": 229000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-12T10:46:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f400000000000000000003"
+    },
+    "userId": {
+      "$oid": "65f00000000000000000000a"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000005"
+        },
+        "productName": "Sen đá mix chậu sứ",
+        "productImage": "https://images.unsplash.com/photo-1498251095152-27c0ddd22aae?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 129000,
+        "quantity": 2,
+        "subtotal": 258000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000009"
+        },
+        "productName": "Cây kim tiền chậu sứ trắng",
+        "productImage": "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 275000,
+        "quantity": 2,
+        "subtotal": 550000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000012"
+        },
+        "productName": "Cây lưỡi hổ góc học tập",
+        "productImage": "https://images.unsplash.com/photo-1547306720-ad507f7d4d7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 149000,
+        "quantity": 1,
+        "subtotal": 149000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-12T10:56:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f40000000000000000000b"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000003"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000007"
+        },
+        "productName": "Trầu bà cẩm thạch",
+        "productImage": "https://images.unsplash.com/photo-1623325943583-d658515e0889?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 235000,
+        "quantity": 1,
+        "subtotal": 235000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-13T12:21:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f400000000000000000009"
+    },
+    "userId": {
+      "$oid": "65f00000000000000000000c"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000006"
+        },
+        "productName": "Nha đam mini",
+        "productImage": "https://images.unsplash.com/photo-1547516508-c0b73071d9de?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 110000,
+        "quantity": 1,
+        "subtotal": 110000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000024"
+        },
+        "productName": "Nha đam mini chậu đất nung",
+        "productImage": "https://images.unsplash.com/photo-1547516508-c0b73071d9de?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 105000,
+        "quantity": 2,
+        "subtotal": 210000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-13T23:21:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f400000000000000000012"
+    },
+    "userId": {
+      "$oid": "65f00000000000000000000e"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f30000000000000000002c"
+        },
+        "productName": "Lan ý để bàn chậu sứ trắng",
+        "productImage": "https://images.unsplash.com/photo-1620310252507-c65943dbd411?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 239000,
+        "quantity": 1,
+        "subtotal": 239000
+      },
+      {
+        "productId": {
+          "$oid": "65f30000000000000000001b"
+        },
+        "productName": "Monstera deliciosa decor studio",
+        "productImage": "https://images.unsplash.com/photo-1762755647813-017e128a4ba0?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 689000,
+        "quantity": 2,
+        "subtotal": 1378000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000026"
+        },
+        "productName": "Nha đam quà tặng nhỏ",
+        "productImage": "https://images.unsplash.com/photo-1547516508-c0b73071d9de?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 98000,
+        "quantity": 2,
+        "subtotal": 196000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-14T03:09:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f400000000000000000005"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000011"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000015"
+        },
+        "productName": "Trầu bà xanh leo cột mini",
+        "productImage": "https://images.unsplash.com/photo-1624798762133-9fbf8f209b7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 229000,
+        "quantity": 1,
+        "subtotal": 229000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000007"
+        },
+        "productName": "Trầu bà cẩm thạch",
+        "productImage": "https://images.unsplash.com/photo-1623325943583-d658515e0889?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 235000,
+        "quantity": 2,
+        "subtotal": 470000
+      },
+      {
+        "productId": {
+          "$oid": "65f30000000000000000001b"
+        },
+        "productName": "Monstera deliciosa decor studio",
+        "productImage": "https://images.unsplash.com/photo-1762755647813-017e128a4ba0?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 689000,
+        "quantity": 1,
+        "subtotal": 689000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-14T07:18:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f400000000000000000011"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000012"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f30000000000000000001d"
+        },
+        "productName": "Monstera deliciosa lá xẻ bản to",
+        "productImage": "https://images.unsplash.com/photo-1762755647813-017e128a4ba0?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 715000,
+        "quantity": 1,
+        "subtotal": 715000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000025"
+        },
+        "productName": "Nha đam để cửa sổ",
+        "productImage": "https://images.unsplash.com/photo-1547516508-c0b73071d9de?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 115000,
+        "quantity": 3,
+        "subtotal": 345000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-14T07:26:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f400000000000000000008"
+    },
+    "userId": {
+      "$oid": "65f00000000000000000000b"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000010"
+        },
+        "productName": "Cây lưỡi hổ size M",
+        "productImage": "https://images.unsplash.com/photo-1547306720-ad507f7d4d7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 225000,
+        "quantity": 1,
+        "subtotal": 225000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000020"
+        },
+        "productName": "Sen đá mini quà tặng",
+        "productImage": "https://images.unsplash.com/photo-1498251095152-27c0ddd22aae?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 99000,
+        "quantity": 1,
+        "subtotal": 99000
+      },
+      {
+        "productId": {
+          "$oid": "65f30000000000000000002e"
+        },
+        "productName": "Lan ý thanh lọc không khí",
+        "productImage": "https://images.unsplash.com/photo-1620310252507-c65943dbd411?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 289000,
+        "quantity": 1,
+        "subtotal": 289000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-14T19:23:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f400000000000000000006"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000018"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000029"
+        },
+        "productName": "Trầu bà cẩm thạch để bàn",
+        "productImage": "https://images.unsplash.com/photo-1623325943583-d658515e0889?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 229000,
+        "quantity": 1,
+        "subtotal": 229000
+      },
+      {
+        "productId": {
+          "$oid": "65f30000000000000000002f"
+        },
+        "productName": "Lan ý quà tặng văn phòng",
+        "productImage": "https://images.unsplash.com/photo-1620310252507-c65943dbd411?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 255000,
+        "quantity": 2,
+        "subtotal": 510000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-15T05:18:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f400000000000000000004"
+    },
+    "userId": {
+      "$oid": "65f00000000000000000000f"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f30000000000000000000a"
+        },
+        "productName": "Cây kim tiền size M",
+        "productImage": "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 315000,
+        "quantity": 1,
+        "subtotal": 315000
+      },
+      {
+        "productId": {
+          "$oid": "65f30000000000000000002d"
+        },
+        "productName": "Lan ý size M",
+        "productImage": "https://images.unsplash.com/photo-1620310252507-c65943dbd411?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 279000,
+        "quantity": 1,
+        "subtotal": 279000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-15T15:38:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f400000000000000000007"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000004"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000018"
+        },
+        "productName": "Trầu bà xanh làm quà tặng",
+        "productImage": "https://images.unsplash.com/photo-1624798762133-9fbf8f209b7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 189000,
+        "quantity": 2,
+        "subtotal": 378000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-15T19:20:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f40000000000000000000d"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000016"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f30000000000000000000f"
+        },
+        "productName": "Cây lưỡi hổ chậu xi măng",
+        "productImage": "https://images.unsplash.com/photo-1547306720-ad507f7d4d7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 175000,
+        "quantity": 3,
+        "subtotal": 525000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000020"
+        },
+        "productName": "Sen đá mini quà tặng",
+        "productImage": "https://images.unsplash.com/photo-1498251095152-27c0ddd22aae?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 99000,
+        "quantity": 1,
+        "subtotal": 99000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000002"
+        },
+        "productName": "Cây lưỡi hổ mini",
+        "productImage": "https://images.unsplash.com/photo-1547306720-ad507f7d4d7b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 165000,
+        "quantity": 1,
+        "subtotal": 165000
+      },
+      {
+        "productId": {
+          "$oid": "65f30000000000000000000a"
+        },
+        "productName": "Cây kim tiền size M",
+        "productImage": "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 315000,
+        "quantity": 1,
+        "subtotal": 315000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-16T04:47:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f40000000000000000000a"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000002"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f30000000000000000002b"
+        },
+        "productName": "Trầu bà cẩm thạch decor tối giản",
+        "productImage": "https://images.unsplash.com/photo-1623325943583-d658515e0889?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 255000,
+        "quantity": 2,
+        "subtotal": 510000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000029"
+        },
+        "productName": "Trầu bà cẩm thạch để bàn",
+        "productImage": "https://images.unsplash.com/photo-1623325943583-d658515e0889?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 229000,
+        "quantity": 1,
+        "subtotal": 229000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000022"
+        },
+        "productName": "Sen đá mix 5 loại",
+        "productImage": "https://images.unsplash.com/photo-1498251095152-27c0ddd22aae?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 219000,
+        "quantity": 1,
+        "subtotal": 219000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-17T04:43:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f40000000000000000000e"
+    },
+    "userId": {
+      "$oid": "65f000000000000000000010"
+    },
+    "status": "active",
+    "items": [
+      {
+        "productId": {
+          "$oid": "65f300000000000000000006"
+        },
+        "productName": "Nha đam mini",
+        "productImage": "https://images.unsplash.com/photo-1547516508-c0b73071d9de?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 110000,
+        "quantity": 1,
+        "subtotal": 110000
+      },
+      {
+        "productId": {
+          "$oid": "65f300000000000000000005"
+        },
+        "productName": "Sen đá mix chậu sứ",
+        "productImage": "https://images.unsplash.com/photo-1498251095152-27c0ddd22aae?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 129000,
+        "quantity": 1,
+        "subtotal": 129000
+      },
+      {
+        "productId": {
+          "$oid": "65f30000000000000000002d"
+        },
+        "productName": "Lan ý size M",
+        "productImage": "https://images.unsplash.com/photo-1620310252507-c65943dbd411?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
+        "unitPrice": 279000,
+        "quantity": 1,
+        "subtotal": 279000
+      }
+    ],
+    "updatedAt": {
+      "$date": "2026-04-17T09:06:00Z"
+    }
   }
 ]

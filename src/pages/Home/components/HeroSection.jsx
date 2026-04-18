@@ -1,3 +1,5 @@
+import BrandLeafIcon from "../../../components/common/BrandLeafIcon";
+
 function HeroSection() {
   return (
     <section className="bg-gradient-to-br from-green-50 to-green-100 min-h-[90vh] flex items-center">
@@ -5,8 +7,9 @@ function HeroSection() {
         <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
           {/* Left – Text */}
           <div className="flex-1 text-center lg:text-left">
-            <span className="inline-block bg-green-200 text-green-800 text-sm font-medium px-3 py-1 rounded-full mb-4">
-              🌿 Cây cảnh tươi mỗi ngày
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-green-200 px-3 py-1 text-sm font-medium text-green-800">
+              <BrandLeafIcon size={16} className="text-green-700" />
+              Cây cảnh tươi mỗi ngày
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-6">
               Mang thiên nhiên vào{' '}
@@ -48,7 +51,7 @@ function HeroSection() {
               <div className="absolute inset-6 bg-green-300 rounded-full opacity-30"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
-                  src="https://placehold.co/420x420/d1fae5/16a34a?text=🌿+Cây+Cảnh"
+                  src="https://placehold.co/420x420/d1fae5/16a34a?text=Cay+Canh"
                   alt="Cây cảnh đẹp"
                   className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl"
                 />

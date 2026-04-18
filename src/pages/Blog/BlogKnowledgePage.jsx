@@ -121,7 +121,7 @@ function BlogKnowledgePage() {
 
             {loading && (
                 <section className="mx-auto max-w-7xl px-4 py-12">
-                    <p className="text-center text-[#526456]">Đang tải bài viết...</p>
+                    <p className="text-center text-[#526456]">Loading articles...</p>
                 </section>
             )}
 

@@ -21,12 +21,14 @@ function HeaderMain() {
         <div className="absolute right-[30%] top-1/2 -translate-y-1/2">
           <button
             onClick={() => setMenuOpen(true)}
-            className="flex flex-col justify-center items-center gap-[6px] p-3 group rounded-md hover:bg-green-50 transition-colors duration-300"
+            className="group inline-flex items-center justify-center rounded-md p-3 hover:bg-green-50 transition-colors duration-300"
             aria-label="Mở menu"
           >
-            <span className="block h-[2px] w-9 bg-gray-700 rounded-full transition-all duration-300 group-hover:bg-green-600 group-hover:translate-x-1" />
-            <span className="block h-[2px] w-6 bg-gray-700 rounded-full transition-all duration-300 group-hover:bg-green-600 group-hover:w-9" />
-            <span className="block h-[2px] w-9 bg-gray-700 rounded-full transition-all duration-300 group-hover:bg-green-600 group-hover:translate-x-1" />
+            <span className="relative block h-5 w-9">
+              <span style={{ height: '2px', top: '1px' }} className="absolute left-0 w-9 rounded-full bg-gray-700 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-green-600" />
+              <span style={{ height: '2px', top: '9px' }} className="absolute left-1/2 w-6 -translate-x-1/2 rounded-full bg-gray-700 transition-all duration-300 group-hover:left-0 group-hover:w-9 group-hover:translate-x-0 group-hover:bg-green-600" />
+              <span style={{ height: '2px', top: '17px' }} className="absolute left-0 w-9 rounded-full bg-gray-700 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-green-600" />
+            </span>
           </button>
         </div>
       </header>

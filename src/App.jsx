@@ -1,6 +1,7 @@
-import { BrowserRouter } from 'react-router-dom'
-import { CartProvider } from './context/CartContext'
-import AppRoutes from './routes/AppRoutes'
+import { BrowserRouter } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
+import AppRoutes from "./routes/AppRoutes";
+import AuthModal from "./components/auth/AuthModal";
 
 function App() {
   return (
@@ -8,8 +9,9 @@ function App() {
       <CartProvider>
         <AppRoutes />
       </CartProvider>
+      <AuthModal />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -43,5 +43,1031 @@
     "totalOrders": 7,
     "totalProductsSold": 12,
     "revenue": 3860000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000006"
+    },
+    "statDate": "2025-06-07",
+    "totalOrders": 1,
+    "totalProductsSold": 5,
+    "revenue": 2268000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000007"
+    },
+    "statDate": "2025-06-14",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 594000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000008"
+    },
+    "statDate": "2025-06-24",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 614000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000009"
+    },
+    "statDate": "2025-06-26",
+    "totalOrders": 1,
+    "totalProductsSold": 1,
+    "revenue": 840000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000000a"
+    },
+    "statDate": "2025-06-29",
+    "totalOrders": 1,
+    "totalProductsSold": 4,
+    "revenue": 625000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000000b"
+    },
+    "statDate": "2025-06-30",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 858000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000000c"
+    },
+    "statDate": "2025-07-08",
+    "totalOrders": 1,
+    "totalProductsSold": 6,
+    "revenue": 2918000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000000d"
+    },
+    "statDate": "2025-07-21",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 429000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000000e"
+    },
+    "statDate": "2025-07-23",
+    "totalOrders": 1,
+    "totalProductsSold": 1,
+    "revenue": 125000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000000f"
+    },
+    "statDate": "2025-07-26",
+    "totalOrders": 1,
+    "totalProductsSold": 1,
+    "revenue": 154000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000010"
+    },
+    "statDate": "2025-07-31",
+    "totalOrders": 2,
+    "totalProductsSold": 4,
+    "revenue": 1969000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000011"
+    },
+    "statDate": "2025-08-03",
+    "totalOrders": 1,
+    "totalProductsSold": 4,
+    "revenue": 1119000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000012"
+    },
+    "statDate": "2025-08-10",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 1260000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000013"
+    },
+    "statDate": "2025-08-17",
+    "totalOrders": 2,
+    "totalProductsSold": 11,
+    "revenue": 2417000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000014"
+    },
+    "statDate": "2025-08-20",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 688000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000015"
+    },
+    "statDate": "2025-08-27",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 532000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000016"
+    },
+    "statDate": "2025-09-02",
+    "totalOrders": 1,
+    "totalProductsSold": 4,
+    "revenue": 851000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000017"
+    },
+    "statDate": "2025-09-12",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 1310000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000018"
+    },
+    "statDate": "2025-09-14",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 774000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000019"
+    },
+    "statDate": "2025-09-17",
+    "totalOrders": 3,
+    "totalProductsSold": 12,
+    "revenue": 2191000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000001a"
+    },
+    "statDate": "2025-09-24",
+    "totalOrders": 2,
+    "totalProductsSold": 9,
+    "revenue": 2917000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000001b"
+    },
+    "statDate": "2025-09-25",
+    "totalOrders": 1,
+    "totalProductsSold": 4,
+    "revenue": 1233000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000001c"
+    },
+    "statDate": "2025-09-30",
+    "totalOrders": 1,
+    "totalProductsSold": 4,
+    "revenue": 917000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000001d"
+    },
+    "statDate": "2025-10-14",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 840000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000001e"
+    },
+    "statDate": "2025-10-15",
+    "totalOrders": 2,
+    "totalProductsSold": 9,
+    "revenue": 1702000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000001f"
+    },
+    "statDate": "2025-10-19",
+    "totalOrders": 2,
+    "totalProductsSold": 7,
+    "revenue": 2849000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000020"
+    },
+    "statDate": "2025-10-25",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 379000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000021"
+    },
+    "statDate": "2025-10-29",
+    "totalOrders": 1,
+    "totalProductsSold": 1,
+    "revenue": 130000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000022"
+    },
+    "statDate": "2025-11-02",
+    "totalOrders": 1,
+    "totalProductsSold": 1,
+    "revenue": 194000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000023"
+    },
+    "statDate": "2025-11-04",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 640000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000024"
+    },
+    "statDate": "2025-11-05",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 452000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000025"
+    },
+    "statDate": "2025-11-07",
+    "totalOrders": 1,
+    "totalProductsSold": 7,
+    "revenue": 1195000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000026"
+    },
+    "statDate": "2025-11-13",
+    "totalOrders": 1,
+    "totalProductsSold": 6,
+    "revenue": 1307000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000027"
+    },
+    "statDate": "2025-11-20",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 473000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000028"
+    },
+    "statDate": "2025-11-21",
+    "totalOrders": 1,
+    "totalProductsSold": 6,
+    "revenue": 1755000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000029"
+    },
+    "statDate": "2025-11-23",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 378000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000002a"
+    },
+    "statDate": "2025-11-25",
+    "totalOrders": 2,
+    "totalProductsSold": 2,
+    "revenue": 814000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000002b"
+    },
+    "statDate": "2025-12-01",
+    "totalOrders": 2,
+    "totalProductsSold": 4,
+    "revenue": 726000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000002c"
+    },
+    "statDate": "2025-12-06",
+    "totalOrders": 1,
+    "totalProductsSold": 7,
+    "revenue": 1104000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000002d"
+    },
+    "statDate": "2025-12-16",
+    "totalOrders": 1,
+    "totalProductsSold": 5,
+    "revenue": 2085000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000002e"
+    },
+    "statDate": "2025-12-30",
+    "totalOrders": 1,
+    "totalProductsSold": 8,
+    "revenue": 2032000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000002f"
+    },
+    "statDate": "2026-01-01",
+    "totalOrders": 1,
+    "totalProductsSold": 1,
+    "revenue": 180000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000030"
+    },
+    "statDate": "2026-01-02",
+    "totalOrders": 2,
+    "totalProductsSold": 8,
+    "revenue": 3132000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000031"
+    },
+    "statDate": "2026-01-03",
+    "totalOrders": 2,
+    "totalProductsSold": 4,
+    "revenue": 2585000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000032"
+    },
+    "statDate": "2026-01-07",
+    "totalOrders": 2,
+    "totalProductsSold": 4,
+    "revenue": 806000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000033"
+    },
+    "statDate": "2026-01-08",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 728000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000034"
+    },
+    "statDate": "2026-01-09",
+    "totalOrders": 3,
+    "totalProductsSold": 8,
+    "revenue": 1741000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000035"
+    },
+    "statDate": "2026-01-10",
+    "totalOrders": 1,
+    "totalProductsSold": 5,
+    "revenue": 1178000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000036"
+    },
+    "statDate": "2026-01-12",
+    "totalOrders": 2,
+    "totalProductsSold": 9,
+    "revenue": 1517000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000037"
+    },
+    "statDate": "2026-01-14",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 222000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000038"
+    },
+    "statDate": "2026-01-16",
+    "totalOrders": 4,
+    "totalProductsSold": 12,
+    "revenue": 2798000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000039"
+    },
+    "statDate": "2026-01-17",
+    "totalOrders": 1,
+    "totalProductsSold": 4,
+    "revenue": 986000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000003a"
+    },
+    "statDate": "2026-01-20",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 968000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000003b"
+    },
+    "statDate": "2026-01-21",
+    "totalOrders": 1,
+    "totalProductsSold": 11,
+    "revenue": 4080000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000003c"
+    },
+    "statDate": "2026-01-22",
+    "totalOrders": 2,
+    "totalProductsSold": 5,
+    "revenue": 1146000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000003d"
+    },
+    "statDate": "2026-01-24",
+    "totalOrders": 7,
+    "totalProductsSold": 34,
+    "revenue": 8891000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000003e"
+    },
+    "statDate": "2026-01-25",
+    "totalOrders": 1,
+    "totalProductsSold": 6,
+    "revenue": 2406000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000003f"
+    },
+    "statDate": "2026-01-29",
+    "totalOrders": 3,
+    "totalProductsSold": 14,
+    "revenue": 4143000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000040"
+    },
+    "statDate": "2026-01-30",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 503000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000041"
+    },
+    "statDate": "2026-01-31",
+    "totalOrders": 2,
+    "totalProductsSold": 9,
+    "revenue": 2421000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000042"
+    },
+    "statDate": "2026-02-01",
+    "totalOrders": 3,
+    "totalProductsSold": 7,
+    "revenue": 1360000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000043"
+    },
+    "statDate": "2026-02-02",
+    "totalOrders": 3,
+    "totalProductsSold": 11,
+    "revenue": 4328000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000044"
+    },
+    "statDate": "2026-02-03",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 588000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000045"
+    },
+    "statDate": "2026-02-05",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 259000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000046"
+    },
+    "statDate": "2026-02-06",
+    "totalOrders": 2,
+    "totalProductsSold": 15,
+    "revenue": 2135000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000047"
+    },
+    "statDate": "2026-02-08",
+    "totalOrders": 1,
+    "totalProductsSold": 6,
+    "revenue": 2286000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000048"
+    },
+    "statDate": "2026-02-11",
+    "totalOrders": 2,
+    "totalProductsSold": 3,
+    "revenue": 795000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000049"
+    },
+    "statDate": "2026-02-12",
+    "totalOrders": 1,
+    "totalProductsSold": 4,
+    "revenue": 1097000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000004a"
+    },
+    "statDate": "2026-02-14",
+    "totalOrders": 2,
+    "totalProductsSold": 3,
+    "revenue": 919000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000004b"
+    },
+    "statDate": "2026-02-16",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 1138000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000004c"
+    },
+    "statDate": "2026-02-18",
+    "totalOrders": 3,
+    "totalProductsSold": 16,
+    "revenue": 4479000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000004d"
+    },
+    "statDate": "2026-02-19",
+    "totalOrders": 1,
+    "totalProductsSold": 4,
+    "revenue": 613000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000004e"
+    },
+    "statDate": "2026-02-20",
+    "totalOrders": 1,
+    "totalProductsSold": 9,
+    "revenue": 3137000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000004f"
+    },
+    "statDate": "2026-02-21",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 365000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000050"
+    },
+    "statDate": "2026-02-22",
+    "totalOrders": 3,
+    "totalProductsSold": 9,
+    "revenue": 1700000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000051"
+    },
+    "statDate": "2026-02-23",
+    "totalOrders": 2,
+    "totalProductsSold": 5,
+    "revenue": 959000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000052"
+    },
+    "statDate": "2026-02-24",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 520000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000053"
+    },
+    "statDate": "2026-02-25",
+    "totalOrders": 1,
+    "totalProductsSold": 6,
+    "revenue": 1142000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000054"
+    },
+    "statDate": "2026-02-27",
+    "totalOrders": 1,
+    "totalProductsSold": 7,
+    "revenue": 1070000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000055"
+    },
+    "statDate": "2026-02-28",
+    "totalOrders": 2,
+    "totalProductsSold": 3,
+    "revenue": 1157000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000056"
+    },
+    "statDate": "2026-03-01",
+    "totalOrders": 1,
+    "totalProductsSold": 4,
+    "revenue": 1197000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000057"
+    },
+    "statDate": "2026-03-03",
+    "totalOrders": 2,
+    "totalProductsSold": 7,
+    "revenue": 2386000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000058"
+    },
+    "statDate": "2026-03-04",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 333000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000059"
+    },
+    "statDate": "2026-03-05",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 1660000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000005a"
+    },
+    "statDate": "2026-03-06",
+    "totalOrders": 3,
+    "totalProductsSold": 9,
+    "revenue": 1528000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000005b"
+    },
+    "statDate": "2026-03-07",
+    "totalOrders": 3,
+    "totalProductsSold": 14,
+    "revenue": 5425000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000005c"
+    },
+    "statDate": "2026-03-13",
+    "totalOrders": 4,
+    "totalProductsSold": 7,
+    "revenue": 1826000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000005d"
+    },
+    "statDate": "2026-03-14",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 443000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000005e"
+    },
+    "statDate": "2026-03-15",
+    "totalOrders": 3,
+    "totalProductsSold": 8,
+    "revenue": 1894000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000005f"
+    },
+    "statDate": "2026-03-16",
+    "totalOrders": 3,
+    "totalProductsSold": 10,
+    "revenue": 3511000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000060"
+    },
+    "statDate": "2026-03-17",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 409000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000061"
+    },
+    "statDate": "2026-03-19",
+    "totalOrders": 1,
+    "totalProductsSold": 4,
+    "revenue": 751000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000062"
+    },
+    "statDate": "2026-03-20",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 820000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000063"
+    },
+    "statDate": "2026-03-21",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 1133000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000064"
+    },
+    "statDate": "2026-03-22",
+    "totalOrders": 2,
+    "totalProductsSold": 5,
+    "revenue": 1598000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000065"
+    },
+    "statDate": "2026-03-23",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 523000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000066"
+    },
+    "statDate": "2026-03-25",
+    "totalOrders": 2,
+    "totalProductsSold": 4,
+    "revenue": 1609000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000067"
+    },
+    "statDate": "2026-03-26",
+    "totalOrders": 2,
+    "totalProductsSold": 5,
+    "revenue": 801000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000068"
+    },
+    "statDate": "2026-03-28",
+    "totalOrders": 1,
+    "totalProductsSold": 1,
+    "revenue": 190000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000069"
+    },
+    "statDate": "2026-03-29",
+    "totalOrders": 1,
+    "totalProductsSold": 1,
+    "revenue": 270000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000006a"
+    },
+    "statDate": "2026-03-30",
+    "totalOrders": 3,
+    "totalProductsSold": 9,
+    "revenue": 1483000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000006b"
+    },
+    "statDate": "2026-03-31",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 283000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000006c"
+    },
+    "statDate": "2026-04-01",
+    "totalOrders": 1,
+    "totalProductsSold": 1,
+    "revenue": 194000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000006d"
+    },
+    "statDate": "2026-04-04",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 509000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000006e"
+    },
+    "statDate": "2026-04-05",
+    "totalOrders": 1,
+    "totalProductsSold": 2,
+    "revenue": 282000
+  },
+  {
+    "_id": {
+      "$oid": "65fa0000000000000000006f"
+    },
+    "statDate": "2026-04-07",
+    "totalOrders": 2,
+    "totalProductsSold": 6,
+    "revenue": 2494000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000070"
+    },
+    "statDate": "2026-04-10",
+    "totalOrders": 1,
+    "totalProductsSold": 6,
+    "revenue": 1042000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000071"
+    },
+    "statDate": "2026-04-11",
+    "totalOrders": 1,
+    "totalProductsSold": 3,
+    "revenue": 825000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000072"
+    },
+    "statDate": "2026-04-12",
+    "totalOrders": 2,
+    "totalProductsSold": 3,
+    "revenue": 789000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000073"
+    },
+    "statDate": "2026-04-13",
+    "totalOrders": 2,
+    "totalProductsSold": 7,
+    "revenue": 813000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000074"
+    },
+    "statDate": "2026-04-14",
+    "totalOrders": 4,
+    "totalProductsSold": 9,
+    "revenue": 2030000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000075"
+    },
+    "statDate": "2026-04-15",
+    "totalOrders": 2,
+    "totalProductsSold": 7,
+    "revenue": 1909000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000076"
+    },
+    "statDate": "2026-04-16",
+    "totalOrders": 2,
+    "totalProductsSold": 4,
+    "revenue": 2399000
+  },
+  {
+    "_id": {
+      "$oid": "65fa00000000000000000077"
+    },
+    "statDate": "2026-04-17",
+    "totalOrders": 1,
+    "totalProductsSold": 6,
+    "revenue": 1333000
   }
 ]

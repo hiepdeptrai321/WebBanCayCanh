@@ -1,3 +1,5 @@
+import BrandLeafIcon from '../common/BrandLeafIcon'
+
 function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 pt-16 pb-8">
@@ -5,8 +7,11 @@ function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <h2 className="text-2xl font-bold text-white mb-3">
-              🌿 Góc Xanh Shop
+            <h2 className="mb-3 flex items-center gap-3 text-2xl font-bold text-white">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-green-600">
+                <BrandLeafIcon size={20} className="text-white" />
+              </span>
+              <span>Góc Xanh Shop</span>
             </h2>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Mang thiên nhiên vào không gian sống của bạn với những loài cây

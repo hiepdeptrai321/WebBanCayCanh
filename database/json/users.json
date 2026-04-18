@@ -109,5 +109,649 @@
     "updatedAt": {
       "$date": "2026-03-12T01:00:00Z"
     }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000009"
+    },
+    "fullName": "Ngô Yến Nhi",
+    "email": "yennhi@gmail.com",
+    "passwordHash": "$2b$10$seedhashyennhi000000000000000000000000000000000000000",
+    "phone": "0973001105",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000009"
+        },
+        "recipientName": "Ngô Yến Nhi",
+        "phone": "0973001105",
+        "province": "TP.HCM",
+        "district": "Tân Bình",
+        "ward": "Phường 2",
+        "streetAddress": "71 Nguyễn Trọng Tuyển",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-05-13T06:44:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-06-10T17:01:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000017"
+    },
+    "fullName": "Đinh Hoài Nam",
+    "email": "hoainam@gmail.com",
+    "passwordHash": "$2b$10$seedhashhoainam00000000000000000000000000000000000000",
+    "phone": "0973001119",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000018"
+        },
+        "recipientName": "Đinh Hoài Nam",
+        "phone": "0973001119",
+        "province": "TP.HCM",
+        "district": "Tân Phú",
+        "ward": "Phú Trung",
+        "streetAddress": "89 Âu Cơ",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-06-03T04:09:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-06-14T17:47:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000012"
+    },
+    "fullName": "Tạ Diệu Linh",
+    "email": "dieulinh@gmail.com",
+    "passwordHash": "$2b$10$seedhashdieulinh0000000000000000000000000000000000000",
+    "phone": "0973001114",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000012"
+        },
+        "recipientName": "Tạ Diệu Linh",
+        "phone": "0973001114",
+        "province": "TP.HCM",
+        "district": "Bình Tân",
+        "ward": "Bình Trị Đông B",
+        "streetAddress": "77 Tên Lửa",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-06-07T08:52:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-06-10T19:17:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000013"
+    },
+    "fullName": "Nguyễn Hải Đăng",
+    "email": "haidang@gmail.com",
+    "passwordHash": "$2b$10$seedhashhaidang00000000000000000000000000000000000000",
+    "phone": "0973001115",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000013"
+        },
+        "recipientName": "Nguyễn Hải Đăng",
+        "phone": "0973001115",
+        "province": "TP.HCM",
+        "district": "Quận 4",
+        "ward": "Phường 9",
+        "streetAddress": "22 Khánh Hội",
+        "isDefault": true
+      },
+      {
+        "_id": {
+          "$oid": "65f100000000000000000014"
+        },
+        "recipientName": "Nguyễn Hải Đăng",
+        "phone": "0973001115",
+        "province": "TP.HCM",
+        "district": "Nhà Bè",
+        "ward": "Phước Kiển",
+        "streetAddress": "9 Nguyễn Hữu Thọ",
+        "isDefault": false
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-06-12T07:58:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-07-19T18:11:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f00000000000000000000d"
+    },
+    "fullName": "Trịnh Đức Minh",
+    "email": "ducminh@gmail.com",
+    "passwordHash": "$2b$10$seedhashducminh00000000000000000000000000000000000000",
+    "phone": "0973001109",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f10000000000000000000d"
+        },
+        "recipientName": "Trịnh Đức Minh",
+        "phone": "0973001109",
+        "province": "TP.HCM",
+        "district": "Gò Vấp",
+        "ward": "Phường 5",
+        "streetAddress": "204 Quang Trung",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-06-14T02:42:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-06-29T11:47:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000007"
+    },
+    "fullName": "Đặng Khánh Linh",
+    "email": "khanhlinh@gmail.com",
+    "passwordHash": "$2b$10$seedhashkhanhlinh000000000000000000000000000000000000",
+    "phone": "0973001103",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000007"
+        },
+        "recipientName": "Đặng Khánh Linh",
+        "phone": "0973001103",
+        "province": "TP.HCM",
+        "district": "Bình Thạnh",
+        "ward": "Phường 22",
+        "streetAddress": "88 Nguyễn Hữu Cảnh",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-06-26T07:14:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-07-29T07:49:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f00000000000000000000e"
+    },
+    "fullName": "Phan Hải Yến",
+    "email": "haiyen@gmail.com",
+    "passwordHash": "$2b$10$seedhashhaiyen000000000000000000000000000000000000000",
+    "phone": "0973001110",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f10000000000000000000e"
+        },
+        "recipientName": "Phan Hải Yến",
+        "phone": "0973001110",
+        "province": "TP.HCM",
+        "district": "Quận 10",
+        "ward": "Phường 12",
+        "streetAddress": "65 Sư Vạn Hạnh",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-06-30T13:17:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-07-31T00:27:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000006"
+    },
+    "fullName": "Võ Nhật Quang",
+    "email": "nhatquang@gmail.com",
+    "passwordHash": "$2b$10$seedhashnhatquang000000000000000000000000000000000000",
+    "phone": "0973001102",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000006"
+        },
+        "recipientName": "Võ Nhật Quang",
+        "phone": "0973001102",
+        "province": "TP.HCM",
+        "district": "Phú Nhuận",
+        "ward": "Phường 7",
+        "streetAddress": "24 Hoa Lan",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-07-01T18:05:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-08-09T07:07:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000010"
+    },
+    "fullName": "Lâm Tú Quyên",
+    "email": "tuquyen@gmail.com",
+    "passwordHash": "$2b$10$seedhashtuquyen00000000000000000000000000000000000000",
+    "phone": "0973001112",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000010"
+        },
+        "recipientName": "Lâm Tú Quyên",
+        "phone": "0973001112",
+        "province": "TP.HCM",
+        "district": "Quận 8",
+        "ward": "Phường 7",
+        "streetAddress": "91 Tạ Quang Bửu",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-08-05T18:46:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-08-22T00:15:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f00000000000000000000a"
+    },
+    "fullName": "Lý Thành Đạt",
+    "email": "thanhdat@gmail.com",
+    "passwordHash": "$2b$10$seedhashthanhdat0000000000000000000000000000000000000",
+    "phone": "0973001106",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f10000000000000000000a"
+        },
+        "recipientName": "Lý Thành Đạt",
+        "phone": "0973001106",
+        "province": "Bình Dương",
+        "district": "Dĩ An",
+        "ward": "Dĩ An",
+        "streetAddress": "12 Lê Hồng Phong",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-08-28T11:06:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-09-03T23:12:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000015"
+    },
+    "fullName": "Tôn Gia Bảo",
+    "email": "giabao@gmail.com",
+    "passwordHash": "$2b$10$seedhashgiabao000000000000000000000000000000000000000",
+    "phone": "0973001117",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000016"
+        },
+        "recipientName": "Tôn Gia Bảo",
+        "phone": "0973001117",
+        "province": "TP.HCM",
+        "district": "Quận 11",
+        "ward": "Phường 5",
+        "streetAddress": "101 Lạc Long Quân",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-09-13T18:34:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-10-01T13:01:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000011"
+    },
+    "fullName": "Chu Minh Khang",
+    "email": "minhkhang@gmail.com",
+    "passwordHash": "$2b$10$seedhashminhkhang000000000000000000000000000000000000",
+    "phone": "0973001113",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000011"
+        },
+        "recipientName": "Chu Minh Khang",
+        "phone": "0973001113",
+        "province": "TP.HCM",
+        "district": "Quận 12",
+        "ward": "Tân Thới Nhất",
+        "streetAddress": "15 Trường Chinh",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-09-25T21:44:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-01T05:27:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f00000000000000000000b"
+    },
+    "fullName": "Đỗ Mỹ Tiên",
+    "email": "mytien@gmail.com",
+    "passwordHash": "$2b$10$seedhashmytien000000000000000000000000000000000000000",
+    "phone": "0973001107",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f10000000000000000000b"
+        },
+        "recipientName": "Đỗ Mỹ Tiên",
+        "phone": "0973001107",
+        "province": "Đồng Nai",
+        "district": "Biên Hòa",
+        "ward": "Tân Mai",
+        "streetAddress": "43 Phạm Văn Thuận",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-11-02T20:16:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-06T10:50:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f00000000000000000000f"
+    },
+    "fullName": "Mai Anh Khoa",
+    "email": "anhkhoa@gmail.com",
+    "passwordHash": "$2b$10$seedhashanhkhoa00000000000000000000000000000000000000",
+    "phone": "0973001111",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f10000000000000000000f"
+        },
+        "recipientName": "Mai Anh Khoa",
+        "phone": "0973001111",
+        "province": "TP.HCM",
+        "district": "Quận 5",
+        "ward": "Phường 11",
+        "streetAddress": "19 Trần Hưng Đạo",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-11-07T07:42:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-11-25T10:20:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f00000000000000000000c"
+    },
+    "fullName": "Hồ Bảo Trâm",
+    "email": "baotram@gmail.com",
+    "passwordHash": "$2b$10$seedhashbaotram00000000000000000000000000000000000000",
+    "phone": "0973001108",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f10000000000000000000c"
+        },
+        "recipientName": "Hồ Bảo Trâm",
+        "phone": "0973001108",
+        "province": "TP.HCM",
+        "district": "Quận 7",
+        "ward": "Tân Phong",
+        "streetAddress": "119 Nguyễn Thị Thập",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-11-19T03:35:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-08T15:11:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000018"
+    },
+    "fullName": "Cao Ngọc Mai",
+    "email": "ngocmai@gmail.com",
+    "passwordHash": "$2b$10$seedhashngocmai00000000000000000000000000000000000000",
+    "phone": "0973001120",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000019"
+        },
+        "recipientName": "Cao Ngọc Mai",
+        "phone": "0973001120",
+        "province": "Long An",
+        "district": "Tân An",
+        "ward": "Phường 2",
+        "streetAddress": "14 Hùng Vương",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-11-23T13:38:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-24T05:54:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000016"
+    },
+    "fullName": "Vũ Thu Trang",
+    "email": "thutrang@gmail.com",
+    "passwordHash": "$2b$10$seedhashthutrang0000000000000000000000000000000000000",
+    "phone": "0973001118",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000017"
+        },
+        "recipientName": "Vũ Thu Trang",
+        "phone": "0973001118",
+        "province": "TP.HCM",
+        "district": "Quận 2",
+        "ward": "An Phú",
+        "streetAddress": "33 Song Hành",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2025-11-30T12:14:00Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-10T04:45:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000014"
+    },
+    "fullName": "Lê Quỳnh Chi",
+    "email": "quynhchi@gmail.com",
+    "passwordHash": "$2b$10$seedhashquynhchi0000000000000000000000000000000000000",
+    "phone": "0973001116",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000015"
+        },
+        "recipientName": "Lê Quỳnh Chi",
+        "phone": "0973001116",
+        "province": "TP.HCM",
+        "district": "Quận 6",
+        "ward": "Phường 10",
+        "streetAddress": "55 Hậu Giang",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-01-20T13:56:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-19T18:12:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000008"
+    },
+    "fullName": "Bùi Quốc Bảo",
+    "email": "quocbao@gmail.com",
+    "passwordHash": "$2b$10$seedhashquocbao00000000000000000000000000000000000000",
+    "phone": "0973001104",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000008"
+        },
+        "recipientName": "Bùi Quốc Bảo",
+        "phone": "0973001104",
+        "province": "TP.HCM",
+        "district": "Thủ Đức",
+        "ward": "Hiệp Bình Chánh",
+        "streetAddress": "56 Đặng Thị Rành",
+        "isDefault": true
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-02-13T14:14:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-03-15T08:31:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "65f000000000000000000005"
+    },
+    "fullName": "Phạm Gia Hân",
+    "email": "giahann@gmail.com",
+    "passwordHash": "$2b$10$seedhashgiahann00000000000000000000000000000000000000",
+    "phone": "0973001101",
+    "role": "customer",
+    "status": "active",
+    "addresses": [
+      {
+        "_id": {
+          "$oid": "65f100000000000000000004"
+        },
+        "recipientName": "Phạm Gia Hân",
+        "phone": "0973001101",
+        "province": "TP.HCM",
+        "district": "Quận 1",
+        "ward": "Bến Nghé",
+        "streetAddress": "18 Nguyễn Huệ",
+        "isDefault": true
+      },
+      {
+        "_id": {
+          "$oid": "65f100000000000000000005"
+        },
+        "recipientName": "Phạm Gia Hân",
+        "phone": "0973001101",
+        "province": "TP.HCM",
+        "district": "Quận 3",
+        "ward": "Phường 6",
+        "streetAddress": "102 Cách Mạng Tháng 8",
+        "isDefault": false
+      }
+    ],
+    "createdAt": {
+      "$date": "2026-04-02T04:01:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-04-17T22:00:00Z"
+    }
   }
 ]
