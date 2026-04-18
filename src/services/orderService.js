@@ -106,6 +106,7 @@ export async function getAllOrders() {
   return ordersStore.map(toAdminOrder)
 }
 
+// Hàm lấy thông tin đơn hàng theo ID (Dùng cho trang Chi tiết đơn hàng/Cảm ơn)
 export async function getOrderById(id) {
   const order = ordersStore.find((item) => getOid(item._id) === id)
 

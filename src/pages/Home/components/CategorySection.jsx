@@ -1,30 +1,34 @@
+import CayTrongNha from "../../../assets/images/home/category/caytrongnha.jpg";
+import CayNgoaiTroi from "../../../assets/images/home/category/cayngoaitroi.jpg";
+import CayMini from "../../../assets/images/home/category/caymini.jpg";
+import SDvaXR from "../../../assets/images/home/category/senda.jpg";
 function CategorySection() {
   const categories = [
     {
       id: 1,
-      name: 'Cây trong nhà',
-      image: 'https://placehold.co/400x300/d1fae5/16a34a?text=🪴',
-      count: '45 loại',
+      name: "Cây trong nhà",
+      image: CayTrongNha,
+      count: "45 loại",
     },
     {
       id: 2,
-      name: 'Cây ngoài trời',
-      image: 'https://placehold.co/400x300/bbf7d0/15803d?text=🌳',
-      count: '60 loại',
+      name: "Cây ngoài trời",
+      image: CayNgoaiTroi,
+      count: "60 loại",
     },
     {
       id: 3,
-      name: 'Cây mini',
-      image: 'https://placehold.co/400x300/dcfce7/166534?text=🌿',
-      count: '38 loại',
+      name: "Cây mini",
+      image: CayMini,
+      count: "38 loại",
     },
     {
       id: 4,
-      name: 'Sen đá & Xương rồng',
-      image: 'https://placehold.co/400x300/a7f3d0/065f46?text=🌵',
-      count: '52 loại',
+      name: "Sen đá & Xương rồng",
+      image: SDvaXR,
+      count: "52 loại",
     },
-  ]
+  ];
 
   return (
     <section className="py-20 bg-white">
@@ -56,7 +60,9 @@ function CategorySection() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="text-white font-semibold text-base sm:text-lg">{cat.name}</h3>
+                <h3 className="text-white font-semibold text-base sm:text-lg">
+                  {cat.name}
+                </h3>
                 <p className="text-green-300 text-sm">{cat.count}</p>
               </div>
             </div>
@@ -64,7 +70,7 @@ function CategorySection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default CategorySection
+export default CategorySection;

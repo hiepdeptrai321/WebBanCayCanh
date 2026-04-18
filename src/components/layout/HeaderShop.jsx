@@ -6,8 +6,9 @@ import { useCart } from '../../context/CartContext'
 
 function HeaderShop() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const { cart } = useCart()
-  const itemCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0)
+  const { cartItems } = useCart()
+
+  const itemCount = cartItems?.reduce((sum, item) => sum + (item.quantity || 1), 0) || 0
 
   return (
     <>

@@ -1,6 +1,12 @@
 import rawProducts from '../../database/json/products.json'
 import rawCategories from '../../database/json/categories.json'
 
+const rawApiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api'
+
+export const API_BASE_URL = rawApiBaseUrl.endsWith('/api')
+  ? rawApiBaseUrl
+  : `${rawApiBaseUrl.replace(/\/+$/, '')}/api`
+
 function getOid(value) {
   if (!value) {
     return ''
@@ -19,6 +25,18 @@ function toSlug(text) {
     .toLowerCase()
     .replace(/\s+/g, '-')
     .replace(/[^a-z0-9-]/g, '')
+}
+
+function toIsoDate(value) {
+  if (!value) {
+    return null
+  }
+
+  if (typeof value === 'string') {
+    return value
+  }
+
+  return value.$date || null
 }
 
 const categoriesById = new Map(
@@ -74,6 +92,16 @@ function toAdminProduct(product) {
   }
 }
 
+function toPublicProduct(product) {
+  return {
+    ...product,
+    _id: getOid(product._id),
+    categoryId: getOid(product.categoryId),
+    createdAt: toIsoDate(product.createdAt),
+    updatedAt: toIsoDate(product.updatedAt),
+  }
+}
+
 function toProductPayload(productData) {
   const categoryId = [...categoriesById.entries()].find(([, name]) => name === productData.category)?.[0]
 
@@ -114,7 +142,22 @@ function toProductPayload(productData) {
   }
 }
 
-export async function getAllProducts() {
+export async function getAllProducts(options = {}) {
+  // Keep backward compatibility:
+  // - Admin pages call getAllProducts() and expect normalized table rows.
+  // - Storefront pages call getAllProducts({ featured, limit }) and expect public product docs.
+  if (Object.keys(options).length > 0) {
+    const { featured = true, limit = 10 } = options
+    let items = productsStore.slice()
+
+    if (featured) {
+      items = items.filter((product) => Boolean(product.isFeatured))
+    }
+
+    const safeLimit = Number(limit) > 0 ? Number(limit) : items.length
+    return items.slice(0, safeLimit).map(toPublicProduct)
+  }
+
   return productsStore.map(toAdminProduct)
 }
 
@@ -125,7 +168,7 @@ export async function getProductById(id) {
     throw new Error('Không tìm thấy sản phẩm.')
   }
 
-  return toAdminProduct(product)
+  return toPublicProduct(product)
 }
 
 export async function createProduct(productData) {
@@ -156,4 +199,8 @@ export async function updateProduct(id, productData) {
 
 export async function deleteProduct(id) {
   productsStore = productsStore.filter((item) => getOid(item._id) !== id)
+}
+
+export async function getReviewsByProduct(productId) {
+  return []
 }
