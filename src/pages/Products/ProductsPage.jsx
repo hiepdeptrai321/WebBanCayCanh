@@ -120,7 +120,7 @@ function ProductsPage() {
     }, [products, selectedCategory, selectedPrice, sortValue]);
 
     if (loading) {
-        return <p className="py-20 text-center">Đang tải sản phẩm...</p>;
+        return <p className="py-20 text-center">Loading products...</p>;
     }
 
     if (error) {

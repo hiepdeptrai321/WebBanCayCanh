@@ -1,4 +1,4 @@
-import rawOrders from '../../database/json/orders.json'
+import { API_BASE_URL } from './productService'
 
 const ORDER_STATUS_LABELS = {
   pending_confirmation: 'Chờ xác nhận',
@@ -33,6 +33,10 @@ function getOid(value) {
     return value
   }
 
+  if (value._id) {
+    return getOid(value._id)
+  }
+
   return value.$oid || ''
 }
 
@@ -47,8 +51,6 @@ function toIsoDate(value) {
 
   return value.$date || null
 }
-
-let ordersStore = structuredClone(rawOrders)
 
 function formatDate(value) {
   if (!value) {
@@ -102,55 +104,54 @@ function toAdminOrder(order) {
   }
 }
 
-export async function getAllOrders() {
-  return ordersStore.map(toAdminOrder)
-}
+async function fetchJson(path, options = {}) {
+  const response = await fetch(`${API_BASE_URL}${path}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      ...(options.headers || {}),
+    },
+    ...options,
+  })
 
-// Hàm lấy thông tin đơn hàng theo ID (Dùng cho trang Chi tiết đơn hàng/Cảm ơn)
-export async function getOrderById(id) {
-  const order = ordersStore.find((item) => getOid(item._id) === id)
-
-  if (!order) {
-    throw new Error('Không tìm thấy đơn hàng.')
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({}))
+    const message = body?.message || `Request failed (${response.status}) for ${path}`
+    throw new Error(message)
   }
 
-  return toAdminOrder(order)
+  if (response.status === 204) {
+    return null
+  }
+
+  return response.json()
+}
+
+export async function getAllOrders() {
+  const response = await fetchJson('/orders')
+  return Array.isArray(response) ? response.map(toAdminOrder) : []
+}
+
+export async function getOrderById(id) {
+  const response = await fetchJson(`/orders/${id}`)
+  return toAdminOrder(response)
 }
 
 export async function createOrder(orderData) {
-  const order = {
-    ...orderData,
-    _id: {
-      $oid: orderData?._id?.$oid || `static-order-${Date.now()}`,
-    },
-    orderCode: orderData.orderCode || `ORD${String(ordersStore.length + 1).padStart(3, '0')}`,
-    orderedAt: {
-      $date: new Date().toISOString(),
-    },
-  }
+  const response = await fetchJson('/orders', {
+    method: 'POST',
+    body: JSON.stringify(orderData),
+  })
 
-  ordersStore = [order, ...ordersStore]
-
-  return toAdminOrder(order)
+  return response
 }
 
 export async function updateOrderStatus(id, nextStatusLabel) {
   const status = ORDER_STATUS_CODES[nextStatusLabel] || nextStatusLabel
-  const index = ordersStore.findIndex((item) => getOid(item._id) === id)
 
-  if (index === -1) {
-    throw new Error('Không tìm thấy đơn hàng để cập nhật.')
-  }
+  const response = await fetchJson(`/orders/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({ status }),
+  })
 
-  const nextOrder = {
-    ...ordersStore[index],
-    status,
-    updatedAt: {
-      $date: new Date().toISOString(),
-    },
-  }
-
-  ordersStore = ordersStore.map((item, itemIndex) => (itemIndex === index ? nextOrder : item))
-
-  return toAdminOrder(nextOrder)
+  return toAdminOrder(response)
 }

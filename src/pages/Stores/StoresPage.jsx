@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import storeBackground from "../../assets/images/storeBackground.png";
+import BrandLeafIcon from "../../components/common/BrandLeafIcon";
 
 // Ảnh cho Showroom
 import showroomMain from "../../assets/images/showroom/main.jpg";
@@ -148,8 +149,8 @@ function StoresPage() {
                 onClick={() => toggleDetail(branch.id)}
               >
                 <div className="flex items-center gap-6">
-                  <div className="text-5xl text-green-600">
-                    <i className="fas fa-store-alt"></i>
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-green-100 text-green-600">
+                    <BrandLeafIcon size={34} className="text-green-600" />
                   </div>
                   <div>
                     <h3 className="text-3xl font-bold text-gray-900">

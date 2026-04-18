@@ -20,7 +20,10 @@ const blogPostSchema = new mongoose.Schema(
     isPublished: { type: Boolean, default: false },
     publishedAt: { type: Date },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    collection: 'blog_posts',
+  }
 )
 
 export default mongoose.model('BlogPost', blogPostSchema)

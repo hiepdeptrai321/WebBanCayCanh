@@ -60,7 +60,7 @@ function ProductDetailPage() {
     }, [id]);
 
     if (loading) {
-        return <p className="py-20 text-center">Đang tải chi tiết sản phẩm...</p>;
+        return <p className="py-20 text-center">Loading product details...</p>;
     }
 
     if (error) {

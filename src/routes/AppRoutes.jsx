@@ -27,10 +27,23 @@ import AboutPage from '../pages/About/AboutUsPage'
 import BlogKnowledgePage from '../pages/Blog/BlogKnowledgePage'
 import BlogDetailPage from '../pages/Blog/BlogDetailPage'
 import AdminRouteGuard from './AdminRouteGuard'
+import Login from '../pages/Auth/Login'
+import Register from '../pages/Auth/Register'
 
 function AppRoutes() {
   return (
     <Routes>
+      {/* Trang chủ, Admin & fallback */}
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/login" element={ <Login /> } />
+        <Route path="/register" element={<Register />} />
+        <Route
+          path="*"
+          element={<PlaceholderPage title="Trang không tồn tại" />}
+        />
+      </Route>
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<PlaceholderPage title="Trang không tồn tại" />} />
@@ -79,4 +92,4 @@ function AppRoutes() {
   )
 }
 
-export default AppRoutes
+export default AppRoutes;

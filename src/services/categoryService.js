@@ -1,5 +1,4 @@
-import rawCategories from '../../database/json/categories.json'
-import rawProducts from '../../database/json/products.json'
+import { API_BASE_URL } from './productService'
 
 function getOid(value) {
   if (!value) {
@@ -10,7 +9,7 @@ function getOid(value) {
     return value
   }
 
-  return value.$oid || ''
+  return value._id || value.$oid || ''
 }
 
 function toStatusLabel(isActive) {
@@ -21,73 +20,81 @@ function toSlug(text) {
   return String(text || '')
     .trim()
     .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '')
+    .replace(/-+/g, '-')
 }
 
-const initialProductCountByCategoryId = rawProducts.reduce((map, product) => {
-  const categoryId = getOid(product.categoryId)
-  map.set(categoryId, (map.get(categoryId) || 0) + 1)
-  return map
-}, new Map())
+async function fetchJson(path, options = {}) {
+  const response = await fetch(`${API_BASE_URL}${path}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      ...(options.headers || {}),
+    },
+    ...options,
+  })
 
-let categoriesStore = structuredClone(rawCategories).map((category) => ({
-  ...category,
-  productCount: initialProductCountByCategoryId.get(getOid(category._id)) || 0,
-}))
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({}))
+    const message = body?.message || `Request failed (${response.status}) for ${path}`
+    throw new Error(message)
+  }
+
+  if (response.status === 204) {
+    return null
+  }
+
+  return response.json()
+}
 
 function toAdminCategory(category) {
   return {
-    id: getOid(category._id),
-    name: category.name || '',
-    slug: category.slug || '',
-    description: category.description || '',
-    productCount: Number(category.productCount || 0),
-    status: toStatusLabel(category.isActive),
+    id: getOid(category?._id),
+    name: category?.name || '',
+    slug: category?.slug || '',
+    description: category?.description || '',
+    productCount: Number(category?.productCount || 0),
+    status: toStatusLabel(category?.isActive),
   }
 }
 
 function toCategoryPayload(categoryData) {
   return {
-    _id: {
-      $oid: categoryData.id || `static-category-${Date.now()}`,
-    },
-    name: categoryData.name,
-    slug: categoryData.slug || toSlug(categoryData.name),
-    description: categoryData.description,
-    productCount: Number(categoryData.productCount || 0),
-    isActive: categoryData.status === 'Đang hiển thị',
+    name: String(categoryData?.name || '').trim(),
+    slug: String(categoryData?.slug || '').trim() || toSlug(categoryData?.name),
+    description: String(categoryData?.description || '').trim(),
+    productCount: Number(categoryData?.productCount || 0),
+    isActive: categoryData?.status !== 'Tạm ẩn',
   }
 }
 
 export async function getAllCategories() {
-  return categoriesStore.map(toAdminCategory)
+  const response = await fetchJson('/categories?includeInactive=true')
+  return Array.isArray(response) ? response.map(toAdminCategory) : []
 }
 
 export async function createCategory(categoryData) {
-  const category = toCategoryPayload(categoryData)
-  categoriesStore = [category, ...categoriesStore]
-  return toAdminCategory(category)
+  const response = await fetchJson('/categories', {
+    method: 'POST',
+    body: JSON.stringify(toCategoryPayload(categoryData)),
+  })
+
+  return toAdminCategory(response)
 }
 
 export async function updateCategory(id, categoryData) {
-  const index = categoriesStore.findIndex((item) => getOid(item._id) === id)
+  const response = await fetchJson(`/categories/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(toCategoryPayload(categoryData)),
+  })
 
-  if (index === -1) {
-    throw new Error('Không tìm thấy danh mục để cập nhật.')
-  }
-
-  const currentCategory = categoriesStore[index]
-  const nextCategory = {
-    ...currentCategory,
-    ...toCategoryPayload({ ...categoryData, id }),
-    _id: currentCategory._id,
-  }
-
-  categoriesStore = categoriesStore.map((item, itemIndex) => (itemIndex === index ? nextCategory : item))
-  return toAdminCategory(nextCategory)
+  return toAdminCategory(response)
 }
 
 export async function deleteCategory(id) {
-  categoriesStore = categoriesStore.filter((item) => getOid(item._id) !== id)
+  await fetchJson(`/categories/${id}`, {
+    method: 'DELETE',
+  })
 }

@@ -129,7 +129,7 @@ function AdminBlogPostsPage() {
         </button>
       </div>
 
-      {isLoading ? <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500">Đang tải dữ liệu bài viết...</div> : null}
+      {isLoading ? <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500">Loading blog post data...</div> : null}
       {pageError ? <div className="rounded-2xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-700">{pageError}</div> : null}
 
       {isFormOpen ? (

@@ -1,4 +1,6 @@
-import rawStores from '../../database/json/stores.json'
+import { API_BASE_URL } from './productService'
+
+let activeStoreId = ''
 
 function getOid(value) {
   if (!value) {
@@ -9,47 +11,43 @@ function getOid(value) {
     return value
   }
 
-  return value.$oid || ''
+  return value._id || value.$oid || ''
 }
 
-let storesStore = structuredClone(rawStores)
+function normalizeStoreId(store) {
+  const storeId = getOid(store?._id)
 
-function withBranchIds(store) {
-  return {
-    ...store,
-    branches: (store.branches || []).map((branch, index) => ({
-      ...branch,
-      id: branch.id || `branch-${index + 1}`,
-    })),
+  if (storeId) {
+    activeStoreId = storeId
   }
-}
 
-storesStore = storesStore.map(withBranchIds)
+  return storeId
+}
 
 function toAdminStore(store) {
   return {
-    id: getOid(store._id),
-    name: store.name || '',
-    slug: store.slug || '',
-    description: store.description || '',
-    status: store.isActive === false ? 'Tạm ẩn' : 'Đang hoạt động',
-    branches: (store.branches || []).map((branch, index) => ({
-      id: branch.id || `branch-${index}`,
-      name: branch.name || '',
-      phone: branch.phone || '',
-      province: branch.province || '',
-      district: branch.district || '',
-      ward: branch.ward || '',
-      streetAddress: branch.streetAddress || '',
-      openingHours: branch.openingHours || '',
-      mapUrl: branch.mapUrl || '',
+    id: normalizeStoreId(store),
+    name: store?.name || '',
+    slug: store?.slug || '',
+    description: store?.description || '',
+    status: store?.isActive === false ? 'Tạm ẩn' : 'Đang hoạt động',
+    branches: (store?.branches || []).map((branch, index) => ({
+      id: branch?.id || `branch-${index + 1}`,
+      name: branch?.name || '',
+      phone: branch?.phone || '',
+      province: branch?.province || '',
+      district: branch?.district || '',
+      ward: branch?.ward || '',
+      streetAddress: branch?.streetAddress || '',
+      openingHours: branch?.openingHours || '',
+      mapUrl: branch?.mapUrl || '',
     })),
   }
 }
 
 function fromAdminBranch(branch) {
   return {
-    id: branch.id || `branch-${Date.now()}`,
+    id: branch.id,
     name: branch.name,
     phone: branch.phone,
     province: branch.province,
@@ -61,84 +59,87 @@ function fromAdminBranch(branch) {
   }
 }
 
-export async function getStoreProfile() {
-  const store = storesStore[0]
+async function fetchJson(path, options = {}) {
+  const response = await fetch(`${API_BASE_URL}${path}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      ...(options.headers || {}),
+    },
+    ...options,
+  })
 
-  if (!store) {
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({}))
+    const message = body?.message || `Request failed (${response.status}) for ${path}`
+    throw new Error(message)
+  }
+
+  if (response.status === 204) {
+    return null
+  }
+
+  return response.json()
+}
+
+async function requireStoreId() {
+  if (activeStoreId) {
+    return activeStoreId
+  }
+
+  const store = await getStoreProfile()
+
+  if (!store?.id) {
     throw new Error('Không tìm thấy dữ liệu cửa hàng.')
   }
 
-  return toAdminStore(store)
+  return store.id
+}
+
+export async function getStoreProfile() {
+  const response = await fetchJson('/stores/profile')
+  return toAdminStore(response)
 }
 
 export async function updateStoreProfile(data) {
-  const store = storesStore[0]
+  const storeId = data?.id || (await requireStoreId())
+  const response = await fetchJson(`/stores/${storeId}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      name: data.name,
+      slug: data.slug,
+      description: data.description,
+      isActive: data.status !== 'Tạm ẩn',
+    }),
+  })
 
-  if (!store) {
-    throw new Error('Không tìm thấy dữ liệu cửa hàng để cập nhật.')
-  }
-
-  const nextStore = {
-    ...store,
-    name: data.name,
-    slug: data.slug,
-    description: data.description,
-    isActive: data.status !== 'Tạm ẩn',
-  }
-
-  storesStore = [nextStore, ...storesStore.slice(1)]
-  return toAdminStore(nextStore)
+  return toAdminStore(response)
 }
 
 export async function createBranch(data) {
-  const store = storesStore[0]
+  const storeId = await requireStoreId()
+  const response = await fetchJson(`/stores/${storeId}/branches`, {
+    method: 'POST',
+    body: JSON.stringify(fromAdminBranch(data)),
+  })
 
-  if (!store) {
-    throw new Error('Không tìm thấy dữ liệu cửa hàng để thêm chi nhánh.')
-  }
-
-  const branch = fromAdminBranch(data)
-  const nextStore = {
-    ...store,
-    branches: [branch, ...(store.branches || [])],
-  }
-
-  storesStore = [nextStore, ...storesStore.slice(1)]
-  return toAdminStore(nextStore)
+  return toAdminStore(response)
 }
 
 export async function updateBranch(branchId, data) {
-  const store = storesStore[0]
+  const storeId = await requireStoreId()
+  const response = await fetchJson(`/stores/${storeId}/branches/${branchId}`, {
+    method: 'PUT',
+    body: JSON.stringify(fromAdminBranch({ ...data, id: branchId })),
+  })
 
-  if (!store) {
-    throw new Error('Không tìm thấy dữ liệu cửa hàng để cập nhật chi nhánh.')
-  }
-
-  const nextBranches = (store.branches || []).map((branch) =>
-    branch.id === branchId ? fromAdminBranch({ ...data, id: branchId }) : branch
-  )
-
-  const nextStore = {
-    ...store,
-    branches: nextBranches,
-  }
-
-  storesStore = [nextStore, ...storesStore.slice(1)]
-  return toAdminStore(nextStore)
+  return toAdminStore(response)
 }
 
 export async function deleteBranch(branchId) {
-  const store = storesStore[0]
+  const storeId = await requireStoreId()
+  const response = await fetchJson(`/stores/${storeId}/branches/${branchId}`, {
+    method: 'DELETE',
+  })
 
-  if (!store) {
-    throw new Error('Không tìm thấy dữ liệu cửa hàng để xóa chi nhánh.')
-  }
-
-  const nextStore = {
-    ...store,
-    branches: (store.branches || []).filter((branch) => branch.id !== branchId),
-  }
-
-  storesStore = [nextStore, ...storesStore.slice(1)]
-  return toAdminStore(nextStore)
+  return toAdminStore(response)
 }

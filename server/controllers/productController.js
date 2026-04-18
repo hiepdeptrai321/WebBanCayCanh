@@ -5,7 +5,8 @@ export async function getAllProducts(req, res) {
   try {
     const limitParam = Number(req.query.limit)
     const onlyFeatured = req.query.featured === 'true'
-    const activeQuery = { isActive: { $ne: false } }
+    const includeInactive = req.query.includeInactive === 'true'
+    const activeQuery = includeInactive ? {} : { isActive: { $ne: false } }
 
     let products = []
 
@@ -13,7 +14,9 @@ export async function getAllProducts(req, res) {
       let featuredQuery = Product.find({
         ...activeQuery,
         isFeatured: true,
-      }).sort({ createdAt: -1 })
+      })
+        .populate('categoryId', 'name')
+        .sort({ createdAt: -1 })
 
       if (!Number.isNaN(limitParam) && limitParam > 0) {
         featuredQuery = featuredQuery.limit(limitParam)
@@ -24,6 +27,8 @@ export async function getAllProducts(req, res) {
       if (products.length === 0) {
         let fallbackQuery = Product.find(activeQuery).sort({ createdAt: -1 })
 
+        fallbackQuery = fallbackQuery.populate('categoryId', 'name')
+
         if (!Number.isNaN(limitParam) && limitParam > 0) {
           fallbackQuery = fallbackQuery.limit(limitParam)
         }
@@ -32,6 +37,8 @@ export async function getAllProducts(req, res) {
       }
     } else {
       let normalQuery = Product.find(activeQuery).sort({ createdAt: -1 })
+
+      normalQuery = normalQuery.populate('categoryId', 'name')
 
       if (!Number.isNaN(limitParam) && limitParam > 0) {
         normalQuery = normalQuery.limit(limitParam)
@@ -59,14 +66,14 @@ export async function getProductById(req, res) {
       product = await Product.findOne({
         _id: id,
         isActive: { $ne: false },
-      })
+      }).populate('categoryId', 'name')
     }
 
     if (!product) {
       product = await Product.findOne({
         slug: id,
         isActive: { $ne: false },
-      })
+      }).populate('categoryId', 'name')
     }
 
     if (!product) {
@@ -85,7 +92,8 @@ export async function getProductById(req, res) {
 export async function createProduct(req, res) {
   try {
     const createdProduct = await Product.create(req.body)
-    res.status(201).json(createdProduct)
+    const populatedProduct = await Product.findById(createdProduct._id).populate('categoryId', 'name')
+    res.status(201).json(populatedProduct)
   } catch (error) {
     res.status(400).json({
       message: 'Failed to create product',
@@ -105,7 +113,7 @@ export async function updateProduct(req, res) {
     const updatedProduct = await Product.findByIdAndUpdate(id, req.body, {
       new: true,
       runValidators: true,
-    })
+    }).populate('categoryId', 'name')
 
     if (!updatedProduct) {
       return res.status(404).json({ message: 'Product not found' })

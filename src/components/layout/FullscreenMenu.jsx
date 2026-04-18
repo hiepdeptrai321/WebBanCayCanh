@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import BrandLeafIcon from '../common/BrandLeafIcon'
 
 const menuItems = [
   { label: 'Trang chủ', href: '/' },
@@ -76,7 +77,9 @@ function FullscreenMenu({ isOpen, onClose }) {
           >
             {/* Brand */}
             <div className="text-center mb-8">
-              <span className="text-8xl block mb-4">🌿</span>
+              <span className="mb-4 inline-flex h-24 w-24 items-center justify-center rounded-3xl bg-green-600">
+                <BrandLeafIcon size={52} className="text-white" />
+              </span>
               <h1 className="text-3xl font-bold tracking-[0.2em] text-gray-700 uppercase">
                 Góc Xanh
               </h1>

@@ -92,7 +92,7 @@ function BlogDetailPage() {
     if (loading) {
         return (
             <section className="mx-auto max-w-5xl px-4 py-16">
-                <p className="text-center text-[#4c5a50]">Đang tải bài viết...</p>
+                <p className="text-center text-[#4c5a50]">Loading article...</p>
             </section>
         );
     }

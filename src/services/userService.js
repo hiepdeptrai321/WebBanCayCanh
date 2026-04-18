@@ -1,4 +1,4 @@
-import rawUsers from '../../database/json/users.json'
+import { API_BASE_URL } from './productService'
 
 function getOid(value) {
   if (!value) {
@@ -9,7 +9,7 @@ function getOid(value) {
     return value
   }
 
-  return value.$oid || ''
+  return value._id || value.$oid || ''
 }
 
 function formatDate(value) {
@@ -17,8 +17,7 @@ function formatDate(value) {
     return ''
   }
 
-  const isoValue = typeof value === 'string' ? value : value.$date
-  const date = new Date(isoValue)
+  const date = new Date(value)
 
   if (Number.isNaN(date.getTime())) {
     return ''
@@ -35,7 +34,9 @@ function normalizeRole(role) {
   return 'user'
 }
 
-let usersStore = structuredClone(rawUsers)
+function normalizeStatus(status) {
+  return status === 'active' ? 'active' : 'locked'
+}
 
 function toAdminUser(user) {
   return {
@@ -44,52 +45,50 @@ function toAdminUser(user) {
     email: user.email || '',
     phone: user.phone || '',
     role: normalizeRole(user.role),
-    accountStatus: user.status === 'locked' ? 'locked' : 'active',
+    accountStatus: normalizeStatus(user.status),
     createdAt: formatDate(user.createdAt),
   }
 }
 
+async function fetchJson(path, options = {}) {
+  const response = await fetch(`${API_BASE_URL}${path}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      ...(options.headers || {}),
+    },
+    ...options,
+  })
+
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({}))
+    const message = body?.message || `Request failed (${response.status}) for ${path}`
+    throw new Error(message)
+  }
+
+  if (response.status === 204) {
+    return null
+  }
+
+  return response.json()
+}
+
 export async function getAllUsers() {
-  return usersStore.map(toAdminUser)
+  const response = await fetchJson('/users')
+  return Array.isArray(response) ? response.map(toAdminUser) : []
 }
 
 export async function toggleUserRole(id) {
-  const index = usersStore.findIndex((item) => getOid(item._id) === id)
+  const response = await fetchJson(`/users/${id}/role`, {
+    method: 'PATCH',
+  })
 
-  if (index === -1) {
-    throw new Error('Không tìm thấy người dùng để cập nhật vai trò.')
-  }
-
-  const currentUser = usersStore[index]
-  const currentRole = normalizeRole(currentUser.role)
-  const nextRole = currentRole === 'admin' ? 'customer' : 'admin'
-
-  const nextUser = {
-    ...currentUser,
-    role: nextRole,
-  }
-
-  usersStore = usersStore.map((item, itemIndex) => (itemIndex === index ? nextUser : item))
-
-  return toAdminUser(nextUser)
+  return toAdminUser(response)
 }
 
 export async function toggleUserLock(id) {
-  const index = usersStore.findIndex((item) => getOid(item._id) === id)
+  const response = await fetchJson(`/users/${id}/status`, {
+    method: 'PATCH',
+  })
 
-  if (index === -1) {
-    throw new Error('Không tìm thấy người dùng để cập nhật trạng thái.')
-  }
-
-  const currentUser = usersStore[index]
-  const nextStatus = currentUser.status === 'locked' ? 'active' : 'locked'
-
-  const nextUser = {
-    ...currentUser,
-    status: nextStatus,
-  }
-
-  usersStore = usersStore.map((item, itemIndex) => (itemIndex === index ? nextUser : item))
-
-  return toAdminUser(nextUser)
+  return toAdminUser(response)
 }

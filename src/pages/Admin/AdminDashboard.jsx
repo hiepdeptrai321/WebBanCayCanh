@@ -198,7 +198,7 @@ function AdminDashboard() {
       </div>
 
       {isLoading ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Đang tải dữ liệu dashboard...</div>
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Loading dashboard data...</div>
       ) : null}
 
       {pageError ? (

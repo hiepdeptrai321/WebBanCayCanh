@@ -1,6 +1,3 @@
-import rawProducts from '../../database/json/products.json'
-import rawCategories from '../../database/json/categories.json'
-
 const rawApiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api'
 
 export const API_BASE_URL = rawApiBaseUrl.endsWith('/api')
@@ -16,34 +13,23 @@ function getOid(value) {
     return value
   }
 
-  return value.$oid || ''
+  if (value._id) {
+    return getOid(value._id)
+  }
+
+  return value.$oid || String(value)
 }
 
 function toSlug(text) {
   return String(text || '')
     .trim()
     .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '')
+    .replace(/-+/g, '-')
 }
-
-function toIsoDate(value) {
-  if (!value) {
-    return null
-  }
-
-  if (typeof value === 'string') {
-    return value
-  }
-
-  return value.$date || null
-}
-
-const categoriesById = new Map(
-  rawCategories.map((category) => [getOid(category._id), category.name || 'Chưa phân loại'])
-)
-
-let productsStore = structuredClone(rawProducts)
 
 function normalizeCareInfo(careInfo) {
   if (!careInfo) {
@@ -69,14 +55,41 @@ function getProductImage(product) {
   return primaryImage || product.images?.[0]?.url || product.image || ''
 }
 
-function toAdminProduct(product) {
+async function fetchJson(path, options = {}) {
+  const response = await fetch(`${API_BASE_URL}${path}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      ...(options.headers || {}),
+    },
+    ...options,
+  })
+
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({}))
+    const message = body?.message || `Request failed (${response.status}) for ${path}`
+    throw new Error(message)
+  }
+
+  if (response.status === 204) {
+    return null
+  }
+
+  return response.json()
+}
+
+function toAdminProduct(product, categoriesById = new Map()) {
   const categoryId = getOid(product.categoryId)
 
   return {
     id: getOid(product._id),
     image: getProductImage(product),
     name: product.name || '',
-    category: product.category || product.categoryName || categoriesById.get(categoryId) || 'Chưa phân loại',
+    category:
+      product.categoryId?.name ||
+      product.category ||
+      product.categoryName ||
+      categoriesById.get(categoryId) ||
+      'Chưa phân loại',
     price: Number(product.price || 0),
     salePrice:
       product.discountPrice !== undefined && product.discountPrice !== null
@@ -97,110 +110,164 @@ function toPublicProduct(product) {
     ...product,
     _id: getOid(product._id),
     categoryId: getOid(product.categoryId),
-    createdAt: toIsoDate(product.createdAt),
-    updatedAt: toIsoDate(product.updatedAt),
+    categoryName: product.categoryId?.name || product.categoryName || '',
+    createdAt: product.createdAt || null,
+    updatedAt: product.updatedAt || null,
   }
 }
 
-function toProductPayload(productData) {
-  const categoryId = [...categoriesById.entries()].find(([, name]) => name === productData.category)?.[0]
+async function fetchCategoriesMap() {
+  const categories = await fetchJson('/categories?includeInactive=true')
+
+  if (!Array.isArray(categories)) {
+    return new Map()
+  }
+
+  return new Map(categories.map((category) => [getOid(category._id), category.name || 'Chưa phân loại']))
+}
+
+async function ensureCategoryId(categoryValue) {
+  const normalizedValue = String(categoryValue || '').trim()
+
+  if (normalizedValue && /^[a-f\d]{24}$/i.test(normalizedValue)) {
+    return normalizedValue
+  }
+
+  const categories = await fetchJson('/categories?includeInactive=true')
+  const categoryList = Array.isArray(categories) ? categories : []
+
+  const matched = categoryList.find((category) => {
+    const categoryName = String(category.name || '').trim().toLowerCase()
+    const categorySlug = String(category.slug || '').trim().toLowerCase()
+    const target = normalizedValue.toLowerCase()
+
+    return categoryName === target || categorySlug === target
+  })
+
+  if (matched) {
+    return getOid(matched._id)
+  }
+
+  if (normalizedValue) {
+    const createdCategory = await fetchJson('/categories', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: normalizedValue,
+        slug: toSlug(normalizedValue),
+        description: '',
+        productCount: 0,
+        isActive: true,
+      }),
+    })
+
+    return getOid(createdCategory?._id)
+  }
+
+  return getOid(categoryList[0]?._id)
+}
+
+async function toProductPayload(productData) {
+  const categoryId = await ensureCategoryId(productData.category)
+
+  if (!categoryId) {
+    throw new Error('Không tìm thấy danh mục để lưu sản phẩm.')
+  }
 
   return {
-    _id: {
-      $oid: productData.id || `static-product-${Date.now()}`,
-    },
-    categoryId: {
-      $oid: categoryId || getOid(rawCategories[0]?._id),
-    },
-    name: productData.name,
+    categoryId,
+    name: String(productData.name || '').trim(),
     slug: toSlug(productData.name),
-    sku: `SP${Math.floor(100 + Math.random() * 900)}`,
-    shortDescription: productData.shortDescription,
-    description: productData.description,
-    price: Number(productData.price),
-    discountPrice: productData.salePrice === null || productData.salePrice === '' ? null : Number(productData.salePrice),
-    stockQuantity: Number(productData.stock),
+    sku: String(productData.sku || '').trim() || `SP${Math.floor(100 + Math.random() * 900)}`,
+    shortDescription: String(productData.shortDescription || '').trim(),
+    description: String(productData.description || '').trim(),
+    price: Number(productData.price || 0),
+    discountPrice:
+      productData.salePrice === null || productData.salePrice === ''
+        ? null
+        : Number(productData.salePrice),
+    stockQuantity: Number(productData.stock || 0),
     careInfo: {
-      lightRequirement: productData.careInfo || 'Chưa cập nhật',
+      lightRequirement: String(productData.careInfo || '').trim() || 'Chưa cập nhật',
       waterRequirement: '',
       humidityRequirement: '',
       difficultyLevel: '',
     },
+    image: String(productData.image || '').trim(),
     images: productData.image
       ? [
           {
-            url: productData.image,
-            alt: productData.name,
+            url: String(productData.image || '').trim(),
+            alt: String(productData.name || '').trim(),
             isPrimary: true,
           },
         ]
       : [],
-    isActive: productData.status === 'Đang bán',
-    updatedAt: {
-      $date: new Date().toISOString(),
-    },
+    isActive: productData.status !== 'Tạm ngưng',
   }
 }
 
 export async function getAllProducts(options = {}) {
-  // Keep backward compatibility:
-  // - Admin pages call getAllProducts() and expect normalized table rows.
-  // - Storefront pages call getAllProducts({ featured, limit }) and expect public product docs.
   if (Object.keys(options).length > 0) {
     const { featured = true, limit = 10 } = options
-    let items = productsStore.slice()
+    const query = new URLSearchParams()
 
     if (featured) {
-      items = items.filter((product) => Boolean(product.isFeatured))
+      query.set('featured', 'true')
     }
 
-    const safeLimit = Number(limit) > 0 ? Number(limit) : items.length
-    return items.slice(0, safeLimit).map(toPublicProduct)
+    if (Number(limit) > 0) {
+      query.set('limit', String(Number(limit)))
+    }
+
+    const path = query.toString() ? `/products?${query.toString()}` : '/products'
+    const response = await fetchJson(path)
+    return Array.isArray(response) ? response.map(toPublicProduct) : []
   }
 
-  return productsStore.map(toAdminProduct)
+  const [products, categoriesById] = await Promise.all([
+    fetchJson('/products?includeInactive=true'),
+    fetchCategoriesMap(),
+  ])
+
+  if (!Array.isArray(products)) {
+    return []
+  }
+
+  return products.map((product) => toAdminProduct(product, categoriesById))
 }
 
 export async function getProductById(id) {
-  const product = productsStore.find((item) => getOid(item._id) === id)
-
-  if (!product) {
-    throw new Error('Không tìm thấy sản phẩm.')
-  }
-
+  const product = await fetchJson(`/products/${id}`)
   return toPublicProduct(product)
 }
 
 export async function createProduct(productData) {
-  const product = toProductPayload(productData)
-  productsStore = [product, ...productsStore]
+  const payload = await toProductPayload(productData)
+  const response = await fetchJson('/products', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  })
 
-  return toAdminProduct(product)
+  return toAdminProduct(response)
 }
 
 export async function updateProduct(id, productData) {
-  const index = productsStore.findIndex((item) => getOid(item._id) === id)
+  const payload = await toProductPayload(productData)
+  const response = await fetchJson(`/products/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(payload),
+  })
 
-  if (index === -1) {
-    throw new Error('Không tìm thấy sản phẩm để cập nhật.')
-  }
-
-  const currentProduct = productsStore[index]
-  const nextProduct = {
-    ...currentProduct,
-    ...toProductPayload({ ...productData, id }),
-    _id: currentProduct._id,
-  }
-
-  productsStore = productsStore.map((item, itemIndex) => (itemIndex === index ? nextProduct : item))
-
-  return toAdminProduct(nextProduct)
+  return toAdminProduct(response)
 }
 
 export async function deleteProduct(id) {
-  productsStore = productsStore.filter((item) => getOid(item._id) !== id)
+  await fetchJson(`/products/${id}`, {
+    method: 'DELETE',
+  })
 }
 
 export async function getReviewsByProduct(productId) {
-  return []
+  const response = await fetchJson(`/reviews/product/${productId}`)
+  return Array.isArray(response) ? response : []
 }

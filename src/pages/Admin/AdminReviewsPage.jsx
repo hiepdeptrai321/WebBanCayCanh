@@ -125,7 +125,7 @@ function AdminReviewsPage() {
       </div>
 
       {isLoading ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Đang tải dữ liệu reviews...</div>
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Loading review data...</div>
       ) : null}
 
       {pageError ? (

@@ -69,7 +69,7 @@ function AdminOrdersPage() {
       </div>
 
       {isLoading ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Đang tải dữ liệu đơn hàng...</div>
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Loading order data...</div>
       ) : null}
 
       {pageError ? (
