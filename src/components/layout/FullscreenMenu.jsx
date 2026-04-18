@@ -9,7 +9,7 @@ const menuItems = [
   { label: 'Kiến thức cây cảnh', href: '/blog' },
   { label: 'Hỗ trợ', href: '/support' },
   { label: 'Về chúng tôi', href: '/about' },
-  { label: 'Quản lý cửa hàng', href: '/admin' },
+  { label: 'Quản lý cửa hàng', href: '/admin/login' },
 ]
 
 function FullscreenMenu({ isOpen, onClose }) {
