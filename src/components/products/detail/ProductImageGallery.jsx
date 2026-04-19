@@ -1,4 +1,4 @@
-import { getProductImage } from "../../../../../../../Downloads/product-detail-refactor/src/utils/productDetailHelpers.js";
+import { getProductImage } from "../../../utils/productDetailHelpers.js";
 
 function ProductImageGallery({
   product,

@@ -2,7 +2,7 @@ import {
   normalizeReviewAuthor,
   normalizeReviewDate,
   normalizeReviewRating,
-} from "../../../../../../../Downloads/product-detail-refactor/src/utils/productDetailHelpers.js";
+} from "../../../utils/productDetailHelpers.js";
 import StarRating from "./StarRating.jsx";
 
 const tabs = (reviewsCount) => [

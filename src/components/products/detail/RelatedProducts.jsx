@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { formatPrice, getProductImage } from "../../../../../../../Downloads/product-detail-refactor/src/utils/productDetailHelpers.js";
+import { formatPrice, getProductImage } from "../../../utils/productDetailHelpers.js";
 
 function RelatedProducts({ relatedProducts, fallbackCategoryName }) {
   if (!relatedProducts.length) return null;

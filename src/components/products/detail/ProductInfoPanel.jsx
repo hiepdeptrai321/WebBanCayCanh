@@ -1,4 +1,4 @@
-import { formatPrice } from "../../../../../../../Downloads/product-detail-refactor/src/utils/productDetailHelpers.js";
+import { formatPrice } from "../../../utils/productDetailHelpers.js";
 import StarRating from "./StarRating.jsx";
 
 function ProductInfoPanel({
