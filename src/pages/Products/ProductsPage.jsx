@@ -1,27 +1,96 @@
 import { useEffect, useMemo, useState } from "react";
-import SidebarFilter from "../../components/products/SidebarFilter";
-import ProductSort from "../../components/products/ProductSort";
-import ProductGrid from "../../components/products/ProductGrid";
-import { API_BASE_URL, getAllProducts } from "../../services/productService";
+import {
+    API_BASE_URL,
+    getAllProducts,
+} from "../../services/productService";
 
-import TopPage from "../../components/products/TopPage.jsx";
+import ProductsHero from "../../components/products/ProductsHero";
+import ProductsFilterSidebar from "../../components/products/ProductsFilterSidebar";
+import ProductsToolbar from "../../components/products/ProductsToolbar";
+import ProductsStats from "../../components/products/ProductsStats";
+import ProductsActiveFilters from "../../components/products/ProductsActiveFilters";
+import ProductsGrid from "../../components/products/ProductsGrid";
+import ProductsSkeleton from "../../components/products/ProductsSkeleton";
+import ProductsEmptyState from "../../components/products/ProductsEmptyState";
+
+import {
+    applyProductFilters,
+    buildCategoryMap,
+    getProductStats,
+    normalizeProducts,
+} from "../../utils/productListingHelpers";
+
+const ITEMS_PER_PAGE = 9;
+
+function roundUpPrice(value) {
+    if (!value || value <= 0) return 5000000;
+    const step = 50000;
+    return Math.ceil(value / step) * step;
+}
+
+function Pagination({ currentPage, totalPages, onPageChange }) {
+    if (totalPages <= 1) return null;
+
+    const pages = [];
+    for (let i = 1; i <= totalPages; i += 1) {
+        pages.push(i);
+    }
+
+    return (
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
+            <button
+                type="button"
+                onClick={() => onPageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="rounded-xl border border-green-200 px-4 py-2 text-sm font-medium text-green-700 transition hover:bg-green-50 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+                Trước
+            </button>
+
+            {pages.map((page) => (
+                <button
+                    key={page}
+                    type="button"
+                    onClick={() => onPageChange(page)}
+                    className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${
+                        currentPage === page
+                            ? "bg-green-600 text-white shadow"
+                            : "border border-green-200 text-green-700 hover:bg-green-50"
+                    }`}
+                >
+                    {page}
+                </button>
+            ))}
+
+            <button
+                type="button"
+                onClick={() => onPageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="rounded-xl border border-green-200 px-4 py-2 text-sm font-medium text-green-700 transition hover:bg-green-50 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+                Sau
+            </button>
+        </div>
+    );
+}
 
 function ProductsPage() {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [sortValue, setSortValue] = useState("newest");
     const [selectedCategory, setSelectedCategory] = useState("all");
-    const [selectedPrice, setSelectedPrice] = useState("all");
+    const [searchKeyword, setSearchKeyword] = useState("");
+    const [inStockOnly, setInStockOnly] = useState(false);
+    const [onSaleOnly, setOnSaleOnly] = useState(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
-    const categoryMap = useMemo(() => {
-        const map = {};
-        categories.forEach((category) => {
-            map[String(category._id)] = category.name;
-        });
-        return map;
-    }, [categories]);
+    const [priceBounds, setPriceBounds] = useState([0, 5000000]);
+    const [priceRange, setPriceRange] = useState([0, 5000000]);
+
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const categoryMap = useMemo(() => buildCategoryMap(categories), [categories]);
 
     useEffect(() => {
         async function loadData() {
@@ -30,7 +99,7 @@ function ProductsPage() {
                 setError("");
 
                 const [productResult, categoryResult] = await Promise.allSettled([
-                    getAllProducts({ featured: false, limit: 100 }),
+                    getAllProducts({ featured: false, limit: 0 }),
                     fetch(`${API_BASE_URL}/categories`),
                 ]);
 
@@ -38,11 +107,19 @@ function ProductsPage() {
                     throw productResult.reason;
                 }
 
-                setProducts(productResult.value);
+                const normalized = normalizeProducts(productResult.value || []);
+                setProducts(normalized);
+
+                const highestPrice = roundUpPrice(
+                    Math.max(...normalized.map((item) => Number(item.finalPrice || 0)), 0)
+                );
+
+                setPriceBounds([0, highestPrice]);
+                setPriceRange([0, highestPrice]);
 
                 if (categoryResult.status === "fulfilled" && categoryResult.value.ok) {
                     const categoryData = await categoryResult.value.json();
-                    setCategories(categoryData);
+                    setCategories(Array.isArray(categoryData) ? categoryData : []);
                 } else {
                     setCategories([]);
                 }
@@ -57,106 +134,149 @@ function ProductsPage() {
         loadData();
     }, []);
 
-    const filteredAndSortedProducts = useMemo(() => {
-        let result = [...products];
+    const filteredProducts = useMemo(() => {
+        return applyProductFilters(products, {
+            selectedCategory,
+            priceRange,
+            sortValue,
+            searchKeyword,
+            inStockOnly,
+            onSaleOnly,
+        });
+    }, [
+        products,
+        selectedCategory,
+        priceRange,
+        sortValue,
+        searchKeyword,
+        inStockOnly,
+        onSaleOnly,
+    ]);
 
-        // Lọc theo phân loại
-        if (selectedCategory !== "all") {
-            result = result.filter(
-                (product) => String(product.categoryId) === String(selectedCategory)
-            );
+    const totalPages = Math.max(1, Math.ceil(filteredProducts.length / ITEMS_PER_PAGE));
+
+    const paginatedProducts = useMemo(() => {
+        const start = (currentPage - 1) * ITEMS_PER_PAGE;
+        return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
+    }, [filteredProducts, currentPage]);
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [selectedCategory, priceRange, searchKeyword, inStockOnly, onSaleOnly, sortValue]);
+
+    useEffect(() => {
+        if (currentPage > totalPages) {
+            setCurrentPage(totalPages);
         }
+    }, [currentPage, totalPages]);
 
-        // Lọc theo giá
-        if (selectedPrice !== "all") {
-            result = result.filter((product) => {
-                const finalPrice =
-                    product.discountPrice > 0 ? product.discountPrice : product.price;
+    const stats = useMemo(() => getProductStats(products), [products]);
 
-                switch (selectedPrice) {
-                    case "under-100k":
-                        return finalPrice < 100000;
-                    case "100k-500k":
-                        return finalPrice >= 100000 && finalPrice <= 500000;
-                    case "500k-2m":
-                        return finalPrice > 500000 && finalPrice <= 2000000;
-                    case "over-2m":
-                        return finalPrice > 2000000;
-                    default:
-                        return true;
-                }
-            });
-        }
+    const selectedCategoryName =
+        selectedCategory !== "all"
+            ? categoryMap[String(selectedCategory)] || "Danh mục đã chọn"
+            : "";
 
-        // Sắp xếp
-        switch (sortValue) {
-            case "oldest":
-                result.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
-                break;
+    const hasFilters =
+        selectedCategory !== "all" ||
+        priceRange[0] !== priceBounds[0] ||
+        priceRange[1] !== priceBounds[1] ||
+        searchKeyword.trim() !== "" ||
+        inStockOnly ||
+        onSaleOnly;
 
-            case "price-asc":
-                result.sort((a, b) => {
-                    const priceA = a.discountPrice > 0 ? a.discountPrice : a.price;
-                    const priceB = b.discountPrice > 0 ? b.discountPrice : b.price;
-                    return priceA - priceB;
-                });
-                break;
-
-            case "price-desc":
-                result.sort((a, b) => {
-                    const priceA = a.discountPrice > 0 ? a.discountPrice : a.price;
-                    const priceB = b.discountPrice > 0 ? b.discountPrice : b.price;
-                    return priceB - priceA;
-                });
-                break;
-
-            case "newest":
-            default:
-                result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-                break;
-        }
-
-        return result;
-    }, [products, selectedCategory, selectedPrice, sortValue]);
-
-    if (loading) {
-        return <p className="py-20 text-center">Loading products...</p>;
-    }
-
-    if (error) {
-        return <p className="py-20 text-center text-red-500">{error}</p>;
+    function clearAllFilters() {
+        setSelectedCategory("all");
+        setPriceRange(priceBounds);
+        setSearchKeyword("");
+        setInStockOnly(false);
+        setOnSaleOnly(false);
+        setSortValue("newest");
+        setCurrentPage(1);
     }
 
     return (
-        <div className="bg-white">
-        <TopPage/>
+        <section className="bg-[#f7fbf6] pb-16">
+            <ProductsHero />
 
-            <section className="mx-auto max-w-7xl px-4 py-10">
-                <div className="grid grid-cols-1 gap-10 lg:grid-cols-[260px_1fr]">
+            <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+                {error ? (
+                    <div className="mb-6 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                        {error}
+                    </div>
+                ) : null}
+
+                <ProductsStats stats={stats} />
+
+                <ProductsActiveFilters
+                    categoryName={selectedCategoryName}
+                    priceRange={priceRange}
+                    inStockOnly={inStockOnly}
+                    onSaleOnly={onSaleOnly}
+                    searchKeyword={searchKeyword}
+                    hasFilters={hasFilters}
+                    onClearCategory={() => setSelectedCategory("all")}
+                    onClearPrice={() => setPriceRange(priceBounds)}
+                    onClearInStock={() => setInStockOnly(false)}
+                    onClearOnSale={() => setOnSaleOnly(false)}
+                    onClearSearch={() => setSearchKeyword("")}
+                />
+
+                <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
                     <aside>
-                        <SidebarFilter
+                        <ProductsFilterSidebar
                             categories={categories}
                             selectedCategory={selectedCategory}
                             onCategoryChange={setSelectedCategory}
-                            selectedPrice={selectedPrice}
-                            onPriceChange={setSelectedPrice}
+                            priceRange={priceRange}
+                            onPriceChange={setPriceRange}
+                            inStockOnly={inStockOnly}
+                            onInStockChange={() => setInStockOnly((prev) => !prev)}
+                            onSaleOnly={onSaleOnly}
+                            onSaleChange={() => setOnSaleOnly((prev) => !prev)}
+                            onClearFilters={clearAllFilters}
                         />
                     </aside>
 
                     <div>
-                        <ProductSort
+                        <ProductsToolbar
+                            searchKeyword={searchKeyword}
+                            onSearchChange={setSearchKeyword}
                             sortValue={sortValue}
                             onSortChange={setSortValue}
+                            visibleCount={paginatedProducts.length}
+                            totalCount={filteredProducts.length}
                         />
 
-                        <ProductGrid
-                            products={filteredAndSortedProducts}
-                            categoryMap={categoryMap}
-                        />
+                        {!loading && filteredProducts.length > 0 ? (
+                            <div className="mb-4 mt-4 text-sm text-gray-600">
+                                Trang <span className="font-semibold">{currentPage}</span> /{" "}
+                                <span className="font-semibold">{totalPages}</span>
+                            </div>
+                        ) : null}
+
+                        {loading ? (
+                            <ProductsSkeleton />
+                        ) : filteredProducts.length ? (
+                            <>
+                                <ProductsGrid
+                                    products={paginatedProducts}
+                                    categoryMap={categoryMap}
+                                />
+
+                                <Pagination
+                                    currentPage={currentPage}
+                                    totalPages={totalPages}
+                                    onPageChange={setCurrentPage}
+                                />
+                            </>
+                        ) : (
+                            <ProductsEmptyState onReset={clearAllFilters} />
+                        )}
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     );
 }
 

@@ -1,8 +1,18 @@
-const rawApiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api'
+const rawApiBaseUrl = import.meta.env.VITE_API_BASE_URL || '/api'
 
-export const API_BASE_URL = rawApiBaseUrl.endsWith('/api')
-  ? rawApiBaseUrl
-  : `${rawApiBaseUrl.replace(/\/+$/, '')}/api`
+function normalizeApiBaseUrl(value) {
+  const normalized = String(value || '/api')
+    .trim()
+    .replace(/\/+$/, '')
+
+  if (!normalized) {
+    return '/api'
+  }
+
+  return normalized.endsWith('/api') ? normalized : `${normalized}/api`
+}
+
+export const API_BASE_URL = normalizeApiBaseUrl(rawApiBaseUrl)
 
 function getOid(value) {
   if (!value) {
