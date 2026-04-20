@@ -67,7 +67,7 @@ function ProductsFilterSidebar({
         <button
           type="button"
           onClick={onClearFilters}
-          className="text-sm font-medium text-green-600 transition hover:text-green-700"
+          className=" text-sm font-medium text-green-600 transition hover:text-green-700"
         >
           Đặt lại
         </button>

@@ -4,10 +4,9 @@ import {
     getAllProducts,
 } from "../../services/productService";
 
-import ProductsHero from "../../components/products/ProductsHero";
+import TopPage from "../../components/products/TopPage"
 import ProductsFilterSidebar from "../../components/products/ProductsFilterSidebar";
 import ProductsToolbar from "../../components/products/ProductsToolbar";
-import ProductsStats from "../../components/products/ProductsStats";
 import ProductsActiveFilters from "../../components/products/ProductsActiveFilters";
 import ProductsGrid from "../../components/products/ProductsGrid";
 import ProductsSkeleton from "../../components/products/ProductsSkeleton";
@@ -16,7 +15,6 @@ import ProductsEmptyState from "../../components/products/ProductsEmptyState";
 import {
     applyProductFilters,
     buildCategoryMap,
-    getProductStats,
     normalizeProducts,
 } from "../../utils/productListingHelpers";
 
@@ -170,8 +168,6 @@ function ProductsPage() {
         }
     }, [currentPage, totalPages]);
 
-    const stats = useMemo(() => getProductStats(products), [products]);
-
     const selectedCategoryName =
         selectedCategory !== "all"
             ? categoryMap[String(selectedCategory)] || "Danh mục đã chọn"
@@ -197,8 +193,7 @@ function ProductsPage() {
 
     return (
         <section className="bg-[#f7fbf6] pb-16">
-            <ProductsHero />
-
+            <TopPage/>
             <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
                 {error ? (
                     <div className="mb-6 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
@@ -206,7 +201,6 @@ function ProductsPage() {
                     </div>
                 ) : null}
 
-                <ProductsStats stats={stats} />
 
                 <ProductsActiveFilters
                     categoryName={selectedCategoryName}
