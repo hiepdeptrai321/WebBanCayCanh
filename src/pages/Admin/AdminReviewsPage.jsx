@@ -75,7 +75,7 @@ function AdminReviewsPage() {
 
       setPageError('')
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Xóa review thất bại.')
+      setPageError(error instanceof Error ? error.message : 'Xóa đánh giá thất bại.')
     }
   }
 

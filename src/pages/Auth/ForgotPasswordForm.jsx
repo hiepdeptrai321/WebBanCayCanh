@@ -71,7 +71,7 @@ export default function ForgotPasswordForm() {
         <p className="text-gray-500 text-sm mt-2 px-4">
           {step === 1
             ? "Nhập email đã đăng ký để hệ thống xác nhận tài khoản của bạn."
-            : "Vui lòng nhập mật khẩu mới để tiếp tục mua sắm tại shop."}
+            : "Vui lòng nhập mật khẩu mới để tiếp tục mua sắm tại cửa hàng."}
         </p>
       </div>
 
