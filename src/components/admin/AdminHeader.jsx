@@ -18,12 +18,12 @@ function AdminHeader({ pageTitle, onMenuToggle }) {
             type="button"
             onClick={onMenuToggle}
             className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition hover:bg-slate-100 lg:hidden"
-            aria-label="Open menu"
+            aria-label="Mở menu"
           >
             <span className="text-xl leading-none">☰</span>
           </button>
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Admin Panel</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Bảng quản trị</p>
             <h1 className="text-lg font-semibold text-slate-900">{pageTitle}</h1>
           </div>
         </div>
@@ -40,7 +40,7 @@ function AdminHeader({ pageTitle, onMenuToggle }) {
             to="/"
             className="rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
           >
-            Back to Shop
+            Quay lại cửa hàng
           </Link>
         </div>
       </div>

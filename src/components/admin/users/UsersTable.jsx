@@ -1,6 +1,6 @@
 function RoleBadge({ role }) {
   const className = role === 'admin' ? 'bg-sky-100 text-sky-700' : 'bg-slate-200 text-slate-700'
-  const label = role === 'admin' ? 'Admin' : 'User'
+  const label = role === 'admin' ? 'Quản trị viên' : 'Khách hàng'
 
   return <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ${className}`}>{label}</span>
 }
@@ -57,7 +57,7 @@ function UsersTable({ users, onToggleRole, onToggleLock }) {
                       onClick={() => onToggleRole(user)}
                       className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
                     >
-                      {user.role === 'admin' ? 'Chuyển user' : 'Chuyển admin'}
+                      {user.role === 'admin' ? 'Chuyển thành khách hàng' : 'Chuyển thành quản trị viên'}
                     </button>
                     <button
                       type="button"

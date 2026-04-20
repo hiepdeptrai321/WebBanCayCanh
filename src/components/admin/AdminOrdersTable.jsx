@@ -52,8 +52,8 @@ function AdminOrdersTable({
                 <th className="px-4 py-3">Khách hàng</th>
                 <th className="px-4 py-3">Ngày đặt</th>
                 <th className="px-4 py-3">Tổng tiền</th>
-                <th className="px-4 py-3">Order status</th>
-                <th className="px-4 py-3">Payment status</th>
+                <th className="px-4 py-3">Trạng thái đơn hàng</th>
+                <th className="px-4 py-3">Trạng thái thanh toán</th>
                 <th className="px-4 py-3">Cập nhật trạng thái</th>
                 <th className="px-4 py-3 text-right">Chi tiết</th>
               </tr>

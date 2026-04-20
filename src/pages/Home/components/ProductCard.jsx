@@ -1,4 +1,8 @@
-function ProductCard({ image, name, price, originalPrice }) {
+import { Link } from "react-router-dom";
+
+function ProductCard({ id, image, name, price, originalPrice }) {
+  const productLink = id ? `/products/${id}` : "/products";
+
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
       {/* Image */}
@@ -21,9 +25,12 @@ function ProductCard({ image, name, price, originalPrice }) {
             <span className="text-gray-400 text-sm line-through">{originalPrice}</span>
           )}
         </div>
-        <button className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2.5 rounded-xl transition-colors duration-300 text-sm">
+        <Link
+          to={productLink}
+          className="block w-full text-center bg-green-600 hover:bg-green-700 text-white font-medium py-2.5 rounded-xl transition-colors duration-300 text-sm"
+        >
           Xem chi tiết
-        </button>
+        </Link>
       </div>
     </div>
   )

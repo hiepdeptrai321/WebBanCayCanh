@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { getAllProducts } from "../../../services/productService";
 import { formatCurrency } from "../../../utils/formatCurrency";
@@ -15,7 +16,7 @@ function mapProductToCard(product) {
   return {
     id: product?._id,
     image,
-    name: product?.name || "San pham",
+    name: product?.name || "Sản phẩm",
     price: formatCurrency(finalPrice),
     originalPrice: originalPrice ? formatCurrency(originalPrice) : null,
   };
@@ -54,7 +55,7 @@ function FeaturedProducts() {
         const mappedProducts = Array.isArray(data) ? data.map(mapProductToCard).slice(0, 10) : [];
         setProducts(mappedProducts);
       } catch (err) {
-        setError(err?.message || "Khong the tai san pham noi bat");
+        setError(err?.message || "Không thể tải sản phẩm nổi bật");
       } finally {
         setIsLoading(false);
       }
@@ -91,18 +92,21 @@ function FeaturedProducts() {
             </h2>
             <div className="w-16 h-1 bg-green-500 rounded-full mt-4"></div>
           </div>
-          <button className="text-green-600 hover:text-green-700 font-semibold text-sm border border-green-600 hover:bg-green-50 px-5 py-2.5 rounded-full transition-colors duration-300 shrink-0">
+          <Link
+            to="/products"
+            className="text-green-600 hover:text-green-700 font-semibold text-sm border border-green-600 hover:bg-green-50 px-5 py-2.5 rounded-full transition-colors duration-300 shrink-0"
+          >
             Xem tất cả →
-          </button>
+          </Link>
         </div>
 
         {/* Carousel */}
         {isLoading ? (
-          <p className="text-gray-500">Dang tai san pham...</p>
+          <p className="text-gray-500">Đang tải sản phẩm...</p>
         ) : error ? (
           <p className="text-red-500">{error}</p>
         ) : products.length === 0 ? (
-          <p className="text-gray-500">Chua co san pham noi bat.</p>
+          <p className="text-gray-500">Chưa có sản phẩm nổi bật.</p>
         ) : (
           <div className="relative">
             <div className="overflow-hidden">
@@ -127,7 +131,7 @@ function FeaturedProducts() {
                 type="button"
                 onClick={goPrev}
                 className="pointer-events-auto -translate-x-3 w-13 h-13 rounded-full bg-green-700/80 hover:bg-green-800/80 transition-colors flex items-center justify-center shadow-lg"
-                aria-label="Trang truoc"
+                aria-label="Trang trước"
               >
                 <span className="w-0 h-0 border-y-[7px] border-y-transparent border-r-11 border-r-white -ml-0.5"></span>
               </button>
@@ -150,7 +154,7 @@ function FeaturedProducts() {
                   className={`h-2.5 rounded-full transition-all ${
                     pageIndex === activePage ? "w-8 bg-green-600" : "w-2.5 bg-green-200"
                   }`}
-                  aria-label={`Den trang ${pageIndex + 1}`}
+                  aria-label={`Đến trang ${pageIndex + 1}`}
                 />
               ))}
             </div>

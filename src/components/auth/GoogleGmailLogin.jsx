@@ -107,6 +107,7 @@ export default function GoogleGmailLogin({ onCredential, disabled = false }) {
             text: "continue_with",
             logo_alignment: "left",
             width: 220,
+            locale: "vi",
           });
         }
 
@@ -157,7 +158,7 @@ export default function GoogleGmailLogin({ onCredential, disabled = false }) {
           className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-white px-2.5 py-1 text-[11px] font-medium text-emerald-700 transition-all hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-60"
         >
           <Mail size={13} />
-          Dùng One Tap
+          Dùng đăng nhập nhanh
         </button>
       </div>
 

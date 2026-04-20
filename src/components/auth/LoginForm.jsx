@@ -172,7 +172,7 @@ export default function LoginForm() {
         disabled={loading || googleLoading}
         className="w-full rounded-2xl bg-emerald-700 py-3 text-base font-bold text-white shadow-lg transition-all hover:bg-emerald-800 disabled:opacity-50"
       >
-        {loading ? "PROCESSING..." : "LOG IN"}
+        {loading ? "ĐANG XỬ LÝ..." : "ĐĂNG NHẬP"}
       </button>
 
       {/* Chuyển sang Đăng ký */}
@@ -203,7 +203,7 @@ export default function LoginForm() {
 
       {googleLoading ? (
         <p className="text-center text-xs text-emerald-700">
-          Verifying Gmail...
+          Đang xác thực Gmail...
         </p>
       ) : null}
     </form>

@@ -43,7 +43,7 @@ function buildRevenueByDay(orders, selectedDays) {
 
     days.push({
       key: getDateKey(date),
-      label: date.toLocaleDateString('en-US', { weekday: 'short' }),
+      label: date.toLocaleDateString('vi-VN', { weekday: 'short' }),
       revenue: 0,
       value: 0,
     })
@@ -87,7 +87,7 @@ function AdminDashboard() {
         setProducts(productsData)
         setOrders(ordersData)
       } catch (error) {
-        setPageError(error instanceof Error ? error.message : 'Không thể tải dữ liệu dashboard.')
+        setPageError(error instanceof Error ? error.message : 'Không thể tải dữ liệu bảng điều khiển.')
       } finally {
         setIsLoading(false)
       }
@@ -159,8 +159,8 @@ function AdminDashboard() {
       <div className="rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-emerald-950 p-6 text-white shadow-sm sm:p-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-emerald-300">Admin Dashboard</p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Overview for plant shop operations</h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-emerald-300">Bảng điều khiển quản trị</p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Tổng quan vận hành cửa hàng cây cảnh</h2>
             <p className="mt-3 max-w-2xl text-sm text-slate-300 sm:text-base">
               Theo dõi doanh thu, đơn hàng, tồn kho và hiệu quả bán hàng trong một màn hình duy nhất.
             </p>
@@ -198,7 +198,7 @@ function AdminDashboard() {
       </div>
 
       {isLoading ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Loading dashboard data...</div>
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Đang tải dữ liệu bảng điều khiển...</div>
       ) : null}
 
       {pageError ? (

@@ -69,7 +69,7 @@ function AdminOrdersPage() {
       </div>
 
       {isLoading ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Loading order data...</div>
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Đang tải dữ liệu đơn hàng...</div>
       ) : null}
 
       {pageError ? (
@@ -78,7 +78,7 @@ function AdminOrdersPage() {
 
       <div className="grid gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:grid-cols-2">
         <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
-          Lọc theo order status
+          Lọc theo trạng thái đơn hàng
           <select
             value={orderStatusFilter}
             onChange={(event) => setOrderStatusFilter(event.target.value)}
@@ -93,7 +93,7 @@ function AdminOrdersPage() {
         </label>
 
         <label className="flex flex-col gap-2 text-sm font-medium text-slate-700">
-          Lọc theo payment status
+          Lọc theo trạng thái thanh toán
           <select
             value={paymentStatusFilter}
             onChange={(event) => setPaymentStatusFilter(event.target.value)}

@@ -103,7 +103,7 @@ function AdminStoresPage() {
   }
 
   if (isLoading) {
-    return <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500">Loading store data...</div>
+    return <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500">Đang tải dữ liệu cửa hàng...</div>
   }
 
   if (!store) {

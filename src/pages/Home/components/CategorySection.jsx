@@ -2,6 +2,7 @@ import CayTrongNha from "../../../assets/images/home/category/caytrongnha.jpg";
 import CayNgoaiTroi from "../../../assets/images/home/category/cayngoaitroi.jpg";
 import CayMini from "../../../assets/images/home/category/caymini.jpg";
 import SDvaXR from "../../../assets/images/home/category/senda.jpg";
+import { Link } from "react-router-dom";
 function CategorySection() {
   const categories = [
     {
@@ -47,7 +48,8 @@ function CategorySection() {
         {/* Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {categories.map((cat) => (
-            <div
+            <Link
+              to="/products"
               key={cat.id}
               className="relative overflow-hidden rounded-2xl cursor-pointer group shadow-md hover:shadow-xl transition-shadow duration-300"
             >
@@ -65,7 +67,7 @@ function CategorySection() {
                 </h3>
                 <p className="text-green-300 text-sm">{cat.count}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

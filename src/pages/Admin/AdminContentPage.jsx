@@ -55,7 +55,7 @@ function AdminContentPage() {
         <p className="mt-1 text-sm text-slate-500">Chỉnh sửa nội dung trang Về chúng tôi hiển thị cho khách hàng.</p>
       </div>
 
-      {isLoading ? <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500">Loading content...</div> : null}
+      {isLoading ? <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500">Đang tải nội dung...</div> : null}
       {pageError ? <div className="rounded-2xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-700">{pageError}</div> : null}
       {savedMessage ? <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-700">{savedMessage}</div> : null}
 

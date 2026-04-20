@@ -21,7 +21,7 @@ function AdminReviewsPage() {
         const data = await getAllReviews()
         setReviews(data)
       } catch (error) {
-        setPageError(error instanceof Error ? error.message : 'Không thể tải danh sách reviews.')
+        setPageError(error instanceof Error ? error.message : 'Không thể tải danh sách đánh giá.')
       } finally {
         setIsLoading(false)
       }
@@ -54,12 +54,12 @@ function AdminReviewsPage() {
 
       setPageError('')
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Cập nhật trạng thái review thất bại.')
+      setPageError(error instanceof Error ? error.message : 'Cập nhật trạng thái đánh giá thất bại.')
     }
   }
 
   const handleDeleteReview = async (review) => {
-    const confirmed = window.confirm(`Bạn có chắc muốn xóa review của "${review.user}" cho sản phẩm "${review.product}"?`)
+    const confirmed = window.confirm(`Bạn có chắc muốn xóa đánh giá của "${review.user}" cho sản phẩm "${review.product}"?`)
 
     if (!confirmed) {
       return
@@ -87,7 +87,7 @@ function AdminReviewsPage() {
     <section className="space-y-6">
       <div className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-slate-900">Quản lý reviews</h2>
+          <h2 className="text-2xl font-bold text-slate-900">Quản lý đánh giá</h2>
           <p className="mt-1 text-sm text-slate-500">Theo dõi phản hồi khách hàng, duyệt hiển thị và kiểm soát nội dung đánh giá.</p>
         </div>
       </div>
@@ -125,7 +125,7 @@ function AdminReviewsPage() {
       </div>
 
       {isLoading ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Loading review data...</div>
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Đang tải dữ liệu đánh giá...</div>
       ) : null}
 
       {pageError ? (
@@ -144,14 +144,14 @@ function AdminReviewsPage() {
           <div className="w-full max-w-2xl rounded-2xl bg-white p-5 shadow-xl sm:p-6">
             <div className="flex items-start justify-between gap-4 border-b border-slate-200 pb-4">
               <div>
-                <h3 className="text-xl font-bold text-slate-900">Chi tiết review</h3>
+                <h3 className="text-xl font-bold text-slate-900">Chi tiết đánh giá</h3>
                 <p className="mt-1 text-sm text-slate-500">{selectedReview.product} - {selectedReview.user}</p>
               </div>
               <button
                 type="button"
                 onClick={() => setSelectedReview(null)}
                 className="rounded-lg p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
-                aria-label="Close detail"
+                aria-label="Đóng chi tiết"
               >
                 ✕
               </button>
@@ -160,7 +160,7 @@ function AdminReviewsPage() {
             <div className="mt-4 space-y-3 text-sm text-slate-700">
               <p><span className="font-semibold text-slate-900">Sản phẩm:</span> {selectedReview.product}</p>
               <p><span className="font-semibold text-slate-900">Người dùng:</span> {selectedReview.user}</p>
-              <p><span className="font-semibold text-slate-900">Rating:</span> {'★'.repeat(selectedReview.rating)}{'☆'.repeat(5 - selectedReview.rating)}</p>
+              <p><span className="font-semibold text-slate-900">Số sao:</span> {'★'.repeat(selectedReview.rating)}{'☆'.repeat(5 - selectedReview.rating)}</p>
               <p><span className="font-semibold text-slate-900">Ngày tạo:</span> {selectedReview.createdAt}</p>
               <p><span className="font-semibold text-slate-900">Trạng thái:</span> {selectedReview.status}</p>
               <div>

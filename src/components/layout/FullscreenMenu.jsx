@@ -84,7 +84,7 @@ function FullscreenMenu({ isOpen, onClose }) {
                 Góc Xanh
               </h1>
               <p className="text-sm tracking-[0.35em] text-gray-400 uppercase mt-1">
-                Shop
+                Tiệm cây
               </p>
             </div>
 
@@ -101,7 +101,7 @@ function FullscreenMenu({ isOpen, onClose }) {
 
             {/* Copyright */}
             <p className="text-xs text-gray-400 text-center leading-relaxed">
-              Copyright © 2026 Góc Xanh Shop.<br />All rights reserved.
+              Bản quyền © 2026 Góc Xanh Shop.<br />Bảo lưu mọi quyền.
             </p>
           </div>
         </div>
