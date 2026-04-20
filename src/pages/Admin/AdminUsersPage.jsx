@@ -2,8 +2,16 @@ import { useEffect, useMemo, useState } from 'react'
 import UsersTable from '../../components/admin/users/UsersTable'
 import { getAllUsers, toggleUserLock, toggleUserRole } from '../../services/userService'
 
-const roleOptions = ['Tất cả', 'user', 'admin']
-const statusOptions = ['Tất cả', 'active', 'locked']
+const roleOptions = [
+  { value: 'Tất cả', label: 'Tất cả' },
+  { value: 'user', label: 'Khách hàng' },
+  { value: 'admin', label: 'Quản trị viên' },
+]
+const statusOptions = [
+  { value: 'Tất cả', label: 'Tất cả' },
+  { value: 'active', label: 'Đang hoạt động' },
+  { value: 'locked', label: 'Đã khóa' },
+]
 
 function AdminUsersPage() {
   const [users, setUsers] = useState([])
@@ -96,8 +104,8 @@ function AdminUsersPage() {
             className="h-11 rounded-lg border border-slate-300 px-3 outline-none ring-emerald-300 transition focus:border-emerald-500 focus:ring"
           >
             {roleOptions.map((role) => (
-              <option key={role} value={role}>
-                {role}
+              <option key={role.value} value={role.value}>
+                {role.label}
               </option>
             ))}
           </select>
@@ -111,8 +119,8 @@ function AdminUsersPage() {
             className="h-11 rounded-lg border border-slate-300 px-3 outline-none ring-emerald-300 transition focus:border-emerald-500 focus:ring"
           >
             {statusOptions.map((status) => (
-              <option key={status} value={status}>
-                {status}
+              <option key={status.value} value={status.value}>
+                {status.label}
               </option>
             ))}
           </select>
@@ -120,7 +128,7 @@ function AdminUsersPage() {
       </div>
 
       {isLoading ? (
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Loading user data...</div>
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">Đang tải dữ liệu người dùng...</div>
       ) : null}
 
       {pageError ? (

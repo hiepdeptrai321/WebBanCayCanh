@@ -129,7 +129,7 @@ function AdminBlogPostsPage() {
         </button>
       </div>
 
-      {isLoading ? <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500">Loading blog post data...</div> : null}
+      {isLoading ? <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500">Đang tải dữ liệu bài viết...</div> : null}
       {pageError ? <div className="rounded-2xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-700">{pageError}</div> : null}
 
       {isFormOpen ? (
@@ -161,7 +161,7 @@ function AdminBlogPostsPage() {
           <label className="text-sm font-medium text-slate-700 md:col-span-2">Nội dung
             <textarea value={values.content} onChange={handleChange('content')} className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2" rows={5} required />
           </label>
-          <label className="text-sm font-medium text-slate-700">Tags (phân tách bởi dấu phẩy)
+          <label className="text-sm font-medium text-slate-700">Thẻ (phân tách bởi dấu phẩy)
             <input value={values.tags} onChange={handleChange('tags')} className="mt-1 h-11 w-full rounded-lg border border-slate-300 px-3" />
           </label>
           <label className="text-sm font-medium text-slate-700">Lượt xem

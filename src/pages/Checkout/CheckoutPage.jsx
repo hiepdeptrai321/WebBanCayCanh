@@ -155,7 +155,7 @@ function CheckoutPage() {
               disabled={isSubmitting}
               className={`w-full text-white font-bold py-3 rounded-md transition ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'}`}
             >
-              {isSubmitting ? 'Processing...' : 'Confirm order'}
+              {isSubmitting ? 'Đang xử lý...' : 'Xác nhận đơn hàng'}
             </button>
           </div>
         </form>

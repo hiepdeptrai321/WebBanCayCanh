@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function PromotionBanner() {
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-8">
@@ -20,9 +22,12 @@ function PromotionBanner() {
               </p>
             </div>
             <div className="shrink-0">
-              <button className="bg-white text-green-700 hover:bg-green-50 font-bold px-10 py-4 rounded-full text-base transition-colors duration-300 shadow-lg">
+              <Link
+                to="/products"
+                className="inline-block bg-white text-green-700 hover:bg-green-50 font-bold px-10 py-4 rounded-full text-base transition-colors duration-300 shadow-lg"
+              >
                 Mua ngay
-              </button>
+              </Link>
             </div>
           </div>
         </div>

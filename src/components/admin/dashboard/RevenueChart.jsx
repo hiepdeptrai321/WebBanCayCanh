@@ -11,7 +11,7 @@ function RevenueChart({ data }) {
           <h3 className="text-lg font-bold text-slate-900">Doanh thu theo ngày</h3>
           <p className="mt-1 text-sm text-slate-500">Biểu đồ doanh thu {dayCount} ngày gần nhất.</p>
         </div>
-        <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">{dayCount} days</span>
+        <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">{dayCount} ngày</span>
       </div>
 
       <div className="mt-6 space-y-4">
@@ -29,7 +29,7 @@ function RevenueChart({ data }) {
               </div>
               <div className="text-right">
                 <p className="text-sm font-semibold text-slate-900">{formatCurrency(item.revenue)}</p>
-                <p className="text-xs text-slate-500">{item.value} orders</p>
+                <p className="text-xs text-slate-500">{item.value} đơn hàng</p>
               </div>
             </div>
           )

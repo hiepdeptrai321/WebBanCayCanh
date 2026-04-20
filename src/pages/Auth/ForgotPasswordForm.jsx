@@ -163,7 +163,7 @@ export default function ForgotPasswordForm() {
             disabled={loading}
             className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-4 rounded-2xl text-lg font-bold shadow-lg transition-all disabled:opacity-50"
           >
-            {loading ? "UPDATING..." : "CONFIRM PASSWORD CHANGE"}
+            {loading ? "ĐANG CẬP NHẬT..." : "XÁC NHẬN ĐỔI MẬT KHẨU"}
           </button>
         </form>
       )}

@@ -92,7 +92,7 @@ function BlogDetailPage() {
     if (loading) {
         return (
             <section className="mx-auto max-w-5xl px-4 py-16">
-                <p className="text-center text-[#4c5a50]">Loading article...</p>
+                <p className="text-center text-[#4c5a50]">Đang tải bài viết...</p>
             </section>
         );
     }
@@ -150,7 +150,7 @@ function BlogDetailPage() {
                         </div>
 
                         <aside className="border-l border-[#d7d2c4] pl-5 lg:pl-6">
-                            <p className="text-xs uppercase tracking-[0.2em] text-[#5f6b5f]">Byline</p>
+                            <p className="text-xs uppercase tracking-[0.2em] text-[#5f6b5f]">Tác giả</p>
                             <p className="mt-2 text-sm font-semibold text-[#2e4534]">{post.authorName}</p>
                             <p className="mt-1 text-sm text-[#657167]">{post.viewCount} lượt xem</p>
                             <div className="mt-5 border-t border-[#d7d2c4] pt-5">

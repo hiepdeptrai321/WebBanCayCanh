@@ -55,7 +55,7 @@ function HeroBannerSlider() {
         <button
           onClick={prevSlide}
           className="absolute left-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-5 rounded-full backdrop-blur-md transition-all z-20 text-2xl"
-          aria-label="Previous banner"
+          aria-label="Banner trước"
         >
           ←
         </button>
@@ -64,7 +64,7 @@ function HeroBannerSlider() {
         <button
           onClick={nextSlide}
           className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-5 rounded-full backdrop-blur-md transition-all z-20 text-2xl"
-          aria-label="Next banner"
+          aria-label="Banner tiếp theo"
         >
           →
         </button>

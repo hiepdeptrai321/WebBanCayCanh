@@ -15,7 +15,7 @@ function ReviewsTable({ reviews, onToggleStatus, onDelete, onViewDetail }) {
   if (reviews.length === 0) {
     return (
       <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center text-slate-500 shadow-sm">
-        Không có review phù hợp bộ lọc.
+        Không có đánh giá phù hợp bộ lọc.
       </div>
     )
   }
@@ -28,7 +28,7 @@ function ReviewsTable({ reviews, onToggleStatus, onDelete, onViewDetail }) {
             <tr className="text-left text-xs uppercase tracking-wide text-slate-500">
               <th className="px-4 py-3">Sản phẩm</th>
               <th className="px-4 py-3">Người dùng</th>
-              <th className="px-4 py-3">Rating</th>
+              <th className="px-4 py-3">Số sao</th>
               <th className="px-4 py-3">Nội dung</th>
               <th className="px-4 py-3">Ngày tạo</th>
               <th className="px-4 py-3">Trạng thái</th>

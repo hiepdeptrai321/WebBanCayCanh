@@ -43,9 +43,9 @@ function AdminLoginPage() {
   return (
     <section className="mx-auto w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
       <div className="mb-6 text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-emerald-600">Admin Login</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-emerald-600">Đăng nhập quản trị</p>
         <h1 className="mt-2 text-3xl font-bold text-slate-900">Đăng nhập quản trị</h1>
-        <p className="mt-2 text-sm text-slate-500">Nhập tài khoản admin để truy cập hệ thống quản lý cửa hàng.</p>
+        <p className="mt-2 text-sm text-slate-500">Nhập tài khoản quản trị để truy cập hệ thống quản lý cửa hàng.</p>
       </div>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
@@ -82,7 +82,7 @@ function AdminLoginPage() {
           disabled={isSubmitting}
           className="h-11 w-full rounded-lg bg-emerald-600 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {isSubmitting ? 'Đang đăng nhập...' : 'Đăng nhập admin'}
+          {isSubmitting ? 'Đang đăng nhập...' : 'Đăng nhập quản trị'}
         </button>
       </form>
 

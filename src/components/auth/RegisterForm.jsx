@@ -647,7 +647,7 @@ export default function RegisterForm() {
             disabled={loading}
             className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3.5 rounded-2xl text-lg font-bold shadow-md active:scale-[0.99] transition-all"
           >
-            {loading ? "PROCESSING..." : "SIGN UP NOW"}
+            {loading ? "ĐANG XỬ LÝ..." : "ĐĂNG KÝ NGAY"}
           </button>
 
           <p className="text-sm text-gray-500">

@@ -16,8 +16,8 @@ function BlogDetailLayout() {
               <BrandLeafIcon size={19} className="text-white" />
             </span>
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#7b8b7d]">Plant Journal</p>
-              <p className="text-sm font-semibold tracking-[0.08em] uppercase">Goc Xanh Shop</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#7b8b7d]">Nhật ký cây xanh</p>
+              <p className="text-sm font-semibold tracking-[0.08em] uppercase">Góc Xanh Shop</p>
             </div>
           </Link>
 
