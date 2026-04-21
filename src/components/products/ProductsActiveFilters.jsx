@@ -16,30 +16,36 @@ function FilterChip({ label, onRemove }) {
 }
 
 function ProductsActiveFilters({
-  categoryName,
-  priceRange,
-  inStockOnly,
-  onSaleOnly,
-  searchKeyword,
-  onClearCategory,
-  onClearPrice,
-  onClearInStock,
-  onClearOnSale,
-  onClearSearch,
-  hasFilters,
+  categoryName = "",
+  priceRange = [0, 5000000],
+  inStockOnly = false,
+  onSaleOnly = false,
+  searchKeyword = "",
+  onClearCategory = () => {},
+  onClearPrice = () => {},
+  onClearInStock = () => {},
+  onClearOnSale = () => {},
+  onClearSearch = () => {},
+  hasFilters = false,
 }) {
   if (!hasFilters) return null;
 
   return (
     <div className="rounded-3xl border border-green-100 bg-green-50/60 px-4 py-4">
       <div className="flex flex-wrap items-center gap-3">
-        <span className="text-sm font-semibold text-green-800">Đang áp dụng:</span>
+        <span className="text-sm font-semibold text-green-800">
+          Đang áp dụng:
+        </span>
 
         {categoryName ? (
-          <FilterChip label={`Danh mục: ${categoryName}`} onRemove={onClearCategory} />
+          <FilterChip
+            label={`Danh mục: ${categoryName}`}
+            onRemove={onClearCategory}
+          />
         ) : null}
 
-        {priceRange[0] !== 0 || priceRange[1] !== 5000000 ? (
+        {(priceRange && priceRange[0] !== 0) ||
+        (priceRange && priceRange[1] !== 5000000) ? (
           <FilterChip
             label={`Giá: ${formatPrice(priceRange[0])} - ${formatPrice(priceRange[1])}`}
             onRemove={onClearPrice}
@@ -55,7 +61,10 @@ function ProductsActiveFilters({
         ) : null}
 
         {searchKeyword.trim() ? (
-          <FilterChip label={`Từ khóa: ${searchKeyword.trim()}`} onRemove={onClearSearch} />
+          <FilterChip
+            label={`Từ khóa: ${searchKeyword.trim()}`}
+            onRemove={onClearSearch}
+          />
         ) : null}
       </div>
     </div>
