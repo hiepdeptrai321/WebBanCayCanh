@@ -64,13 +64,13 @@ function ProductsFilterSidebar({
           <p className="text-sm font-semibold text-green-800">Bộ lọc sản phẩm</p>
           <p className="mt-1 text-xs text-gray-500">Tinh chỉnh nhanh theo nhu cầu của bạn</p>
         </div>
-        <button
-          type="button"
-          onClick={onClearFilters}
-          className="text-sm font-medium text-green-600 transition hover:text-green-700"
-        >
-          Đặt lại
-        </button>
+          <button
+              type="button"
+              onClick={onClearFilters}
+              className="shrink-0 whitespace-nowrap text-sm font-medium text-green-600 transition hover:text-green-700"
+          >
+              Đặt lại
+          </button>
       </div>
 
       <FilterSection title="Khoảng giá">
