@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 // 1. Khai báo dữ liệu trước
 const benefits = [
@@ -51,7 +51,7 @@ function BenefitsSection() {
         </div>
 
         {/* 3. Sử dụng motion.div cho danh sách */}
-        <motion.div
+        <Motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -59,7 +59,7 @@ function BenefitsSection() {
           className="grid md:grid-cols-3 gap-10"
         >
           {benefits.map((item, index) => (
-            <motion.div
+            <Motion.div
               key={index}
               variants={itemVariants}
               whileHover={{ y: -10 }}
@@ -77,9 +77,9 @@ function BenefitsSection() {
 
               {/* Trang trí thêm hiệu ứng ánh sáng khi hover */}
               <div className="absolute -inset-1 bg-gradient-to-r from-green-400 to-emerald-400 rounded-[2.5rem] opacity-0 group-hover:opacity-10 blur transition-opacity duration-300 -z-10"></div>
-            </motion.div>
+            </Motion.div>
           ))}
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );

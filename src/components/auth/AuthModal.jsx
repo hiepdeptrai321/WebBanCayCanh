@@ -1,5 +1,5 @@
 import { X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "../../context/AuthContext";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
@@ -18,7 +18,7 @@ export default function AuthModal() {
     <AnimatePresence>
       {isModalOpen && (
         <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/70 backdrop-blur-md p-4">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{
               opacity: 1,
@@ -82,7 +82,7 @@ export default function AuthModal() {
               {modalTab === "register" && <RegisterForm />}
               {modalTab === "forgot" && <ForgotPasswordForm />}
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       )}
     </AnimatePresence>

@@ -6,11 +6,10 @@ import { API_BASE_URL, getAllProducts } from "../../services/productService";
 import {
   applyProductFilters,
   buildCategoryMap,
-  getProductStats,
   normalizeProducts,
 } from "../../utils/productListingHelpers";
 
-import ProductsHero from "../../components/products/ProductsHero";
+import TopPage from "../../components/products/TopPage";
 import ProductsFilterSidebar from "../../components/products/ProductsFilterSidebar";
 import ProductsToolbar from "../../components/products/ProductsToolbar";
 import ProductsActiveFilters from "../../components/products/ProductsActiveFilters";
@@ -18,12 +17,7 @@ import ProductsGrid from "../../components/products/ProductsGrid";
 import ProductsSkeleton from "../../components/products/ProductsSkeleton";
 import ProductsEmptyState from "../../components/products/ProductsEmptyState";
 
-import {
-    applyProductFilters,
-    buildCategoryMap,
-    getProductStats,
-    normalizeProducts,
-} from "../../utils/productListingHelpers";
+
 
 const ITEMS_PER_PAGE = 9;
 
@@ -93,14 +87,12 @@ function ProductsPage() {
               50000,
           ) * 50000;
         setPriceBounds([0, highest]);
-        if (!searchParams.get("minPrice")) {
-          setPriceRange([0, highest]);
-        }
+        setPriceRange([0, highest]);
 
         if (categoryResult.status === "fulfilled" && categoryResult.value.ok) {
           setCategories(await categoryResult.value.json());
         }
-      } catch (err) {
+      } catch {
         setError("Không thể tải sản phẩm.");
       } finally {
         setLoading(false);
@@ -153,14 +145,15 @@ function ProductsPage() {
     return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
   }, [filteredProducts, currentPage]);
 
-  const stats = useMemo(() => getProductStats(products), [products]);
-
   return (
     <section className="bg-[#f7fbf6] pb-16 min-h-screen">
-      <TopPage/>
-      <ProductsHero />
+      <TopPage />
       <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
-        <ProductsStats stats={stats} />
+        {error ? (
+          <div className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+            {error}
+          </div>
+        ) : null}
 
 
         <ProductsActiveFilters

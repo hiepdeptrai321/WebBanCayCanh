@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion, useInView, useSpring, useMotionValue } from "framer-motion";
+import { motion as Motion, useInView } from "framer-motion";
 import { Search, Star, ShieldCheck, Truck } from "lucide-react";
 import BrandLeafIcon from "../../../components/common/BrandLeafIcon";
 
@@ -62,7 +62,7 @@ function Counter({
   }, [isInView, value, delay, duration, isDecimal]);
 
   return (
-    <motion.span
+    <Motion.span
       ref={ref}
       className="inline-flex items-center"
       initial={{ scale: 0.8, opacity: 0 }}
@@ -75,7 +75,7 @@ function Counter({
       }}
       whileHover={{ scale: 1.1 }}
     >
-      <motion.span
+      <Motion.span
         animate={
           isAnimating
             ? {
@@ -92,18 +92,18 @@ function Counter({
         className="font-black"
       >
         {displayValue.toLocaleString()}
-      </motion.span>
+      </Motion.span>
       {suffix && (
-        <motion.span
+        <Motion.span
           initial={{ opacity: 0, scale: 0 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ delay: delay + duration + 0.3, duration: 0.3 }}
           className="text-green-600 font-bold ml-1"
         >
           {suffix}
-        </motion.span>
+        </Motion.span>
       )}
-    </motion.span>
+    </Motion.span>
   );
 }
 
@@ -124,7 +124,7 @@ function HeroSection() {
     <section className="relative bg-gradient-to-br from-green-50 via-white to-emerald-50 min-h-[90vh] flex items-center overflow-hidden py-12">
       <div className="max-w-7xl mx-auto px-6 w-full z-10">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex-1 text-center lg:text-left"
@@ -162,7 +162,7 @@ function HeroSection() {
             </form>
 
             <div className="flex gap-10 justify-center lg:justify-start pt-8 border-t border-gray-100">
-              <motion.div
+              <Motion.div
                 className="text-center lg:text-left cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -170,18 +170,18 @@ function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <motion.p
+                <Motion.p
                   className="text-3xl font-black text-gray-800 mb-1"
                   whileHover={{ color: "#16a34a" }}
                 >
                   <Counter value={200} delay={0.2} suffix="+" />
-                </motion.p>
+                </Motion.p>
                 <p className="text-sm text-gray-500 font-bold uppercase tracking-wider">
                   Loại cây
                 </p>
-              </motion.div>
+              </Motion.div>
 
-              <motion.div
+              <Motion.div
                 className="text-center lg:text-left border-l border-gray-200 pl-10 cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -189,18 +189,18 @@ function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <motion.p
+                <Motion.p
                   className="text-3xl font-black text-gray-800 mb-1"
                   whileHover={{ color: "#16a34a" }}
                 >
                   <Counter value={5000} delay={0.5} suffix="+" />
-                </motion.p>
+                </Motion.p>
                 <p className="text-sm text-gray-500 font-bold uppercase tracking-wider">
                   Khách hàng
                 </p>
-              </motion.div>
+              </Motion.div>
 
-              <motion.div
+              <Motion.div
                 className="text-center lg:text-left border-l border-gray-200 pl-10 cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -209,10 +209,10 @@ function HeroSection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <p className="text-3xl font-black text-gray-800 mb-1 flex items-center justify-center lg:justify-start gap-1">
-                  <motion.span whileHover={{ color: "#16a34a" }}>
+                  <Motion.span whileHover={{ color: "#16a34a" }}>
                     <Counter value={4.9} delay={0.8} isDecimal={true} />
-                  </motion.span>
-                  <motion.div
+                  </Motion.span>
+                  <Motion.div
                     initial={{ scale: 0, rotate: -180 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{
@@ -228,16 +228,16 @@ function HeroSection() {
                       size={20}
                       className="fill-yellow-400 text-yellow-400"
                     />
-                  </motion.div>
+                  </Motion.div>
                 </p>
                 <p className="text-sm text-gray-500 font-bold uppercase tracking-wider">
                   Đánh giá
                 </p>
-              </motion.div>
+              </Motion.div>
             </div>
-          </motion.div>
+          </Motion.div>
 
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             className="flex-1 relative flex justify-center"
@@ -250,7 +250,7 @@ function HeroSection() {
                 alt="Main Plant"
               />
             </div>
-          </motion.div>
+          </Motion.div>
         </div>
       </div>
     </section>

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-function ProductCard({ id, image, name, price, originalPrice }) {
+function ProductCard({ id, image, name, price }) {
   const productLink = id ? `/products/${id}` : "/products";
 
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
       <Link
-        to={`/products/${id}`}
+        to={productLink}
         className="relative block overflow-hidden bg-green-50 h-56"
       >
         <img
@@ -26,7 +26,7 @@ function ProductCard({ id, image, name, price, originalPrice }) {
 
         {/* Nút xem chi tiết */}
         <Link
-          to={`/products/${id}`}
+          to={productLink}
           className="block text-center w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2.5 rounded-xl transition-colors duration-300 text-sm"
         >
           Xem chi tiết

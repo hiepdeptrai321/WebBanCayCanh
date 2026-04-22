@@ -3,7 +3,6 @@ import CayTrongNha from "../../../assets/images/home/category/caytrongnha.jpg";
 import CayNgoaiTroi from "../../../assets/images/home/category/cayngoaitroi.jpg";
 import CayMini from "../../../assets/images/home/category/caymini.jpg";
 import SDvaXR from "../../../assets/images/home/category/senda.jpg";
-import { Link } from "react-router-dom";
 
 function CategorySection() {
   const categories = [

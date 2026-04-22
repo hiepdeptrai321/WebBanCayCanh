@@ -1,6 +1,6 @@
 // Test Counter Animation
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion as Motion, useInView } from "framer-motion";
 
 function TestCounter({ value, duration = 2, delay = 0 }) {
   const [displayValue, setDisplayValue] = useState(0);
@@ -49,25 +49,25 @@ function TestCounter({ value, duration = 2, delay = 0 }) {
   }, [isInView, value, delay, duration]);
 
   return (
-    <motion.div
+    <Motion.div
       ref={ref}
       className="p-8 bg-blue-100 rounded-lg m-4"
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
     >
       <h2 className="text-2xl font-bold mb-4">Test Counter: {value}</h2>
-      <motion.div
+      <Motion.div
         className="text-6xl font-black text-blue-600"
         animate={isAnimating ? { scale: [1, 1.1, 1] } : {}}
         transition={{ duration: 0.5, repeat: isAnimating ? Infinity : 0 }}
       >
         {displayValue.toLocaleString()}
-      </motion.div>
+      </Motion.div>
       <p className="mt-2 text-sm text-gray-600">
         Status: {isInView ? "In View" : "Not in View"} | Animating:{" "}
         {isAnimating ? "Yes" : "No"}
       </p>
-    </motion.div>
+    </Motion.div>
   );
 }
 

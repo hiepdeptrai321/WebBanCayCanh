@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { getAllProducts } from "../../../services/productService";
 import { formatCurrency } from "../../../utils/formatCurrency";
-import { Link } from "react-router-dom";
 const FALLBACK_IMAGE =
   "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=800&q=80";
 
