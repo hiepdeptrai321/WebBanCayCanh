@@ -1,82 +1,259 @@
+import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { motion, useInView, useSpring, useMotionValue } from "framer-motion";
+import { Search, Star, ShieldCheck, Truck } from "lucide-react";
 import BrandLeafIcon from "../../../components/common/BrandLeafIcon";
 
-function HeroSection() {
-  return (
-    <section className="bg-gradient-to-br from-green-50 to-green-100 min-h-[90vh] flex items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
-          {/* Left – Text */}
-          <div className="flex-1 text-center lg:text-left">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-green-200 px-3 py-1 text-sm font-medium text-green-800">
-              <BrandLeafIcon size={16} className="text-green-700" />
-              Cây cảnh tươi mỗi ngày
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-6">
-              Mang thiên nhiên vào{' '}
-              <span className="text-green-600">không gian sống</span>
-            </h1>
-            <p className="text-gray-500 text-lg sm:text-xl mb-8 max-w-lg mx-auto lg:mx-0">
-              Khám phá những loại cây cảnh đẹp giúp không gian của bạn trở nên
-              xanh mát và thư giãn hơn.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-full transition-colors duration-300 text-base">
-                Mua ngay
-              </button>
-              <button className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 text-base">
-                Xem bộ sưu tập
-              </button>
-            </div>
-            {/* Stats */}
-            <div className="flex gap-8 mt-10 justify-center lg:justify-start">
-              <div>
-                <p className="text-2xl font-bold text-gray-800">200+</p>
-                <p className="text-sm text-gray-500">Loại cây</p>
-              </div>
-              <div className="border-l border-gray-300 pl-8">
-                <p className="text-2xl font-bold text-gray-800">5000+</p>
-                <p className="text-sm text-gray-500">Khách hàng</p>
-              </div>
-              <div className="border-l border-gray-300 pl-8">
-                <p className="text-2xl font-bold text-gray-800">4.9★</p>
-                <p className="text-sm text-gray-500">Đánh giá</p>
-              </div>
-            </div>
-          </div>
+function Counter({
+  value,
+  duration = 2,
+  delay = 0,
+  isDecimal = false,
+  suffix = "",
+}) {
+  const [displayValue, setDisplayValue] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-          {/* Right – Image */}
-          <div className="flex-1 flex justify-center">
-            <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[480px] lg:h-[480px]">
-              <div className="absolute inset-0 bg-green-200 rounded-full opacity-40"></div>
-              <div className="absolute inset-6 bg-green-300 rounded-full opacity-30"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <img
-                  src="https://placehold.co/420x420/d1fae5/16a34a?text=Cay+Canh"
-                  alt="Cây cảnh đẹp"
-                  className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl"
+  useEffect(() => {
+    if (isInView) {
+      console.log(
+        `🎯 Counter ${value} is in view, starting animation with delay ${delay}s`,
+      );
+      setIsAnimating(true);
+      const timeout = setTimeout(() => {
+        console.log(`🚀 Starting counter animation for value: ${value}`);
+
+        let startTime = null;
+        const startValue = 0;
+        const endValue = value;
+
+        const animateCounter = (timestamp) => {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min(
+            (timestamp - startTime) / (duration * 1000),
+            1,
+          );
+
+          // Easing function for smooth animation
+          const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+          const currentValue =
+            startValue + (endValue - startValue) * easeOutQuart;
+
+          setDisplayValue(
+            isDecimal
+              ? parseFloat(currentValue.toFixed(1))
+              : Math.floor(currentValue),
+          );
+
+          if (progress < 1) {
+            requestAnimationFrame(animateCounter);
+          } else {
+            console.log(`✅ Counter animation completed for value: ${value}`);
+            setIsAnimating(false);
+          }
+        };
+
+        requestAnimationFrame(animateCounter);
+      }, delay * 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [isInView, value, delay, duration, isDecimal]);
+
+  return (
+    <motion.span
+      ref={ref}
+      className="inline-flex items-center"
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={isInView ? { scale: 1, opacity: 1 } : {}}
+      transition={{
+        delay: delay + 0.2,
+        duration: 0.5,
+        type: "spring",
+        bounce: 0.4,
+      }}
+      whileHover={{ scale: 1.1 }}
+    >
+      <motion.span
+        animate={
+          isAnimating
+            ? {
+                textShadow: [
+                  "0 0 0px rgba(34, 197, 94, 0)",
+                  "0 0 15px rgba(34, 197, 94, 0.8)",
+                  "0 0 0px rgba(34, 197, 94, 0)",
+                ],
+                scale: [1, 1.02, 1],
+              }
+            : {}
+        }
+        transition={{ duration: 1.2, repeat: isAnimating ? Infinity : 0 }}
+        className="font-black"
+      >
+        {displayValue.toLocaleString()}
+      </motion.span>
+      {suffix && (
+        <motion.span
+          initial={{ opacity: 0, scale: 0 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ delay: delay + duration + 0.3, duration: 0.3 }}
+          className="text-green-600 font-bold ml-1"
+        >
+          {suffix}
+        </motion.span>
+      )}
+    </motion.span>
+  );
+}
+
+function HeroSection() {
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (keyword.trim()) {
+      navigate(`/products?search=${encodeURIComponent(keyword.trim())}`);
+    } else {
+      navigate("/products");
+    }
+  };
+
+  return (
+    <section className="relative bg-gradient-to-br from-green-50 via-white to-emerald-50 min-h-[90vh] flex items-center overflow-hidden py-12">
+      <div className="max-w-7xl mx-auto px-6 w-full z-10">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex-1 text-center lg:text-left"
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-bold mb-6 border border-green-200">
+              <BrandLeafIcon size={18} /> Góc Xanh Shop
+            </span>
+            <h1 className="text-5xl lg:text-7xl font-black text-gray-900 leading-tight mb-8">
+              Mang <span className="text-green-600">thiên nhiên</span> <br />{" "}
+              vào tổ ấm bạn
+            </h1>
+
+            {/* THANH TÌM KIẾM GỬI DATA */}
+            <form
+              onSubmit={handleSearch}
+              className="relative max-w-xl mx-auto lg:mx-0 mb-10 group"
+            >
+              <div className="absolute -inset-1 bg-green-400/20 rounded-3xl blur opacity-25 group-focus-within:opacity-50 transition"></div>
+              <div className="relative flex items-center bg-white rounded-2xl shadow-2xl p-2 border border-gray-100">
+                <Search className="ml-4 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Tìm sen đá, xương rồng..."
+                  className="w-full px-4 py-3 outline-none text-gray-700 bg-transparent text-lg"
+                  value={keyword}
+                  onChange={(e) => setKeyword(e.target.value)}
                 />
+                <button
+                  type="submit"
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-3.5 rounded-xl font-bold transition-transform active:scale-95"
+                >
+                  Tìm kiếm
+                </button>
               </div>
-              {/* Floating badges */}
-              <div className="absolute top-4 right-0 bg-white rounded-2xl shadow-lg px-3 py-2 flex items-center gap-2">
-                <span className="text-green-500 text-xl">🌱</span>
-                <div>
-                  <p className="text-xs font-semibold text-gray-700">Cây khỏe mạnh</p>
-                  <p className="text-xs text-gray-400">100% tươi</p>
-                </div>
-              </div>
-              <div className="absolute bottom-8 -left-4 bg-white rounded-2xl shadow-lg px-3 py-2 flex items-center gap-2">
-                <span className="text-yellow-500 text-xl">🚚</span>
-                <div>
-                  <p className="text-xs font-semibold text-gray-700">Giao hàng nhanh</p>
-                  <p className="text-xs text-gray-400">24–48 giờ</p>
-                </div>
-              </div>
+            </form>
+
+            <div className="flex gap-10 justify-center lg:justify-start pt-8 border-t border-gray-100">
+              <motion.div
+                className="text-center lg:text-left cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <motion.p
+                  className="text-3xl font-black text-gray-800 mb-1"
+                  whileHover={{ color: "#16a34a" }}
+                >
+                  <Counter value={200} delay={0.2} suffix="+" />
+                </motion.p>
+                <p className="text-sm text-gray-500 font-bold uppercase tracking-wider">
+                  Loại cây
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="text-center lg:text-left border-l border-gray-200 pl-10 cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.0, duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <motion.p
+                  className="text-3xl font-black text-gray-800 mb-1"
+                  whileHover={{ color: "#16a34a" }}
+                >
+                  <Counter value={5000} delay={0.5} suffix="+" />
+                </motion.p>
+                <p className="text-sm text-gray-500 font-bold uppercase tracking-wider">
+                  Khách hàng
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="text-center lg:text-left border-l border-gray-200 pl-10 cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <p className="text-3xl font-black text-gray-800 mb-1 flex items-center justify-center lg:justify-start gap-1">
+                  <motion.span whileHover={{ color: "#16a34a" }}>
+                    <Counter value={4.9} delay={0.8} isDecimal={true} />
+                  </motion.span>
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{
+                      delay: 1.8,
+                      duration: 0.5,
+                      type: "spring",
+                      bounce: 0.6,
+                    }}
+                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Star
+                      size={20}
+                      className="fill-yellow-400 text-yellow-400"
+                    />
+                  </motion.div>
+                </p>
+                <p className="text-sm text-gray-500 font-bold uppercase tracking-wider">
+                  Đánh giá
+                </p>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="flex-1 relative flex justify-center"
+          >
+            <div className="relative w-full max-w-[420px] aspect-square">
+              <div className="absolute inset-0 bg-green-200 rounded-[40%_60%_70%_30%] animate-pulse blur-3xl opacity-30"></div>
+              <img
+                src="https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=1000"
+                className="relative z-10 w-full h-full object-cover rounded-[3rem] shadow-2xl border-[12px] border-white"
+                alt="Main Plant"
+              />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-export default HeroSection
+export default HeroSection;

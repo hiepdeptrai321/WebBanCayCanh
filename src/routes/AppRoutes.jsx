@@ -1,34 +1,35 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
-import MainLayout from '../layouts/MainLayout'
-import ShopLayout from '../layouts/ShopLayout'
-import InfoLayout from '../layouts/InfoLayout'
-import BlogDetailLayout from '../layouts/BlogDetailLayout'
-import BlogKnowledgeLayout from '../layouts/BlogKnowledgeLayout'
-import AdminLayout from '../layouts/AdminLayout'
-import HomePage from '../pages/Home/HomePage'
-import ProductsPage from '../pages/Products/ProductsPage'
-import ProductDetailPage from '../pages/Products/ProductDetailPage'
-import CartPage from '../pages/Cart/CartPage'
-import CheckoutPage from '../pages/Checkout/CheckoutPage'
-import AdminDashboard from '../pages/Admin/AdminDashboard'
-import AdminCategoriesPage from '../pages/Admin/AdminCategoriesPage'
-import AdminProductsPage from '../pages/Admin/AdminProductsPage'
-import AdminOrdersPage from '../pages/Admin/AdminOrdersPage'
-import AdminReviewsPage from '../pages/Admin/AdminReviewsPage'
-import AdminUsersPage from '../pages/Admin/AdminUsersPage'
-import AdminInventoryPage from '../pages/Admin/AdminInventoryPage'
-import AdminBlogPostsPage from '../pages/Admin/AdminBlogPostsPage'
-import AdminStoresPage from '../pages/Admin/AdminStoresPage'
-import AdminContentPage from '../pages/Admin/AdminContentPage'
-import AdminLoginPage from '../pages/Admin/AdminLoginPage'
-import PlaceholderPage from '../pages/PlaceholderPage'
-import StoresPage from '../pages/Stores/StoresPage'
-import AboutPage from '../pages/About/AboutUsPage'
-import BlogKnowledgePage from '../pages/Blog/BlogKnowledgePage'
-import BlogDetailPage from '../pages/Blog/BlogDetailPage'
-import AdminRouteGuard from './AdminRouteGuard'
-import Login from '../pages/Auth/Login'
-import Register from '../pages/Auth/Register'
+import { Navigate, Route, Routes } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout";
+import ShopLayout from "../layouts/ShopLayout";
+import InfoLayout from "../layouts/InfoLayout";
+import BlogDetailLayout from "../layouts/BlogDetailLayout";
+import BlogKnowledgeLayout from "../layouts/BlogKnowledgeLayout";
+import AdminLayout from "../layouts/AdminLayout";
+import HomePage from "../pages/Home/HomePage";
+import ProductsPage from "../pages/Products/ProductsPage";
+import ProductDetailPage from "../pages/Products/ProductDetailPage";
+import CartPage from "../pages/Cart/CartPage";
+import CheckoutPage from "../pages/Checkout/CheckoutPage";
+import AdminDashboard from "../pages/Admin/AdminDashboard";
+import AdminCategoriesPage from "../pages/Admin/AdminCategoriesPage";
+import AdminProductsPage from "../pages/Admin/AdminProductsPage";
+import AdminOrdersPage from "../pages/Admin/AdminOrdersPage";
+import AdminReviewsPage from "../pages/Admin/AdminReviewsPage";
+import AdminUsersPage from "../pages/Admin/AdminUsersPage";
+import AdminInventoryPage from "../pages/Admin/AdminInventoryPage";
+import AdminBlogPostsPage from "../pages/Admin/AdminBlogPostsPage";
+import AdminStoresPage from "../pages/Admin/AdminStoresPage";
+import AdminContentPage from "../pages/Admin/AdminContentPage";
+import AdminLoginPage from "../pages/Admin/AdminLoginPage";
+import PlaceholderPage from "../pages/PlaceholderPage";
+import StoresPage from "../pages/Stores/StoresPage";
+import AboutPage from "../pages/About/AboutUsPage";
+import BlogKnowledgePage from "../pages/Blog/BlogKnowledgePage";
+import BlogDetailPage from "../pages/Blog/BlogDetailPage";
+import AdminRouteGuard from "./AdminRouteGuard";
+import Login from "../pages/Auth/Login";
+import Register from "../pages/Auth/Register";
+import TestCounter from "../TestCounter";
 
 function AppRoutes() {
   return (
@@ -36,8 +37,9 @@ function AppRoutes() {
       {/* Trang chủ, Admin & fallback */}
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/test-counter" element={<TestCounter />} />
         <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/login" element={ <Login /> } />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route
           path="*"
@@ -46,7 +48,10 @@ function AppRoutes() {
       </Route>
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="*" element={<PlaceholderPage title="Trang không tồn tại" />} />
+        <Route
+          path="*"
+          element={<PlaceholderPage title="Trang không tồn tại" />}
+        />
       </Route>
 
       <Route path="/admin/login" element={<AdminLoginPage />} />
@@ -89,7 +94,7 @@ function AppRoutes() {
         <Route path="/blog/:slug" element={<BlogDetailPage />} />
       </Route>
     </Routes>
-  )
+  );
 }
 
 export default AppRoutes;
