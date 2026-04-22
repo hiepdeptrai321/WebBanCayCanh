@@ -3,15 +3,17 @@ import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { getAllProducts } from "../../../services/productService";
 import { formatCurrency } from "../../../utils/formatCurrency";
-
-const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=800&q=80";
+const FALLBACK_IMAGE =
+  "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=800&q=80";
 
 function mapProductToCard(product) {
   const primaryImage = product?.images?.find((img) => img?.isPrimary)?.url;
   const firstImage = product?.images?.[0]?.url;
   const image = primaryImage || firstImage || product?.image || FALLBACK_IMAGE;
   const finalPrice = Number(product?.discountPrice ?? product?.price ?? 0);
-  const originalPrice = product?.discountPrice ? Number(product?.price ?? 0) : null;
+  const originalPrice = product?.discountPrice
+    ? Number(product?.price ?? 0)
+    : null;
 
   return {
     id: product?._id,
@@ -52,7 +54,9 @@ function FeaturedProducts() {
     async function loadFeaturedProducts() {
       try {
         const data = await getAllProducts({ featured: false, limit: 10 });
-        const mappedProducts = Array.isArray(data) ? data.map(mapProductToCard).slice(0, 10) : [];
+        const mappedProducts = Array.isArray(data)
+          ? data.map(mapProductToCard).slice(0, 10)
+          : [];
         setProducts(mappedProducts);
       } catch (err) {
         setError(err?.message || "Không thể tải sản phẩm nổi bật");
@@ -152,7 +156,9 @@ function FeaturedProducts() {
                   type="button"
                   onClick={() => setActivePage(pageIndex)}
                   className={`h-2.5 rounded-full transition-all ${
-                    pageIndex === activePage ? "w-8 bg-green-600" : "w-2.5 bg-green-200"
+                    pageIndex === activePage
+                      ? "w-8 bg-green-600"
+                      : "w-2.5 bg-green-200"
                   }`}
                   aria-label={`Đến trang ${pageIndex + 1}`}
                 />

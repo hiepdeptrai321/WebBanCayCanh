@@ -3,12 +3,7 @@ import { useOutletContext } from 'react-router-dom'
 import BrandLeafIcon from '../components/common/BrandLeafIcon'
 
 function PlaceholderPage({ title, bgImage = '' }) {
-  let outletContext
-  try {
-    outletContext = useOutletContext()
-  } catch {
-    outletContext = null
-  }
+  const outletContext = useOutletContext() || null
 
   useEffect(() => {
     if (outletContext?.setBannerConfig) {

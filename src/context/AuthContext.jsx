@@ -61,13 +61,9 @@ export const AuthProvider = ({ children }) => {
 
   // 3. Hàm Đăng ký
   const register = async (formData) => {
-    try {
-      await authService.register(formData);
-      toast.success("Đăng ký thành công! Vui lòng đăng nhập");
-      setModalTab("login");
-    } catch (err) {
-      throw err;
-    }
+    await authService.register(formData);
+    toast.success("Đăng ký thành công! Vui lòng đăng nhập");
+    setModalTab("login");
   };
 
   // 4. Hàm Quên mật khẩu (Thêm mới)

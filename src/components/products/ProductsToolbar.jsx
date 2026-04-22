@@ -28,7 +28,9 @@ function ProductsToolbar({
           </label>
 
           <label className="flex h-12 min-w-[220px] items-center gap-3 rounded-2xl border border-green-100 bg-green-50/40 px-4 text-sm text-gray-700">
-            <span className="font-medium text-green-800">Sắp xếp</span>
+            <span className="shrink-0 whitespace-nowrap text-sm font-medium text-green-800">
+    Sắp xếp
+  </span>
             <select
               value={sortValue}
               onChange={(event) => onSortChange(event.target.value)}

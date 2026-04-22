@@ -5,7 +5,7 @@ import FullscreenMenu from "./FullscreenMenu";
 import { useCart } from "../../context/CartContext";
 import AccountButton from "../auth/AccountButton";
 
-function HeaderInfo({ title = "", bgImage = defaultBg }) {
+function HeaderInfo({ title = "", bgImage = "" }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const { cartItems } = useCart();
   const itemCount =

@@ -1,283 +1,248 @@
 import { useEffect, useMemo, useState } from "react";
-import {
-    API_BASE_URL,
-    getAllProducts,
-} from "../../services/productService";
+import { useSearchParams } from "react-router-dom";
+import { API_BASE_URL, getAllProducts } from "../../services/productService";
 
-import ProductsHero from "../../components/products/ProductsHero";
+// Import Helpers của bạn
+import {
+  applyProductFilters,
+  buildCategoryMap,
+  normalizeProducts,
+} from "../../utils/productListingHelpers";
+
+import TopPage from "../../components/products/TopPage";
 import ProductsFilterSidebar from "../../components/products/ProductsFilterSidebar";
 import ProductsToolbar from "../../components/products/ProductsToolbar";
-import ProductsStats from "../../components/products/ProductsStats";
 import ProductsActiveFilters from "../../components/products/ProductsActiveFilters";
 import ProductsGrid from "../../components/products/ProductsGrid";
 import ProductsSkeleton from "../../components/products/ProductsSkeleton";
 import ProductsEmptyState from "../../components/products/ProductsEmptyState";
 
-import {
-    applyProductFilters,
-    buildCategoryMap,
-    getProductStats,
-    normalizeProducts,
-} from "../../utils/productListingHelpers";
+
 
 const ITEMS_PER_PAGE = 9;
 
-function roundUpPrice(value) {
-    if (!value || value <= 0) return 5000000;
-    const step = 50000;
-    return Math.ceil(value / step) * step;
-}
-
-function Pagination({ currentPage, totalPages, onPageChange }) {
-    if (totalPages <= 1) return null;
-
-    const pages = [];
-    for (let i = 1; i <= totalPages; i += 1) {
-        pages.push(i);
-    }
-
-    return (
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-            <button
-                type="button"
-                onClick={() => onPageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-                className="rounded-xl border border-green-200 px-4 py-2 text-sm font-medium text-green-700 transition hover:bg-green-50 disabled:cursor-not-allowed disabled:opacity-50"
-            >
-                Trước
-            </button>
-
-            {pages.map((page) => (
-                <button
-                    key={page}
-                    type="button"
-                    onClick={() => onPageChange(page)}
-                    className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${
-                        currentPage === page
-                            ? "bg-green-600 text-white shadow"
-                            : "border border-green-200 text-green-700 hover:bg-green-50"
-                    }`}
-                >
-                    {page}
-                </button>
-            ))}
-
-            <button
-                type="button"
-                onClick={() => onPageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-                className="rounded-xl border border-green-200 px-4 py-2 text-sm font-medium text-green-700 transition hover:bg-green-50 disabled:cursor-not-allowed disabled:opacity-50"
-            >
-                Sau
-            </button>
-        </div>
-    );
-}
-
 function ProductsPage() {
-    const [products, setProducts] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const [sortValue, setSortValue] = useState("newest");
-    const [selectedCategory, setSelectedCategory] = useState("all");
-    const [searchKeyword, setSearchKeyword] = useState("");
-    const [inStockOnly, setInStockOnly] = useState(false);
-    const [onSaleOnly, setOnSaleOnly] = useState(false);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
 
-    const [priceBounds, setPriceBounds] = useState([0, 5000000]);
-    const [priceRange, setPriceRange] = useState([0, 5000000]);
+  // Dữ liệu gốc
+  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-    const [currentPage, setCurrentPage] = useState(1);
+  // States bộ lọc - Lấy trực tiếp từ URL SearchParams để đồng bộ với Trang Chủ
+  const [sortValue, setSortValue] = useState(
+    searchParams.get("sort") || "newest",
+  );
+  const [selectedCategory, setSelectedCategory] = useState(
+    searchParams.get("category") || "all",
+  );
+  const [searchKeyword, setSearchKeyword] = useState(
+    searchParams.get("search") || "",
+  );
+  const [inStockOnly, setInStockOnly] = useState(
+    searchParams.get("stock") === "true",
+  );
+  const [onSaleOnly, setOnSaleOnly] = useState(
+    searchParams.get("sale") === "true",
+  );
 
-    const categoryMap = useMemo(() => buildCategoryMap(categories), [categories]);
+  const [priceBounds, setPriceBounds] = useState([0, 5000000]);
+  const [priceRange, setPriceRange] = useState([0, 5000000]);
+  const [currentPage, setCurrentPage] = useState(1);
 
-    useEffect(() => {
-        async function loadData() {
-            try {
-                setLoading(true);
-                setError("");
+  // --- BƯỚC QUAN TRỌNG: ĐỒNG BỘ TỪ KHÓA TỪ URL ---
+  useEffect(() => {
+    const keywordFromUrl = searchParams.get("search") || "";
+    const categoryFromUrl = searchParams.get("category") || "all";
 
-                const [productResult, categoryResult] = await Promise.allSettled([
-                    getAllProducts({ featured: false, limit: 0 }),
-                    fetch(`${API_BASE_URL}/categories`),
-                ]);
+    // Cập nhật state để useMemo lọc lại sản phẩm
+    setSearchKeyword(keywordFromUrl);
+    setSelectedCategory(categoryFromUrl);
 
-                if (productResult.status !== "fulfilled") {
-                    throw productResult.reason;
-                }
+    // Nếu có tìm kiếm mới, luôn đưa về trang 1
+    setCurrentPage(1);
+  }, [searchParams]);
 
-                const normalized = normalizeProducts(productResult.value || []);
-                setProducts(normalized);
+  // Load Data
+  useEffect(() => {
+    async function loadData() {
+      try {
+        setLoading(true);
+        const [productResult, categoryResult] = await Promise.allSettled([
+          getAllProducts({ featured: false, limit: 0 }),
+          fetch(`${API_BASE_URL}/categories`),
+        ]);
 
-                const highestPrice = roundUpPrice(
-                    Math.max(...normalized.map((item) => Number(item.finalPrice || 0)), 0)
-                );
+        if (productResult.status !== "fulfilled") throw productResult.reason;
 
-                setPriceBounds([0, highestPrice]);
-                setPriceRange([0, highestPrice]);
+        const normalized = normalizeProducts(productResult.value || []);
+        console.log("1. Dữ liệu sau chuẩn hóa:", normalized); // <--- THÊM DÒNG NÀY
+        setProducts(normalized);
 
-                if (categoryResult.status === "fulfilled" && categoryResult.value.ok) {
-                    const categoryData = await categoryResult.value.json();
-                    setCategories(Array.isArray(categoryData) ? categoryData : []);
-                } else {
-                    setCategories([]);
-                }
-            } catch (err) {
-                console.error(err);
-                setError("Không thể tải dữ liệu sản phẩm. Hãy kiểm tra backend API ở cổng 5000.");
-            } finally {
-                setLoading(false);
-            }
+        // Tính toán khoảng giá lớn nhất
+        const highest =
+          Math.ceil(
+            Math.max(...normalized.map((i) => i.finalPrice || 0), 5000000) /
+              50000,
+          ) * 50000;
+        setPriceBounds([0, highest]);
+        setPriceRange([0, highest]);
+
+        if (categoryResult.status === "fulfilled" && categoryResult.value.ok) {
+          setCategories(await categoryResult.value.json());
         }
-
-        loadData();
-    }, []);
-
-    const filteredProducts = useMemo(() => {
-        return applyProductFilters(products, {
-            selectedCategory,
-            priceRange,
-            sortValue,
-            searchKeyword,
-            inStockOnly,
-            onSaleOnly,
-        });
-    }, [
-        products,
-        selectedCategory,
-        priceRange,
-        sortValue,
-        searchKeyword,
-        inStockOnly,
-        onSaleOnly,
-    ]);
-
-    const totalPages = Math.max(1, Math.ceil(filteredProducts.length / ITEMS_PER_PAGE));
-
-    const paginatedProducts = useMemo(() => {
-        const start = (currentPage - 1) * ITEMS_PER_PAGE;
-        return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
-    }, [filteredProducts, currentPage]);
-
-    useEffect(() => {
-        setCurrentPage(1);
-    }, [selectedCategory, priceRange, searchKeyword, inStockOnly, onSaleOnly, sortValue]);
-
-    useEffect(() => {
-        if (currentPage > totalPages) {
-            setCurrentPage(totalPages);
-        }
-    }, [currentPage, totalPages]);
-
-    const stats = useMemo(() => getProductStats(products), [products]);
-
-    const selectedCategoryName =
-        selectedCategory !== "all"
-            ? categoryMap[String(selectedCategory)] || "Danh mục đã chọn"
-            : "";
-
-    const hasFilters =
-        selectedCategory !== "all" ||
-        priceRange[0] !== priceBounds[0] ||
-        priceRange[1] !== priceBounds[1] ||
-        searchKeyword.trim() !== "" ||
-        inStockOnly ||
-        onSaleOnly;
-
-    function clearAllFilters() {
-        setSelectedCategory("all");
-        setPriceRange(priceBounds);
-        setSearchKeyword("");
-        setInStockOnly(false);
-        setOnSaleOnly(false);
-        setSortValue("newest");
-        setCurrentPage(1);
+      } catch {
+        setError("Không thể tải sản phẩm.");
+      } finally {
+        setLoading(false);
+      }
     }
+    loadData();
+  }, []);
 
-    return (
-        <section className="bg-[#f7fbf6] pb-16">
-            <ProductsHero />
+  const categoryMap = useMemo(() => buildCategoryMap(categories), [categories]);
 
-            <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
-                {error ? (
-                    <div className="mb-6 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-                        {error}
-                    </div>
-                ) : null}
+  // Hàm cập nhật URL
+  const updateUrl = (key, value) => {
+    const params = new URLSearchParams(searchParams);
+    if (!value || value === "all") params.delete(key);
+    else params.set(key, value);
+    setSearchParams(params);
+  };
 
-                <ProductsStats stats={stats} />
+  // --- LOGIC LỌC CHÍNH ---
+  const filteredProducts = useMemo(() => {
+    console.log("📊 Products array khi lọc:", products.length, "sản phẩm");
+    console.log("🔍 Từ khóa tìm:", searchKeyword);
 
-                <ProductsActiveFilters
-                    categoryName={selectedCategoryName}
-                    priceRange={priceRange}
-                    inStockOnly={inStockOnly}
-                    onSaleOnly={onSaleOnly}
-                    searchKeyword={searchKeyword}
-                    hasFilters={hasFilters}
-                    onClearCategory={() => setSelectedCategory("all")}
-                    onClearPrice={() => setPriceRange(priceBounds)}
-                    onClearInStock={() => setInStockOnly(false)}
-                    onClearOnSale={() => setOnSaleOnly(false)}
-                    onClearSearch={() => setSearchKeyword("")}
+    const result = applyProductFilters(products, {
+      selectedCategory,
+      priceRange,
+      sortValue,
+      searchKeyword,
+      inStockOnly,
+      onSaleOnly,
+    });
+
+    // Log ngay tại đây để kiểm tra lúc đang lọc
+    console.log("--- DEBUG FILTER ---");
+    console.log("2. Từ khóa đang tìm:", searchKeyword);
+    console.log("3. Kết quả sau khi lọc:", result);
+
+    return result;
+  }, [
+    products,
+    selectedCategory,
+    priceRange,
+    sortValue,
+    searchKeyword,
+    inStockOnly,
+    onSaleOnly,
+  ]);
+  const paginatedProducts = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredProducts, currentPage]);
+
+  return (
+    <section className="bg-[#f7fbf6] pb-16 min-h-screen">
+      <TopPage />
+      <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+        {error ? (
+          <div className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+            {error}
+          </div>
+        ) : null}
+
+
+        <ProductsActiveFilters
+          searchKeyword={searchKeyword}
+          onClearSearch={() => updateUrl("search", "")}
+          categoryName={categoryMap[selectedCategory]?.name || ""}
+          onClearCategory={() => updateUrl("category", "all")}
+          priceRange={priceRange}
+          onClearPrice={() => setPriceRange([0, priceBounds[1]])}
+          inStockOnly={inStockOnly}
+          onClearInStock={() => {
+            setInStockOnly(false);
+            searchParams.delete("stock");
+            setSearchParams(searchParams);
+          }}
+          onSaleOnly={onSaleOnly}
+          onClearOnSale={() => {
+            setOnSaleOnly(false);
+            searchParams.delete("sale");
+            setSearchParams(searchParams);
+          }}
+          hasFilters={
+            searchKeyword !== "" ||
+            selectedCategory !== "all" ||
+            priceRange[0] !== 0 ||
+            priceRange[1] !== priceBounds[1] ||
+            inStockOnly ||
+            onSaleOnly
+          }
+        />
+
+        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
+          <aside className="hidden lg:block">
+            <ProductsFilterSidebar
+              categories={categories}
+              selectedCategory={selectedCategory}
+              onCategoryChange={(id) => updateUrl("category", id)}
+              priceRange={priceRange}
+              onPriceChange={setPriceRange}
+            />
+          </aside>
+
+          <div className="space-y-6">
+            <ProductsToolbar
+              searchKeyword={searchKeyword}
+              onSearchChange={(val) => updateUrl("search", val)}
+              sortValue={sortValue}
+              onSortChange={(val) => {
+                setSortValue(val);
+                updateUrl("sort", val);
+              }}
+              totalCount={filteredProducts.length}
+            />
+
+            {loading ? (
+              <ProductsSkeleton />
+            ) : filteredProducts.length > 0 ? (
+              <>
+                <ProductsGrid
+                  products={paginatedProducts}
+                  categoryMap={categoryMap}
                 />
-
-                <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
-                    <aside>
-                        <ProductsFilterSidebar
-                            categories={categories}
-                            selectedCategory={selectedCategory}
-                            onCategoryChange={setSelectedCategory}
-                            priceRange={priceRange}
-                            onPriceChange={setPriceRange}
-                            inStockOnly={inStockOnly}
-                            onInStockChange={() => setInStockOnly((prev) => !prev)}
-                            onSaleOnly={onSaleOnly}
-                            onSaleChange={() => setOnSaleOnly((prev) => !prev)}
-                            onClearFilters={clearAllFilters}
-                        />
-                    </aside>
-
-                    <div>
-                        <ProductsToolbar
-                            searchKeyword={searchKeyword}
-                            onSearchChange={setSearchKeyword}
-                            sortValue={sortValue}
-                            onSortChange={setSortValue}
-                            visibleCount={paginatedProducts.length}
-                            totalCount={filteredProducts.length}
-                        />
-
-                        {!loading && filteredProducts.length > 0 ? (
-                            <div className="mb-4 mt-4 text-sm text-gray-600">
-                                Trang <span className="font-semibold">{currentPage}</span> /{" "}
-                                <span className="font-semibold">{totalPages}</span>
-                            </div>
-                        ) : null}
-
-                        {loading ? (
-                            <ProductsSkeleton />
-                        ) : filteredProducts.length ? (
-                            <>
-                                <ProductsGrid
-                                    products={paginatedProducts}
-                                    categoryMap={categoryMap}
-                                />
-
-                                <Pagination
-                                    currentPage={currentPage}
-                                    totalPages={totalPages}
-                                    onPageChange={setCurrentPage}
-                                />
-                            </>
-                        ) : (
-                            <ProductsEmptyState onReset={clearAllFilters} />
-                        )}
-                    </div>
+                {/* Thanh phân trang đơn giản */}
+                <div className="mt-10 flex justify-center gap-2">
+                  {Array.from(
+                    {
+                      length: Math.ceil(
+                        filteredProducts.length / ITEMS_PER_PAGE,
+                      ),
+                    },
+                    (_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setCurrentPage(i + 1)}
+                        className={`px-4 py-2 rounded-lg font-bold ${currentPage === i + 1 ? "bg-green-600 text-white" : "bg-white text-green-700 border"}`}
+                      >
+                        {i + 1}
+                      </button>
+                    ),
+                  )}
                 </div>
-            </div>
-        </section>
-    );
+              </>
+            ) : (
+              <ProductsEmptyState onReset={() => setSearchParams({})} />
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
-
 export default ProductsPage;

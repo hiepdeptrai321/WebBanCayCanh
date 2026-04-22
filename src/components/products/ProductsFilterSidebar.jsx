@@ -1,3 +1,4 @@
+import React from "react";
 import PriceRangeSlider from "./PriceRangeSlider";
 
 function FilterSection({ title, children }) {
@@ -23,11 +24,7 @@ function RadioOption({ checked, label, onClick }) {
       }`}
     >
       <span>{label}</span>
-      <span
-        className={`h-4 w-4 rounded-full border ${
-          checked ? "border-green-600 bg-green-600" : "border-green-200 bg-white"
-        }`}
-      />
+      <span className={`h-4 w-4 rounded-full border ${checked ? "border-green-600 bg-green-600" : "border-green-200 bg-white"}`} />
     </button>
   );
 }
@@ -83,27 +80,23 @@ function ProductsFilterSidebar({
           label="Tất cả danh mục"
           onClick={() => onCategoryChange("all")}
         />
-        {categories.map((category) => (
-          <RadioOption
-            key={category._id}
-            checked={String(selectedCategory) === String(category._id)}
-            label={category.name}
-            onClick={() => onCategoryChange(category._id)}
-          />
-        ))}
+        {categories.map((category) => {
+          // Lấy ID tùy theo cấu trúc dữ liệu (có thể là category._id.$oid hoặc category._id)
+          const catId = category._id?.$oid || category._id;
+          return (
+            <RadioOption
+              key={catId}
+              checked={String(selectedCategory) === String(catId)}
+              label={category.name}
+              onClick={() => onCategoryChange(catId)}
+            />
+          );
+        })}
       </FilterSection>
 
       <FilterSection title="Ưu tiên hiển thị">
-        <ToggleOption
-          checked={inStockOnly}
-          onChange={onInStockChange}
-          label="Chỉ hiện sản phẩm còn hàng"
-        />
-        <ToggleOption
-          checked={onSaleOnly}
-          onChange={onSaleChange}
-          label="Chỉ hiện sản phẩm đang giảm giá"
-        />
+        <ToggleOption checked={inStockOnly} onChange={onInStockChange} label="Chỉ hiện sản phẩm còn hàng" />
+        <ToggleOption checked={onSaleOnly} onChange={onSaleChange} label="Chỉ hiện sản phẩm đang giảm giá" />
       </FilterSection>
     </aside>
   );
