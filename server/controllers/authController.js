@@ -42,9 +42,11 @@ function toAuthUser(user) {
   return {
     id: user._id,
     fullName: user.fullName,
+    username: user.username || "",
     email: user.email,
     phone: user.phone || "",
     avatar: user.avatar || null,
+    role: user.role || "customer",
   };
 }
 
@@ -368,6 +370,63 @@ export const login = async (req, res) => {
     res.json(createAuthResponse(user));
   } catch (err) {
     res.status(500).json({ message: "Lỗi server" });
+  }
+};
+
+export const adminLogin = async (req, res) => {
+  try {
+    const username = normalizeText(req.body?.username).toLowerCase();
+    const password = String(req.body?.password || "").trim();
+
+    if (!username || !password) {
+      return res
+        .status(400)
+        .json({ message: "Thiếu thông tin đăng nhập quản trị" });
+    }
+
+    const adminUser =
+      (await User.findOne({ role: "admin", username })) ||
+      (username === "admin"
+        ? await User.findOne({ role: "admin" }).sort({
+            createdAt: 1,
+          })
+        : null);
+
+    if (!adminUser) {
+      return res
+        .status(401)
+        .json({ message: "Tài khoản hoặc mật khẩu quản trị không đúng" });
+    }
+
+    if (adminUser.status === "inactive" || adminUser.status === "blocked") {
+      return res
+        .status(403)
+        .json({ message: "Tài khoản quản trị đang bị khóa hoặc tạm ngưng." });
+    }
+
+    if (!adminUser.passwordHash) {
+      return res.status(401).json({
+        message: "Tài khoản quản trị chưa có mật khẩu hợp lệ trong hệ thống.",
+      });
+    }
+
+    const isPasswordMatched = await bcrypt.compare(
+      password,
+      adminUser.passwordHash,
+    );
+
+    if (!isPasswordMatched) {
+      return res
+        .status(401)
+        .json({ message: "Tài khoản hoặc mật khẩu quản trị không đúng" });
+    }
+
+    return res.json(
+      createAuthResponse(adminUser, "Đăng nhập quản trị thành công"),
+    );
+  } catch (err) {
+    console.error("Admin login error:", err);
+    return res.status(500).json({ message: "Lỗi server" });
   }
 };
 

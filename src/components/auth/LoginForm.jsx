@@ -1,16 +1,18 @@
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Eye, EyeOff, Lock, Mail, RefreshCw } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
-import { RefreshCw, Eye, EyeOff, Mail, Lock } from "lucide-react";
 import GoogleGmailLogin from "./GoogleGmailLogin";
+
 export default function LoginForm() {
-  const { login, loginWithGoogle, setModalTab } = useAuth();
+  const navigate = useNavigate();
+  const { login, loginWithGoogle, setModalTab, closeModal } = useAuth();
 
   const [formData, setFormData] = useState({
     emailOrPhone: "",
     password: "",
     rememberMe: false,
   });
-
   const [showPassword, setShowPassword] = useState(false);
   const [captchaCode, setCaptchaCode] = useState("");
   const [userCaptcha, setUserCaptcha] = useState("");
@@ -27,27 +29,26 @@ export default function LoginForm() {
     generateCaptcha();
   }, []);
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+  const handleChange = (event) => {
+    const { name, value, type, checked } = event.target;
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
     if (userCaptcha !== captchaCode) {
-      alert("Mã xác nhận (CAPTCHA) không chính xác!");
+      alert("Mã xác nhận CAPTCHA không chính xác!");
       return;
     }
 
     setLoading(true);
+
     try {
-      // Gửi dữ liệu qua context/AuthContext.js
       await login(formData);
-      // AuthContext thường sẽ xử lý alert thành công và đóng Modal
     } catch (error) {
       alert(error.message || "Đăng nhập thất bại. Vui lòng kiểm tra lại!");
       generateCaptcha();
@@ -59,6 +60,7 @@ export default function LoginForm() {
   const handleGoogleCredential = useCallback(
     async (credential) => {
       setGoogleLoading(true);
+
       try {
         await loginWithGoogle(credential);
       } finally {
@@ -68,12 +70,16 @@ export default function LoginForm() {
     [loginWithGoogle],
   );
 
+  const handleAdminLoginClick = () => {
+    closeModal();
+    navigate("/admin/login");
+  };
+
   return (
     <form onSubmit={handleSubmit} className="space-y-3.5">
-      {/* Input Tài khoản */}
       <div>
         <label className="mb-1.5 block text-sm font-semibold text-gray-700">
-          Tài khoản (Email đã đăng ký hoặc số điện thoại)
+          Tài khoản (email đã đăng ký hoặc số điện thoại)
         </label>
         <div className="relative">
           <Mail
@@ -85,13 +91,12 @@ export default function LoginForm() {
             value={formData.emailOrPhone}
             onChange={handleChange}
             required
-            className="w-full rounded-2xl border border-gray-200 py-3 pl-11 pr-4 text-sm shadow-sm transition-all outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full rounded-2xl border border-gray-200 py-3 pl-11 pr-4 text-sm shadow-sm outline-none transition-all focus:ring-2 focus:ring-emerald-500"
             placeholder="Nhập email đã đăng ký hoặc số điện thoại"
           />
         </div>
       </div>
 
-      {/* Input Mật khẩu */}
       <div>
         <label className="mb-1.5 block text-sm font-semibold text-gray-700">
           Mật khẩu
@@ -107,7 +112,7 @@ export default function LoginForm() {
             value={formData.password}
             onChange={handleChange}
             required
-            className="w-full rounded-2xl border border-gray-200 py-3 pl-11 pr-12 text-sm shadow-sm transition-all outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full rounded-2xl border border-gray-200 py-3 pl-11 pr-12 text-sm shadow-sm outline-none transition-all focus:ring-2 focus:ring-emerald-500"
             placeholder="••••••••"
           />
           <button
@@ -120,28 +125,26 @@ export default function LoginForm() {
         </div>
       </div>
 
-      {/* Ghi nhớ & Quên mật khẩu */}
       <div className="flex items-center justify-between px-1">
-        <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
+        <label className="cursor-pointer text-sm text-gray-600">
           <input
             type="checkbox"
             name="rememberMe"
             checked={formData.rememberMe}
             onChange={handleChange}
-            className="w-4 h-4 accent-emerald-600 rounded border-gray-300"
+            className="mr-2 h-4 w-4 rounded border-gray-300 accent-emerald-600"
           />
           Duy trì đăng nhập
         </label>
         <button
           type="button"
           onClick={() => setModalTab("forgot")}
-          className="text-emerald-700 text-sm font-semibold hover:text-emerald-800"
+          className="text-sm font-semibold text-emerald-700 hover:text-emerald-800"
         >
           Quên mật khẩu?
         </button>
       </div>
 
-      {/* CAPTCHA */}
       <div className="space-y-1.5">
         <div className="flex items-center gap-2.5">
           <div className="w-28 select-none rounded-2xl border-2 border-dashed border-emerald-200 bg-emerald-50 py-1.5 text-center font-mono text-base font-bold italic tracking-[0.2em] text-emerald-800">
@@ -159,14 +162,15 @@ export default function LoginForm() {
             maxLength={6}
             placeholder="Mã xác thực"
             value={userCaptcha}
-            onChange={(e) => setUserCaptcha(e.target.value.toUpperCase())}
+            onChange={(event) =>
+              setUserCaptcha(event.target.value.toUpperCase())
+            }
             className="h-10 flex-1 rounded-2xl border border-gray-200 px-3 text-center text-sm font-bold outline-none focus:ring-2 focus:ring-emerald-500"
             required
           />
         </div>
       </div>
 
-      {/* Nút đăng nhập */}
       <button
         type="submit"
         disabled={loading || googleLoading}
@@ -175,22 +179,31 @@ export default function LoginForm() {
         {loading ? "ĐANG XỬ LÝ..." : "ĐĂNG NHẬP"}
       </button>
 
-      {/* Chuyển sang Đăng ký */}
       <p className="text-center text-sm text-gray-600">
         Bạn là thành viên mới?{" "}
         <button
           type="button"
           onClick={() => setModalTab("register")}
-          className="text-emerald-700 font-bold hover:underline"
+          className="font-bold text-emerald-700 hover:underline"
         >
           Tạo tài khoản ngay
         </button>
       </p>
 
-      {/* Social login */}
+      <p className="text-center text-sm text-gray-600">
+        Bạn là quản trị viên?{" "}
+        <button
+          type="button"
+          onClick={handleAdminLoginClick}
+          className="font-bold text-emerald-700 hover:underline"
+        >
+          Đăng nhập quản trị
+        </button>
+      </p>
+
       <div className="relative flex items-center py-1">
         <div className="grow border-t border-gray-100"></div>
-        <span className="shrink mx-3 text-[10px] uppercase tracking-[0.18em] text-gray-400">
+        <span className="mx-3 shrink text-[10px] uppercase tracking-[0.18em] text-gray-400">
           Hoặc dùng Gmail
         </span>
         <div className="grow border-t border-gray-100"></div>

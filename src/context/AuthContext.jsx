@@ -16,7 +16,12 @@ export const AuthProvider = ({ children }) => {
     const savedUser = localStorage.getItem("user");
     const token = localStorage.getItem("token");
     if (savedUser && token) {
-      setUser(JSON.parse(savedUser));
+      try {
+        setUser(JSON.parse(savedUser));
+      } catch {
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+      }
     }
     setLoading(false);
   }, []);
@@ -100,8 +105,10 @@ export const AuthProvider = ({ children }) => {
         register,
         resetPassword,
         logout,
+        setAuthSession: persistSession,
         setModalTab,
         loading,
+        isAdmin: user?.role === "admin",
       }}
     >
       {!loading && children}

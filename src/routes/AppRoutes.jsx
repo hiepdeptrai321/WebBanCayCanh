@@ -26,6 +26,7 @@ import StoresPage from "../pages/Stores/StoresPage";
 import AboutPage from "../pages/About/AboutUsPage";
 import BlogKnowledgePage from "../pages/Blog/BlogKnowledgePage";
 import BlogDetailPage from "../pages/Blog/BlogDetailPage";
+import SupportPage from "../pages/Support/SupportPage";
 import AdminRouteGuard from "./AdminRouteGuard";
 import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
@@ -34,20 +35,11 @@ import TestCounter from "../TestCounter";
 function AppRoutes() {
   return (
     <Routes>
-      {/* Trang chủ, Admin & fallback */}
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/test-counter" element={<TestCounter />} />
-        <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route
-          path="*"
-          element={<PlaceholderPage title="Trang không tồn tại" />}
-        />
-      </Route>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<HomePage />} />
         <Route
           path="*"
           element={<PlaceholderPage title="Trang không tồn tại" />}
@@ -82,7 +74,7 @@ function AppRoutes() {
 
       <Route element={<InfoLayout />}>
         <Route path="/stores" element={<StoresPage title="Các cửa hàng" />} />
-        <Route path="/support" element={<PlaceholderPage title="Hỗ trợ" />} />
+        <Route path="/support" element={<SupportPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Route>
 
