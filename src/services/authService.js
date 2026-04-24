@@ -3,7 +3,6 @@ import { API_BASE_URL } from "./productService";
 const AUTH_API_URL = `${API_BASE_URL}/auth`;
 
 export const authService = {
-  // Đăng ký tài khoản
   register: async (userData) => {
     try {
       const response = await fetch(`${AUTH_API_URL}/register`, {
@@ -34,7 +33,6 @@ export const authService = {
     }
   },
 
-  // Đăng nhập
   login: async (credentials) => {
     try {
       const response = await fetch(`${AUTH_API_URL}/login`, {
@@ -54,6 +52,28 @@ export const authService = {
       return data;
     } catch (error) {
       throw new Error(error.message || "Lỗi kết nối đăng nhập");
+    }
+  },
+
+  loginAdmin: async (credentials) => {
+    try {
+      const response = await fetch(`${AUTH_API_URL}/admin-login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(credentials),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.message || "Đăng nhập quản trị thất bại");
+      }
+
+      return data;
+    } catch (error) {
+      throw new Error(error.message || "Lỗi kết nối đăng nhập quản trị");
     }
   },
 
@@ -79,7 +99,6 @@ export const authService = {
     }
   },
 
-  // Đặt lại mật khẩu (PHẦN THÊM MỚI ĐỂ FIX LỖI)
   resetPassword: async (resetData) => {
     try {
       const response = await fetch(`${AUTH_API_URL}/reset-password`, {
@@ -87,7 +106,7 @@ export const authService = {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(resetData), // Gửi object chứa email và newPassword
+        body: JSON.stringify(resetData),
       });
 
       const data = await response.json();
@@ -102,7 +121,6 @@ export const authService = {
     }
   },
 
-  // Lấy thông tin user hiện tại
   getCurrentUser: async (token) => {
     try {
       const response = await fetch(`${AUTH_API_URL}/me`, {

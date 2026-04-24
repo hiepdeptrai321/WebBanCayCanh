@@ -17,9 +17,9 @@ db.users.insertMany([
   {
     _id: ObjectId("65f000000000000000000001"),
     fullName: "Quản trị viên Hiệp Garden",
+    username: "admin",
     email: "admin@hiepgarden.vn",
-    passwordHash:
-      "$2b$10$adminseedhashxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    passwordHash: "$2b$10$9fqDcSro0F233k4njYI0wuG9E9thcy/eD7TV5AoNZmb7r9gI6s9Sy",
     phone: "0909000001",
     role: "admin",
     status: "active",

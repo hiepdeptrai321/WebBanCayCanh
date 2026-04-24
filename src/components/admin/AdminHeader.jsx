@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-import { logoutAdmin } from '../../services/adminAuth'
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 function AdminHeader({ pageTitle, onMenuToggle }) {
-  const navigate = useNavigate()
+  const { logout } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    logoutAdmin()
-    navigate('/admin/login', { replace: true })
-  }
+    logout();
+    navigate("/admin/login", { replace: true });
+  };
 
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
@@ -20,11 +20,15 @@ function AdminHeader({ pageTitle, onMenuToggle }) {
             className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition hover:bg-slate-100 lg:hidden"
             aria-label="Mở menu"
           >
-            <span className="text-xl leading-none">☰</span>
+            <span className="text-xl leading-none">&#9776;</span>
           </button>
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Bảng quản trị</p>
-            <h1 className="text-lg font-semibold text-slate-900">{pageTitle}</h1>
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
+              Bảng quản trị
+            </p>
+            <h1 className="text-lg font-semibold text-slate-900">
+              {pageTitle}
+            </h1>
           </div>
         </div>
 
@@ -45,7 +49,7 @@ function AdminHeader({ pageTitle, onMenuToggle }) {
         </div>
       </div>
     </header>
-  )
+  );
 }
 
-export default AdminHeader
+export default AdminHeader;
