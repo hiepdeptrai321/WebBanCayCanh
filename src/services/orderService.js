@@ -145,6 +145,10 @@ export async function createOrder(orderData) {
   return response
 }
 
+export async function getOrderPaymentStatus(id) {
+  return fetchJson(`/orders/${id}/payment-status`)
+}
+
 export async function updateOrderStatus(id, nextStatusLabel) {
   const status = ORDER_STATUS_CODES[nextStatusLabel] || nextStatusLabel
 
