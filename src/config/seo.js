@@ -1,10 +1,10 @@
 const rawSiteUrl =
   import.meta.env.VITE_SITE_URL ||
   import.meta.env.VITE_PUBLIC_SITE_URL ||
-  "https://gocxanh.app";
+  "https://www.gocxanh.app";
 
 function normalizeSiteUrl(value) {
-  return String(value || "https://gocxanh.app").replace(/\/+$/, "");
+  return String(value || "https://www.gocxanh.app").replace(/\/+$/, "");
 }
 
 export const SITE_SEO = {

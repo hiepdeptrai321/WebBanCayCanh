@@ -8,4 +8,4 @@ Disallow: /login
 Disallow: /register
 Disallow: /test-counter
 
-Sitemap: https://gocxanh.app/sitemap.xml
+Sitemap: https://www.gocxanh.app/sitemap.xml
