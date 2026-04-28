@@ -9,13 +9,14 @@ import {
   normalizeProducts,
 } from "../../utils/productListingHelpers";
 
-import TopPage from "../../components/products/TopPage";
+import ShopPageHeader from "../../components/products/ShopPageHeader";
 import ProductsFilterSidebar from "../../components/products/ProductsFilterSidebar";
 import ProductsToolbar from "../../components/products/ProductsToolbar";
 import ProductsActiveFilters from "../../components/products/ProductsActiveFilters";
 import ProductsGrid from "../../components/products/ProductsGrid";
 import ProductsSkeleton from "../../components/products/ProductsSkeleton";
 import ProductsEmptyState from "../../components/products/ProductsEmptyState";
+import headerPlantImage from "../../assets/images/homeBackground.jpeg";
 
 
 
@@ -144,48 +145,66 @@ function ProductsPage() {
     const start = (currentPage - 1) * ITEMS_PER_PAGE;
     return filteredProducts.slice(start, start + ITEMS_PER_PAGE);
   }, [filteredProducts, currentPage]);
+  const hasActiveFilters =
+    searchKeyword !== "" ||
+    selectedCategory !== "all" ||
+    priceRange[0] !== 0 ||
+    priceRange[1] !== priceBounds[1] ||
+    inStockOnly ||
+    onSaleOnly;
 
   return (
-    <section className="bg-[#f7fbf6] pb-16 min-h-screen">
-      <TopPage />
-      <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+    <section className="min-h-screen bg-[#f7fbf6] pb-16 pt-10 sm:pt-12 lg:pt-14">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <ShopPageHeader
+          title="Tất cả sản phẩm"
+          subtitle="Khám phá bộ sưu tập cây cảnh phù hợp với mọi không gian sống."
+          breadcrumbItems={[
+            { label: "Trang chủ", to: "/" },
+            { label: "Sản phẩm" },
+          ]}
+          decorativeImage={headerPlantImage}
+          rightContent={
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#0FA34A]/15 bg-white/80 px-3.5 py-2 text-sm font-semibold text-[#0F7F3A] backdrop-blur">
+              <span className="h-2 w-2 rounded-full bg-[#0FA34A]" />
+              {loading ? "Đang tải..." : `${products.length} sản phẩm`}
+            </div>
+          }
+        />
+
         {error ? (
-          <div className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+          <div className="mt-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
             {error}
           </div>
         ) : null}
 
+        {hasActiveFilters ? (
+          <div className="mt-6">
+            <ProductsActiveFilters
+              searchKeyword={searchKeyword}
+              onClearSearch={() => updateUrl("search", "")}
+              categoryName={categoryMap[selectedCategory]?.name || ""}
+              onClearCategory={() => updateUrl("category", "all")}
+              priceRange={priceRange}
+              onClearPrice={() => setPriceRange([0, priceBounds[1]])}
+              inStockOnly={inStockOnly}
+              onClearInStock={() => {
+                setInStockOnly(false);
+                searchParams.delete("stock");
+                setSearchParams(searchParams);
+              }}
+              onSaleOnly={onSaleOnly}
+              onClearOnSale={() => {
+                setOnSaleOnly(false);
+                searchParams.delete("sale");
+                setSearchParams(searchParams);
+              }}
+              hasFilters={hasActiveFilters}
+            />
+          </div>
+        ) : null}
 
-        <ProductsActiveFilters
-          searchKeyword={searchKeyword}
-          onClearSearch={() => updateUrl("search", "")}
-          categoryName={categoryMap[selectedCategory]?.name || ""}
-          onClearCategory={() => updateUrl("category", "all")}
-          priceRange={priceRange}
-          onClearPrice={() => setPriceRange([0, priceBounds[1]])}
-          inStockOnly={inStockOnly}
-          onClearInStock={() => {
-            setInStockOnly(false);
-            searchParams.delete("stock");
-            setSearchParams(searchParams);
-          }}
-          onSaleOnly={onSaleOnly}
-          onClearOnSale={() => {
-            setOnSaleOnly(false);
-            searchParams.delete("sale");
-            setSearchParams(searchParams);
-          }}
-          hasFilters={
-            searchKeyword !== "" ||
-            selectedCategory !== "all" ||
-            priceRange[0] !== 0 ||
-            priceRange[1] !== priceBounds[1] ||
-            inStockOnly ||
-            onSaleOnly
-          }
-        />
-
-        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
+        <div className="mt-7 grid grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
           <aside className="hidden lg:block">
             <ProductsFilterSidebar
               categories={categories}
@@ -205,6 +224,7 @@ function ProductsPage() {
                 setSortValue(val);
                 updateUrl("sort", val);
               }}
+              visibleCount={paginatedProducts.length}
               totalCount={filteredProducts.length}
             />
 

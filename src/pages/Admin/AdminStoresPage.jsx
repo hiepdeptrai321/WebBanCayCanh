@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { toast } from 'react-toastify'
 import {
   createBranch,
   deleteBranch,
@@ -6,6 +7,7 @@ import {
   updateBranch,
   updateStoreProfile,
 } from '../../services/storeService'
+import { showConfirmToast } from '../../utils/toastNotifications'
 
 const defaultBranchValues = {
   name: '',
@@ -53,8 +55,11 @@ function AdminStoresPage() {
       const savedStore = await updateStoreProfile(store)
       setStore(savedStore)
       setPageError('')
+      toast.success('Đã lưu thông tin cửa hàng.')
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Không thể cập nhật cửa hàng.')
+      const message = error instanceof Error ? error.message : 'Không thể cập nhật cửa hàng.'
+      setPageError(message)
+      toast.error(message)
     }
   }
 
@@ -66,6 +71,7 @@ function AdminStoresPage() {
     event.preventDefault()
 
     try {
+      const successMessage = editingBranchId ? 'Cập nhật chi nhánh thành công.' : 'Thêm chi nhánh thành công.'
       const savedStore = editingBranchId
         ? await updateBranch(editingBranchId, branchValues)
         : await createBranch(branchValues)
@@ -74,8 +80,11 @@ function AdminStoresPage() {
       setBranchValues(defaultBranchValues)
       setEditingBranchId(null)
       setPageError('')
+      toast.success(successMessage)
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Không thể lưu chi nhánh.')
+      const message = error instanceof Error ? error.message : 'Không thể lưu chi nhánh.'
+      setPageError(message)
+      toast.error(message)
     }
   }
 
@@ -85,7 +94,13 @@ function AdminStoresPage() {
   }
 
   const handleDeleteBranch = async (branch) => {
-    if (!window.confirm(`Bạn có chắc muốn xóa chi nhánh "${branch.name}"?`)) {
+    const confirmed = await showConfirmToast({
+      message: `Bạn có chắc muốn xóa chi nhánh "${branch.name}"?`,
+      confirmText: 'Xóa',
+      cancelText: 'Hủy',
+    })
+
+    if (!confirmed) {
       return
     }
 
@@ -97,8 +112,11 @@ function AdminStoresPage() {
         setBranchValues(defaultBranchValues)
       }
       setPageError('')
+      toast.success('Đã xóa chi nhánh.')
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Không thể xóa chi nhánh.')
+      const message = error instanceof Error ? error.message : 'Không thể xóa chi nhánh.'
+      setPageError(message)
+      toast.error(message)
     }
   }
 

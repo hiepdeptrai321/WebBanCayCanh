@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { Mail, Lock, ArrowLeft, ShieldCheck, Eye, EyeOff } from "lucide-react";
+import { toast } from "react-toastify";
 
 export default function ForgotPasswordForm() {
   const { setModalTab, resetPassword } = useAuth();
@@ -35,7 +36,7 @@ export default function ForgotPasswordForm() {
   const handleResetPassword = async (e) => {
     e.preventDefault();
     if (formData.newPassword !== formData.confirmPassword) {
-      alert("Mật khẩu xác nhận không khớp!");
+      toast.error("Mật khẩu xác nhận không khớp!");
       return;
     }
 
@@ -47,7 +48,6 @@ export default function ForgotPasswordForm() {
       });
     } catch (error) {
       console.error("Lỗi kết nối:", error);
-      alert(error.message);
     } finally {
       setLoading(false);
     }

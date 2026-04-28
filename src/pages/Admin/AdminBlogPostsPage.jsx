@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { toast } from 'react-toastify'
 import {
   createBlogPost,
   deleteBlogPost,
@@ -6,6 +7,7 @@ import {
   toggleBlogPostStatus,
   updateBlogPost,
 } from '../../services/blogPostService'
+import { showConfirmToast } from '../../utils/toastNotifications'
 
 const defaultValues = {
   title: '',
@@ -77,6 +79,8 @@ function AdminBlogPostsPage() {
     }
 
     try {
+      const successMessage = editingId ? 'Cập nhật bài viết thành công.' : 'Tạo bài viết thành công.'
+
       if (editingId) {
         const saved = await updateBlogPost(editingId, payload)
         setPosts((prev) => prev.map((item) => (item.id === editingId ? saved : item)))
@@ -89,21 +93,33 @@ function AdminBlogPostsPage() {
       setEditingId(null)
       setValues(defaultValues)
       setPageError('')
+      toast.success(successMessage)
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Không thể lưu bài viết.')
+      const message = error instanceof Error ? error.message : 'Không thể lưu bài viết.'
+      setPageError(message)
+      toast.error(message)
     }
   }
 
   const handleDelete = async (post) => {
-    if (!window.confirm(`Bạn có chắc muốn xóa bài viết "${post.title}"?`)) {
+    const confirmed = await showConfirmToast({
+      message: `Bạn có chắc muốn xóa bài viết "${post.title}"?`,
+      confirmText: 'Xóa',
+      cancelText: 'Hủy',
+    })
+
+    if (!confirmed) {
       return
     }
 
     try {
       await deleteBlogPost(post.id)
       setPosts((prev) => prev.filter((item) => item.id !== post.id))
+      toast.success('Đã xóa bài viết.')
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Không thể xóa bài viết.')
+      const message = error instanceof Error ? error.message : 'Không thể xóa bài viết.'
+      setPageError(message)
+      toast.error(message)
     }
   }
 
@@ -111,8 +127,11 @@ function AdminBlogPostsPage() {
     try {
       const updated = await toggleBlogPostStatus(post.id)
       setPosts((prev) => prev.map((item) => (item.id === post.id ? updated : item)))
+      toast.success('Đã cập nhật trạng thái bài viết.')
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Không thể đổi trạng thái bài viết.')
+      const message = error instanceof Error ? error.message : 'Không thể đổi trạng thái bài viết.'
+      setPageError(message)
+      toast.error(message)
     }
   }
 

@@ -1,11 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { API_BASE_URL, getAllProducts, getProductById, getReviewsByProduct } from "../../services/productService";
 import { useCart } from "../../context/CartContext";
 
-import TopDetailPage from "../../components/products/TopDetailPage";
-import ProductBreadcrumbs from "../../components/products/detail/ProductBreadcrumbs";
 import ProductDetailSkeleton from "../../components/products/detail/ProductDetailSkeleton";
 import ProductDetailTabs from "../../components/products/detail/ProductDetailTabs";
 import ProductHighlights from "../../components/products/detail/ProductHighlights";
@@ -55,6 +54,7 @@ function ProductDetailPage() {
 
     const stockQuantity = Number(product?.stockQuantity ?? 0);
     const isInStock = stockQuantity > 0;
+    const productTitle = product?.name || "Chi tiết sản phẩm";
 
     const specs = useMemo(() => {
         if (!product) return [];
@@ -170,8 +170,22 @@ function ProductDetailPage() {
             quantity
         );
 
-        alert(`Đã thêm ${quantity} "${product.name}" vào giỏ hàng!`);
+        toast.success(`Đã thêm ${quantity} "${product.name}" vào giỏ hàng!`);
     };
+
+    const renderBreadcrumbs = (currentLabel = productTitle) => (
+        <nav className="mb-6 flex flex-wrap items-center gap-2 text-sm font-medium text-[#6B7A72]">
+            <Link to="/" className="transition hover:text-[#0FA34A]">
+                Trang chủ
+            </Link>
+            <span className="text-[#9eaca5]">/</span>
+            <Link to="/products" className="transition hover:text-[#0FA34A]">
+                Sản phẩm
+            </Link>
+            <span className="text-[#9eaca5]">/</span>
+            <span className="font-semibold text-[#173B2E]">{currentLabel}</span>
+        </nav>
+    );
 
     if (loading) {
         return <ProductDetailSkeleton />;
@@ -179,10 +193,11 @@ function ProductDetailPage() {
 
     if (error) {
         return (
-            <div className="bg-[#f7f8f4]">
-                <TopDetailPage />
-                <section className="mx-auto max-w-7xl px-4 py-20 text-center md:px-6 lg:px-8">
-                    <div className="mx-auto max-w-xl rounded-[28px] border border-red-100 bg-white p-10 shadow-sm">
+            <div className="min-h-screen bg-[#f7f8f4]">
+                <section className="mx-auto max-w-7xl px-4 pb-20 pt-10 md:px-6 md:pt-12 lg:px-8 lg:pt-14">
+                    {renderBreadcrumbs("Chi tiết")}
+
+                    <div className="mx-auto max-w-xl rounded-[28px] border border-red-100 bg-white p-10 text-center shadow-sm">
                         <p className="text-lg font-semibold text-red-500">{error}</p>
                         <p className="mt-3 text-gray-500">Vui lòng thử lại sau hoặc kiểm tra lại đường dẫn sản phẩm.</p>
                         <Link
@@ -199,10 +214,11 @@ function ProductDetailPage() {
 
     if (!product) {
         return (
-            <div className="bg-[#f7f8f4]">
-                <TopDetailPage />
-                <section className="mx-auto max-w-7xl px-4 py-20 text-center md:px-6 lg:px-8">
-                    <div className="mx-auto max-w-xl rounded-[28px] bg-white p-10 shadow-sm">
+            <div className="min-h-screen bg-[#f7f8f4]">
+                <section className="mx-auto max-w-7xl px-4 pb-20 pt-10 md:px-6 md:pt-12 lg:px-8 lg:pt-14">
+                    {renderBreadcrumbs("Không tìm thấy")}
+
+                    <div className="mx-auto max-w-xl rounded-[28px] bg-white p-10 text-center shadow-sm">
                         <p className="text-lg font-semibold text-[#163020]">Không tìm thấy sản phẩm.</p>
                         <Link
                             to="/products"
@@ -218,10 +234,8 @@ function ProductDetailPage() {
 
     return (
         <div className="bg-[#f7f8f4] text-[#1d2a1f]">
-            <TopDetailPage />
-
-            <section className="mx-auto max-w-7xl px-4 py-8 md:px-6 lg:px-8">
-                <ProductBreadcrumbs productName={product.name} />
+            <section className="mx-auto max-w-7xl px-4 pb-8 pt-10 md:px-6 md:pt-12 lg:px-8 lg:pt-14">
+                {renderBreadcrumbs()}
 
                 <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
                     <ProductImageGallery
