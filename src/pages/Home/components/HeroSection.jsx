@@ -18,13 +18,8 @@ function Counter({
 
   useEffect(() => {
     if (isInView) {
-      console.log(
-        `🎯 Counter ${value} is in view, starting animation with delay ${delay}s`,
-      );
       setIsAnimating(true);
       const timeout = setTimeout(() => {
-        console.log(`🚀 Starting counter animation for value: ${value}`);
-
         let startTime = null;
         const startValue = 0;
         const endValue = value;
@@ -50,7 +45,6 @@ function Counter({
           if (progress < 1) {
             requestAnimationFrame(animateCounter);
           } else {
-            console.log(`✅ Counter animation completed for value: ${value}`);
             setIsAnimating(false);
           }
         };

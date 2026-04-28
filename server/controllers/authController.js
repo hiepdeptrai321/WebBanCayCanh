@@ -522,9 +522,6 @@ export const resetPassword = async (req, res) => {
       return res.status(400).json({ message: "Mật khẩu mới phải có ít nhất 6 ký tự" });
     }
 
-    console.log("--- Bắt đầu Reset Password ---");
-    console.log("Email nhận được:", normalizedEmail);
-
     const salt = await bcrypt.genSalt(10);
     const hashedNewPassword = await bcrypt.hash(normalizedNewPassword, salt);
 
@@ -536,11 +533,8 @@ export const resetPassword = async (req, res) => {
     );
 
     if (result) {
-      console.log("Cập nhật thành công vào DB cho User:", result.email);
-      console.log("Hash mới trong DB:", result.passwordHash);
       return res.status(200).json({ message: "Thành công!" });
     } else {
-      console.log("KHÔNG TÌM THẤY USER VỚI EMAIL NÀY");
       return res.status(404).json({ message: "Email không tồn tại" });
     }
   } catch (err) {

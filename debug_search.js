@@ -1,6 +1,3 @@
-// Script để debug tìm kiếm
-// Chạy trong console DevTools để kiểm tra
-
 const testProducts = [
   {
     name: "Sen đá mix chậu sứ",
@@ -17,28 +14,16 @@ const testProducts = [
 const searchKeyword = "sen đá";
 const normalizedSearch = searchKeyword.trim().toLowerCase();
 
-console.log("🔍 Tìm kiếm:", normalizedSearch);
-console.log("📦 Tổng sản phẩm:", testProducts.length);
-
 const result = testProducts.filter((product) => {
   const name = String(product.name || "").toLowerCase();
   const categoryName = String(product.categoryName || "").toLowerCase();
   const shortDescription = String(product.shortDescription || "").toLowerCase();
 
-  const matches =
+  return (
     name.includes(normalizedSearch) ||
     categoryName.includes(normalizedSearch) ||
-    shortDescription.includes(normalizedSearch);
-
-  console.log(`
-    Sản phẩm: ${product.name}
-    - Name include: ${name.includes(normalizedSearch)}
-    - Category include: ${categoryName.includes(normalizedSearch)}
-    - Description include: ${shortDescription.includes(normalizedSearch)}
-    - Match: ${matches}
-  `);
-
-  return matches;
+    shortDescription.includes(normalizedSearch)
+  );
 });
 
-console.log("✅ Kết quả:", result);
+export default result;

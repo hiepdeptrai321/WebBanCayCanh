@@ -24,11 +24,12 @@ function RelatedProducts({ relatedProducts, fallbackCategoryName }) {
         {relatedProducts.map((item) => {
           const itemImage = getProductImage(item);
           const sale = item?.discountPrice > 0 ? item.discountPrice : item.price;
+          const productPath = `/products/${item.slug || item._id}`;
 
           return (
             <Link
               key={item._id}
-              to={`/products/${item._id}`}
+              to={productPath}
               className="group overflow-hidden rounded-[28px] border border-[#e4eadf] bg-white shadow-[0_14px_40px_rgba(20,45,30,0.06)] transition hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(20,45,30,0.1)]"
             >
               <div className="overflow-hidden">

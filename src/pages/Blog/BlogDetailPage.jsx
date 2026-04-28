@@ -1,6 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getAllBlogPosts, getBlogPostBySlug } from "../../services/blogService";
+import Seo from "../../components/common/Seo";
+import {
+    absoluteUrl,
+    buildBreadcrumbSchema,
+    SITE_SEO,
+    truncateText,
+} from "../../config/seo";
 
 function normalizePost(post) {
     return {
@@ -89,6 +96,61 @@ function BlogDetailPage() {
         return splitParagraphs(post.content || post.summary);
     }, [post]);
 
+    const postCanonicalPath = useMemo(
+        () => `/blog/${post?.slug || slug}`,
+        [post?.slug, slug]
+    );
+
+    const postDescription = useMemo(() => {
+        if (!post) {
+            return "Bài viết kiến thức cây cảnh từ Góc Xanh.";
+        }
+
+        return truncateText(
+            post.summary || post.content || `Đọc bài viết ${post.title} từ Góc Xanh.`
+        );
+    }, [post]);
+
+    const postImage = post?.thumbnail || SITE_SEO.defaultImage;
+
+    const postJsonLd = useMemo(() => {
+        if (!post) {
+            return [];
+        }
+
+        return [
+            {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                headline: post.title,
+                description: postDescription,
+                image: [absoluteUrl(postImage)],
+                datePublished: post.publishedAt || undefined,
+                author: {
+                    "@type": "Person",
+                    name: post.authorName,
+                },
+                publisher: {
+                    "@type": "Organization",
+                    name: SITE_SEO.siteName,
+                    logo: {
+                        "@type": "ImageObject",
+                        url: absoluteUrl(SITE_SEO.defaultImage),
+                    },
+                },
+                mainEntityOfPage: {
+                    "@type": "WebPage",
+                    "@id": absoluteUrl(postCanonicalPath),
+                },
+            },
+            buildBreadcrumbSchema([
+                { name: "Trang chủ", path: "/" },
+                { name: "Kiến thức", path: "/blog" },
+                { name: post.title, path: postCanonicalPath },
+            ]),
+        ];
+    }, [post, postDescription, postImage, postCanonicalPath]);
+
     if (loading) {
         return (
             <section className="mx-auto max-w-5xl px-4 py-16">
@@ -126,6 +188,17 @@ function BlogDetailPage() {
     }
 
     return (
+        <>
+        <Seo
+            title={post.title}
+            description={postDescription}
+            canonicalPath={postCanonicalPath}
+            image={postImage}
+            type="article"
+            jsonLd={postJsonLd}
+            publishedTime={post.publishedAt}
+            author={post.authorName}
+        />
         <div className="min-h-screen bg-[#f8f6f0] text-[#1f2a21]">
             <section className="border-y border-[#d7d2c4] bg-[#fdfbf5] px-4 py-8">
                 <div className="mx-auto max-w-6xl">
@@ -239,6 +312,7 @@ function BlogDetailPage() {
                 </div>
             </section>
         </div>
+        </>
     );
 }
 

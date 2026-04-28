@@ -101,18 +101,6 @@ export function applyProductFilters(products, filters) {
   // 3. Lọc theo từ khóa tìm kiếm (Tên, Danh mục, Mô tả ngắn)
   const normalizedSearch = searchKeyword.trim().toLowerCase();
   if (normalizedSearch) {
-    console.log(
-      `🔎 Trước khi lọc từ khóa "${searchKeyword}":`,
-      result.length,
-      "sản phẩm",
-    );
-    console.log(
-      "📝 Ví dụ sản phẩm:",
-      result
-        .slice(0, 3)
-        .map((p) => ({ name: p.name, desc: p.shortDescription })),
-    );
-
     result = result.filter((product) => {
       const name = String(product.name || "").toLowerCase();
       const categoryName = String(product.categoryName || "").toLowerCase();
@@ -126,8 +114,6 @@ export function applyProductFilters(products, filters) {
         shortDescription.includes(normalizedSearch)
       );
     });
-
-    console.log(`✅ Sau khi lọc từ khóa:`, result.length, "sản phẩm");
   }
 
   // 4. Lọc trạng thái kho hàng

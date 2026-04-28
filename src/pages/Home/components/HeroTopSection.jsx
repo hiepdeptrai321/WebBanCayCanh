@@ -11,11 +11,8 @@ export default function HeroTopSection() {
     e.preventDefault();
     const trimmedInput = searchInput.trim();
     if (trimmedInput) {
-      console.log("🔍 Tìm kiếm:", trimmedInput);
       // Điều hướng đến trang sản phẩm với tham số tìm kiếm
       navigate(`/products?search=${encodeURIComponent(trimmedInput)}`);
-    } else {
-      console.log("⚠️ Vui lòng nhập từ khóa tìm kiếm");
     }
   };
 

@@ -4,11 +4,12 @@ import { formatPrice } from "../../utils/productListingHelpers";
 function ProductCardPro({ product, categoryName = "Cây cảnh" }) {
   const isOutOfStock = Number(product.stockQuantity || 0) <= 0;
   const hasDiscount = Number(product.discountPercent || 0) > 0;
+  const productPath = `/products/${product.slug || product._id}`;
 
   return (
     <article className="group overflow-hidden rounded-[30px] border border-green-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-green-200 hover:shadow-xl">
       <div className="relative overflow-hidden bg-green-50/70">
-        <Link to={`/products/${product._id}`} className="block aspect-[4/4.2] overflow-hidden">
+        <Link to={productPath} className="block aspect-[4/4.2] overflow-hidden">
           {product.imageUrl ? (
             <img
               src={product.imageUrl}
@@ -46,7 +47,7 @@ function ProductCardPro({ product, categoryName = "Cây cảnh" }) {
             {categoryName}
           </p>
           <h3 className="line-clamp-2 min-h-[3.5rem] text-lg font-semibold leading-7 text-gray-800">
-            <Link to={`/products/${product._id}`} className="transition hover:text-green-600">
+            <Link to={productPath} className="transition hover:text-green-600">
               {product.name}
             </Link>
           </h3>
@@ -66,7 +67,7 @@ function ProductCardPro({ product, categoryName = "Cây cảnh" }) {
           </div>
 
           <Link
-            to={`/products/${product._id}`}
+            to={productPath}
             className="inline-flex items-center rounded-full border border-green-200 px-4 py-2 text-sm font-medium text-green-700 transition hover:border-green-600 hover:bg-green-50 hover:text-green-800"
           >
             Xem chi tiết
