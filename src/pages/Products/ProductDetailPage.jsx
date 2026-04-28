@@ -4,6 +4,13 @@ import { toast } from "react-toastify";
 
 import { API_BASE_URL, getAllProducts, getProductById, getReviewsByProduct } from "../../services/productService";
 import { useCart } from "../../context/CartContext";
+import Seo from "../../components/common/Seo";
+import {
+    absoluteUrl,
+    buildBreadcrumbSchema,
+    SITE_SEO,
+    truncateText,
+} from "../../config/seo";
 
 import ProductDetailSkeleton from "../../components/products/detail/ProductDetailSkeleton";
 import ProductDetailTabs from "../../components/products/detail/ProductDetailTabs";
@@ -87,6 +94,86 @@ function ProductDetailPage() {
         return total / reviews.length;
     }, [reviews]);
 
+    const productCanonicalPath = useMemo(
+        () => `/products/${product?.slug || id}`,
+        [product?.slug, id]
+    );
+
+    const productDescription = useMemo(() => {
+        if (!product) {
+            return "Thông tin chi tiết sản phẩm cây cảnh tại Góc Xanh.";
+        }
+
+        return truncateText(
+            product.shortDescription ||
+                product.description ||
+                `Mua ${product.name} tại Góc Xanh với tư vấn chăm sóc cây tận tâm.`
+        );
+    }, [product]);
+
+    const productJsonLd = useMemo(() => {
+        if (!product) {
+            return [];
+        }
+
+        const productImages = images
+            .map((item) => item.url)
+            .filter(Boolean)
+            .map(absoluteUrl);
+
+        const productSchema = {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: productTitle,
+            image: productImages.length ? productImages : [absoluteUrl(SITE_SEO.defaultImage)],
+            description: productDescription,
+            sku: product.sku || product._id,
+            category: categoryName,
+            brand: {
+                "@type": "Brand",
+                name: SITE_SEO.siteName,
+            },
+            offers: {
+                "@type": "Offer",
+                url: absoluteUrl(productCanonicalPath),
+                priceCurrency: "VND",
+                price: String(finalPrice || product.price || 0),
+                availability: isInStock
+                    ? "https://schema.org/InStock"
+                    : "https://schema.org/OutOfStock",
+                itemCondition: "https://schema.org/NewCondition",
+            },
+        };
+
+        if (averageRating > 0 && reviews.length > 0) {
+            productSchema.aggregateRating = {
+                "@type": "AggregateRating",
+                ratingValue: Number(averageRating.toFixed(1)),
+                reviewCount: reviews.length,
+            };
+        }
+
+        return [
+            productSchema,
+            buildBreadcrumbSchema([
+                { name: "Trang chủ", path: "/" },
+                { name: "Sản phẩm", path: "/products" },
+                { name: productTitle, path: productCanonicalPath },
+            ]),
+        ];
+    }, [
+        product,
+        images,
+        productTitle,
+        productDescription,
+        categoryName,
+        productCanonicalPath,
+        finalPrice,
+        isInStock,
+        averageRating,
+        reviews.length,
+    ]);
+
     useEffect(() => {
         if (!images.length) {
             setSelectedImage("");
@@ -112,7 +199,7 @@ function ProductDetailPage() {
                     getProductById(id),
                     fetch(`${API_BASE_URL}/categories`),
                     getReviewsByProduct(id).catch(() => []),
-                    getAllProducts().catch(() => []),
+                    getAllProducts({ featured: false, limit: 0 }).catch(() => []),
                 ]);
 
                 setProduct(productData);
@@ -233,6 +320,15 @@ function ProductDetailPage() {
     }
 
     return (
+        <>
+        <Seo
+            title={`${productTitle} - Cây cảnh`}
+            description={productDescription}
+            canonicalPath={productCanonicalPath}
+            image={selectedImage || getProductImage(product)}
+            type="product"
+            jsonLd={productJsonLd}
+        />
         <div className="bg-[#f7f8f4] text-[#1d2a1f]">
             <section className="mx-auto max-w-7xl px-4 pb-8 pt-10 md:px-6 md:pt-12 lg:px-8 lg:pt-14">
                 {renderBreadcrumbs()}
@@ -282,6 +378,7 @@ function ProductDetailPage() {
 
             <RelatedProducts relatedProducts={relatedProducts} fallbackCategoryName={categoryName} />
         </div>
+        </>
     );
 }
 

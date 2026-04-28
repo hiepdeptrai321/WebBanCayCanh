@@ -78,7 +78,6 @@ function ProductsPage() {
         if (productResult.status !== "fulfilled") throw productResult.reason;
 
         const normalized = normalizeProducts(productResult.value || []);
-        console.log("1. Dữ liệu sau chuẩn hóa:", normalized); // <--- THÊM DÒNG NÀY
         setProducts(normalized);
 
         // Tính toán khoảng giá lớn nhất
@@ -114,9 +113,6 @@ function ProductsPage() {
 
   // --- LOGIC LỌC CHÍNH ---
   const filteredProducts = useMemo(() => {
-    console.log("📊 Products array khi lọc:", products.length, "sản phẩm");
-    console.log("🔍 Từ khóa tìm:", searchKeyword);
-
     const result = applyProductFilters(products, {
       selectedCategory,
       priceRange,
@@ -125,11 +121,6 @@ function ProductsPage() {
       inStockOnly,
       onSaleOnly,
     });
-
-    // Log ngay tại đây để kiểm tra lúc đang lọc
-    console.log("--- DEBUG FILTER ---");
-    console.log("2. Từ khóa đang tìm:", searchKeyword);
-    console.log("3. Kết quả sau khi lọc:", result);
 
     return result;
   }, [

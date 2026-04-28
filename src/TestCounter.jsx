@@ -10,11 +10,8 @@ function TestCounter({ value, duration = 2, delay = 0 }) {
 
   useEffect(() => {
     if (isInView) {
-      console.log(`🎯 Test Counter ${value} is in view`);
       setIsAnimating(true);
       const timeout = setTimeout(() => {
-        console.log(`🚀 Starting test counter animation for value: ${value}`);
-
         let startTime = null;
         const startValue = 0;
         const endValue = value;
@@ -35,9 +32,6 @@ function TestCounter({ value, duration = 2, delay = 0 }) {
           if (progress < 1) {
             requestAnimationFrame(animateCounter);
           } else {
-            console.log(
-              `✅ Test counter animation completed for value: ${value}`,
-            );
             setIsAnimating(false);
           }
         };
@@ -84,7 +78,7 @@ export default function TestPage() {
       </div>
       <div className="mt-16 p-8 bg-yellow-100 rounded-lg">
         <h3 className="text-xl font-bold mb-4">Debug Info:</h3>
-        <p>Open browser console (F12) to see animation logs</p>
+        <p>Scroll down to see the counter animation state update.</p>
         <p>Scroll down to trigger animations</p>
       </div>
     </div>

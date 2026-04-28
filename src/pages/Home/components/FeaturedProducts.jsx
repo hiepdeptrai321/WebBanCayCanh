@@ -16,7 +16,7 @@ function mapProductToCard(product) {
     : null;
 
   return {
-    id: product?._id,
+    id: product?.slug || product?._id,
     image,
     name: product?.name || "Sản phẩm",
     price: formatCurrency(finalPrice),
