@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
+import { toast } from 'react-toastify'
 import ReviewsTable from '../../components/admin/reviews/ReviewsTable'
 import { deleteReview, getAllReviews, toggleReviewStatus } from '../../services/reviewService'
+import { showConfirmToast } from '../../utils/toastNotifications'
 
 const statusOptions = ['Tất cả', 'Hiển thị', 'Ẩn']
 const ratingOptions = ['Tất cả', '5 sao', '4 sao', '3 sao', '2 sao', '1 sao']
@@ -53,13 +55,20 @@ function AdminReviewsPage() {
       )
 
       setPageError('')
+      toast.success('Đã cập nhật trạng thái đánh giá.')
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Cập nhật trạng thái đánh giá thất bại.')
+      const message = error instanceof Error ? error.message : 'Cập nhật trạng thái đánh giá thất bại.'
+      setPageError(message)
+      toast.error(message)
     }
   }
 
   const handleDeleteReview = async (review) => {
-    const confirmed = window.confirm(`Bạn có chắc muốn xóa đánh giá của "${review.user}" cho sản phẩm "${review.product}"?`)
+    const confirmed = await showConfirmToast({
+      message: `Bạn có chắc muốn xóa đánh giá của "${review.user}" cho sản phẩm "${review.product}"?`,
+      confirmText: 'Xóa',
+      cancelText: 'Hủy',
+    })
 
     if (!confirmed) {
       return
@@ -74,8 +83,11 @@ function AdminReviewsPage() {
       }
 
       setPageError('')
+      toast.success('Đã xóa đánh giá.')
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Xóa đánh giá thất bại.')
+      const message = error instanceof Error ? error.message : 'Xóa đánh giá thất bại.'
+      setPageError(message)
+      toast.error(message)
     }
   }
 

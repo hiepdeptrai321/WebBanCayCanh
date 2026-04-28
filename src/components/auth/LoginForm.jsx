@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff, Lock, Mail, RefreshCw } from "lucide-react";
+import { toast } from "react-toastify";
 import { useAuth } from "../../context/AuthContext";
 import GoogleGmailLogin from "./GoogleGmailLogin";
 
@@ -41,7 +42,7 @@ export default function LoginForm() {
     event.preventDefault();
 
     if (userCaptcha !== captchaCode) {
-      alert("Mã xác nhận CAPTCHA không chính xác!");
+      toast.error("Mã xác nhận CAPTCHA không chính xác!");
       return;
     }
 
@@ -49,8 +50,7 @@ export default function LoginForm() {
 
     try {
       await login(formData);
-    } catch (error) {
-      alert(error.message || "Đăng nhập thất bại. Vui lòng kiểm tra lại!");
+    } catch {
       generateCaptcha();
     } finally {
       setLoading(false);

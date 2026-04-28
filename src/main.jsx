@@ -3,13 +3,23 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
-import { Toaster } from "react-hot-toast";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <App />
-      <Toaster position="top-center" />
+      <ToastContainer
+        position="top-right"
+        autoClose={2800}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        pauseOnFocusLoss
+        pauseOnHover
+        theme="light"
+      />
     </AuthProvider>
   </StrictMode>,
 );

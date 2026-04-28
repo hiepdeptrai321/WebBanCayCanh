@@ -24,10 +24,10 @@ function HeaderMain() {
             className="group inline-flex items-center justify-center rounded-md p-3 hover:bg-green-50 transition-colors duration-300"
             aria-label="Mở menu"
           >
-            <span className="relative block h-5 w-9">
-              <span style={{ height: '2px', top: '1px' }} className="absolute left-0 w-9 rounded-full bg-gray-700 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-green-600" />
-              <span style={{ height: '2px', top: '9px' }} className="absolute left-1/2 w-6 -translate-x-1/2 rounded-full bg-gray-700 transition-all duration-300 group-hover:left-0 group-hover:w-9 group-hover:translate-x-0 group-hover:bg-green-600" />
-              <span style={{ height: '2px', top: '17px' }} className="absolute left-0 w-9 rounded-full bg-gray-700 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-green-600" />
+            <span className="relative block h-[18px] w-9">
+              <span className="absolute left-0 top-0 h-[2.25px] w-9 rounded-full bg-gray-700 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-green-600" />
+              <span className="absolute left-1/2 top-1/2 h-[2.25px] w-6 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-700 transition-all duration-300 group-hover:left-0 group-hover:w-9 group-hover:translate-x-0 group-hover:bg-green-600" />
+              <span className="absolute bottom-0 left-0 h-[2.25px] w-9 rounded-full bg-gray-700 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-green-600" />
             </span>
           </button>
         </div>

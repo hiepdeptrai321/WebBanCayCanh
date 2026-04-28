@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { toast } from 'react-toastify'
 import AdminProductsTable from '../../components/admin/AdminProductsTable'
 import ProductForm from '../../components/admin/ProductForm'
 import {
@@ -7,6 +8,7 @@ import {
   getAllProducts,
   updateProduct,
 } from '../../services/productService'
+import { showConfirmToast } from '../../utils/toastNotifications'
 
 const defaultFormValues = {
   name: '',
@@ -80,7 +82,11 @@ function AdminProductsPage() {
   }
 
   const handleDeleteProduct = async (product) => {
-    const confirmed = window.confirm(`Bạn có chắc muốn xóa sản phẩm "${product.name}"?`)
+    const confirmed = await showConfirmToast({
+      message: `Bạn có chắc muốn xóa sản phẩm "${product.name}"?`,
+      confirmText: 'Xóa',
+      cancelText: 'Hủy',
+    })
 
     if (!confirmed) {
       return
@@ -89,8 +95,11 @@ function AdminProductsPage() {
     try {
       await deleteProduct(product.id)
       setProducts((prevProducts) => prevProducts.filter((item) => item.id !== product.id))
+      toast.success('Đã xóa sản phẩm.')
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Xóa sản phẩm thất bại.')
+      const message = error instanceof Error ? error.message : 'Xóa sản phẩm thất bại.'
+      setPageError(message)
+      toast.error(message)
     }
   }
 
@@ -116,6 +125,8 @@ function AdminProductsPage() {
   }, [formMode, editingProduct])
 
   const handleSubmitForm = async (formData) => {
+    const successMessage = formMode === 'edit' ? 'Cập nhật sản phẩm thành công.' : 'Tạo sản phẩm thành công.'
+
     if (formMode === 'edit' && editingProductId) {
       const savedProduct = await updateProduct(editingProductId, formData)
       setProducts((prevProducts) => prevProducts.map((product) => (product.id === editingProductId ? savedProduct : product)))
@@ -128,6 +139,7 @@ function AdminProductsPage() {
     setEditingProductId(null)
     setFormMode('create')
     setPageError('')
+    toast.success(successMessage)
   }
 
   const handleCancelForm = () => {

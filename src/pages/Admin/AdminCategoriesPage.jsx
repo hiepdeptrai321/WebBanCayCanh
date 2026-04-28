@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { toast } from 'react-toastify'
 import CategoriesTable from '../../components/admin/categories/CategoriesTable'
 import CategoryForm from '../../components/admin/categories/CategoryForm'
 import {
@@ -7,6 +8,7 @@ import {
   getAllCategories,
   updateCategory,
 } from '../../services/categoryService'
+import { showConfirmToast } from '../../utils/toastNotifications'
 
 const defaultCategoryValues = {
   name: '',
@@ -80,7 +82,11 @@ function AdminCategoriesPage() {
   }
 
   const handleDeleteCategory = async (category) => {
-    const confirmed = window.confirm(`Bạn có chắc muốn xóa danh mục "${category.name}"?`)
+    const confirmed = await showConfirmToast({
+      message: `Bạn có chắc muốn xóa danh mục "${category.name}"?`,
+      confirmText: 'Xóa',
+      cancelText: 'Hủy',
+    })
 
     if (!confirmed) {
       return
@@ -90,12 +96,17 @@ function AdminCategoriesPage() {
       await deleteCategory(category.id)
       setCategories((prevCategories) => prevCategories.filter((item) => item.id !== category.id))
       setPageError('')
+      toast.success('Đã xóa danh mục.')
     } catch (error) {
-      setPageError(error instanceof Error ? error.message : 'Xóa danh mục thất bại.')
+      const message = error instanceof Error ? error.message : 'Xóa danh mục thất bại.'
+      setPageError(message)
+      toast.error(message)
     }
   }
 
   const handleSubmitForm = async (formData) => {
+    const successMessage = formMode === 'edit' ? 'Cập nhật danh mục thành công.' : 'Tạo danh mục thành công.'
+
     if (formMode === 'edit' && editingCategoryId) {
       const savedCategory = await updateCategory(editingCategoryId, formData)
       setCategories((prevCategories) =>
@@ -110,6 +121,7 @@ function AdminCategoriesPage() {
     setEditingCategoryId(null)
     setFormMode('create')
     setPageError('')
+    toast.success(successMessage)
   }
 
   const handleCancelForm = () => {
