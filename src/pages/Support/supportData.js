@@ -18,10 +18,10 @@ export const contactChannels = [
   {
     id: "address",
     title: "Văn phòng chính",
-    value: "12 Nguyễn Văn Bảo, Phường 5, Gò Vấp, TP.HCM",
+    value: "12 Nguyễn Văn Bảo, Hạnh Thông, Hồ Chí Minh",
     hint: "Có khu vực tư vấn trực tiếp",
     actionLabel: "Xem đường đi",
-    href: "https://maps.google.com/?q=12+Nguyen+Van+Bao+Go+Vap+TPHCM",
+    href: "https://www.google.com/maps/search/?api=1&query=12+Nguyen+Van+Bao+Hanh+Thong+Ho+Chi+Minh",
   },
   {
     id: "hours",

@@ -8,17 +8,19 @@ function normalizeSiteUrl(value) {
 }
 
 export const SITE_SEO = {
-  siteName: "Góc Xanh",
+  siteName: "Góc Xanh Shop",
   siteUrl: normalizeSiteUrl(rawSiteUrl),
-  defaultTitle: "Góc Xanh - Cây cảnh trong nhà, cây để bàn tại TP.HCM",
+  defaultTitle:
+    "Góc Xanh Shop - Sản phẩm nhóm 2 môn Phát triển giao diện ứng dụng",
   defaultDescription:
-    "Góc Xanh cung cấp cây cảnh trong nhà, cây để bàn, cây phong thủy, chậu cây và dịch vụ tư vấn chăm sóc cây xanh tại TP.HCM.",
-  defaultImage: "/logo.png",
+    "Góc Xanh Shop là website giới thiệu và bán cây cảnh mô phỏng, sản phẩm của nhóm 2 môn Phát triển giao diện ứng dụng. Địa chỉ: 12 Nguyễn Văn Bảo, Hạnh Thông, Hồ Chí Minh.",
+  defaultImage: "/favicon.png",
   locale: "vi_VN",
-  phone: "+84 833 449 449",
+  phone: "",
   address: {
-    streetAddress: "12 Nguyễn Văn Bảo, Phường 5, Quận Gò Vấp",
-    addressLocality: "TP. Hồ Chí Minh",
+    streetAddress: "12 Nguyễn Văn Bảo",
+    addressLocality: "Hạnh Thông",
+    addressRegion: "Hồ Chí Minh",
     addressCountry: "VN",
   },
 };
@@ -69,15 +71,27 @@ export function buildOrganizationSchema() {
     "@type": "Organization",
     "@id": absoluteUrl("/#organization"),
     name: SITE_SEO.siteName,
+    description: SITE_SEO.defaultDescription,
     url: SITE_SEO.siteUrl,
-    logo: absoluteUrl(SITE_SEO.defaultImage),
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: SITE_SEO.phone,
-      contactType: "customer service",
-      areaServed: "VN",
-      availableLanguage: ["vi"],
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl(SITE_SEO.defaultImage),
+      width: 512,
+      height: 512,
     },
+    address: {
+      "@type": "PostalAddress",
+      ...SITE_SEO.address,
+    },
+    contactPoint: SITE_SEO.phone
+      ? {
+          "@type": "ContactPoint",
+          telephone: SITE_SEO.phone,
+          contactType: "customer service",
+          areaServed: "VN",
+          availableLanguage: ["vi"],
+        }
+      : undefined,
   };
 }
 
@@ -105,9 +119,10 @@ export function buildLocalBusinessSchema() {
     "@type": "GardenStore",
     "@id": absoluteUrl("/#local-business"),
     name: SITE_SEO.siteName,
+    description: SITE_SEO.defaultDescription,
     image: absoluteUrl(SITE_SEO.defaultImage),
     url: SITE_SEO.siteUrl,
-    telephone: SITE_SEO.phone,
+    telephone: SITE_SEO.phone || undefined,
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",

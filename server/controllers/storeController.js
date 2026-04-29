@@ -37,7 +37,7 @@ async function getOrCreateStoreProfile() {
     store = await Store.create({
       name: 'Góc Xanh Shop',
       slug: 'goc-xanh-shop',
-      description: 'Thông tin hệ thống cửa hàng chưa được cập nhật.',
+      description: 'Website bán cây cảnh mô phỏng, sản phẩm của Nhóm 2 môn Phát triển giao diện ứng dụng.',
       isActive: true,
       branches: [],
     })

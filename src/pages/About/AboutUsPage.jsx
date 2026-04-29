@@ -143,7 +143,7 @@ function AboutUsPage() {
             </p>
             <ul className="list-disc pl-6 mt-4 text-gray-700 space-y-2">
               <li>
-                Showroom tại 12 Nguyễn Văn Bảo, Phường 5, Quận Gò Vấp, TP.HCM
+                Showroom tại 12 Nguyễn Văn Bảo, Hạnh Thông, Hồ Chí Minh
               </li>
               <li>
                 Kho hàng tại 25 Lê Văn Việt, Phường Hiệp Phú, TP. Thủ Đức,
