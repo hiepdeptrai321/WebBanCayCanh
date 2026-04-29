@@ -47,7 +47,7 @@ function SupportLocationSection() {
                 </span>
                 <div>
                   <p className="font-semibold text-gray-900">Showroom chính</p>
-                  <p>12 Nguyễn Văn Bảo, Phường 5, Gò Vấp, TP.HCM</p>
+                  <p>12 Nguyễn Văn Bảo, Hạnh Thông, Hồ Chí Minh</p>
                 </div>
               </div>
 
@@ -63,7 +63,7 @@ function SupportLocationSection() {
             </div>
 
             <a
-              href="https://maps.google.com/?q=12+Nguyen+Van+Bao+Go+Vap+TPHCM"
+              href="https://www.google.com/maps/search/?api=1&query=12+Nguyen+Van+Bao+Hanh+Thong+Ho+Chi+Minh"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-700"

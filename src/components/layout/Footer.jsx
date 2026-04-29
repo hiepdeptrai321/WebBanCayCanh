@@ -14,8 +14,8 @@ function Footer() {
               <span>Góc Xanh Shop</span>
             </h2>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Mang thiên nhiên vào không gian sống của bạn với những loài cây
-              cảnh đẹp, khỏe mạnh và được chăm sóc tận tình.
+              Website giới thiệu và bán cây cảnh mô phỏng, sản phẩm của Nhóm 2
+              môn Phát triển giao diện ứng dụng.
             </p>
             {/* Social icons */}
             <div className="flex gap-3">
@@ -77,24 +77,20 @@ function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-white font-semibold mb-4 uppercase text-sm tracking-widest">
-              Liên hệ
+              Thông tin website
             </h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-start gap-2">
                 <span className="mt-0.5">📍</span>
-                <span>123 Đường Lá Xanh, Quận 1, TP.HCM</span>
+                <span>12 Nguyễn Văn Bảo, Hạnh Thông, Hồ Chí Minh</span>
               </li>
               <li className="flex items-center gap-2">
-                <span>📞</span>
-                <a href="tel:0901234567" className="hover:text-green-400 transition-colors">
-                  0901 234 567
-                </a>
+                <span>👥</span>
+                <span>Sản phẩm của Nhóm 2</span>
               </li>
               <li className="flex items-center gap-2">
-                <span>✉️</span>
-                <a href="mailto:hello@caycanhxanh.vn" className="hover:text-green-400 transition-colors">
-                  hello@caycanhxanh.vn
-                </a>
+                <span>🎓</span>
+                <span>Môn Phát triển giao diện ứng dụng</span>
               </li>
             </ul>
           </div>
@@ -102,8 +98,8 @@ function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-gray-700 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-          <p>© 2026 Góc Xanh Shop. Tất cả quyền được bảo lưu.</p>
-          <p>Thiết kế với 💚 bởi nhóm WebBanCayCanh</p>
+          <p>© 2026 Góc Xanh Shop. Website phục vụ học tập.</p>
+          <p>Thiết kế bởi Nhóm 2 - môn Phát triển giao diện ứng dụng</p>
         </div>
       </div>
     </footer>

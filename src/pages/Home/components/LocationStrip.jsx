@@ -2,7 +2,7 @@ const locations = [
   {
     id: 1,
     title: 'Showroom',
-    address: '12 Nguyễn Văn Bảo, Gò Vấp, TP.HCM',
+    address: '12 Nguyễn Văn Bảo, Hạnh Thông, Hồ Chí Minh',
   },
   {
     id: 2,

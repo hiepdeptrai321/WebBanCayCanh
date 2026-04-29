@@ -27,13 +27,13 @@ const branches = [
   {
     id: 0,
     name: "Showroom",
-    address: "12 Nguyễn Văn Bảo, Phường 5, Quận Gò Vấp, TP.HCM",
+    address: "12 Nguyễn Văn Bảo, Hạnh Thông, Hồ Chí Minh",
     phone: "0833 449 449",
     hours: "8:00 – 20:00 hàng ngày",
     description:
       "Showroom chính với không gian trưng bày đa dạng cây cảnh nội thất, ngoại thất và vật tư. Dễ dàng đỗ xe, thoáng đãng, phù hợp mua sắm trực tiếp.",
     mapLink:
-      "https://www.google.com/maps/place/12+Nguyễn+Văn+Bảo/@10.8221368,106.6841968,17z/...",
+      "https://www.google.com/maps/search/?api=1&query=12+Nguyen+Van+Bao+Hanh+Thong+Ho+Chi+Minh",
     mainImage: showroomMain,
     gallery: [showroom1, showroom2, showroom3, showroom4],
   },
